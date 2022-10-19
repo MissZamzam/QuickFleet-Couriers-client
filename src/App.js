@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react';
 import {   BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+=======
+
+import {   BrowserRouter, Route, Routes } from 'react-router-dom';
+>>>>>>> f7313877c3078b748eefaa0005bf2115673f1a34
 import './App.css';
 import { verify } from "./auth/Users";
 import Login from './components/Login/Login';
 import Signup from "./components/SignUp/SignUp"
+
+import './App.css';
+import React from 'react'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
   
@@ -40,8 +49,19 @@ function App() {
     
   </div>
 
+<<<<<<< HEAD
   ) : (
     <h1>Loading</h1>
+=======
+      <BrowserRouter>
+        <Routes>
+        <Route path='/Login' element={<Login />} />
+        <Route path='/Signup' element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
+      <Navbar />
+    </div>
+>>>>>>> f7313877c3078b748eefaa0005bf2115673f1a34
   );
 
 }
