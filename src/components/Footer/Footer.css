@@ -51,6 +51,7 @@
 
 .footer-img{
     max-width: 370px;
+    width: 50%;
     opacity: 0.9;
     position: absolute;
     left: 50%;
@@ -91,6 +92,7 @@
         font-size: 14px;
     }
     .footer-img{
-        top: 15%;
+        top: 50%;
+        left: 70%;
     }
 }
