@@ -1,0 +1,25 @@
+.home{
+    background-color: #353D68;
+    
+}
+.caption{
+    color: white;
+    font-size: xx-large;
+}
+.first{
+    color: white;
+    font-size: 12px;
+}
+button{
+    background-color: #F2B035;
+    padding: 8px;
+    border-radius: 18px;
+}
+.town{
+    background-color: #353D68;
+    color: white;
+}
+.client{
+    background-color: #060E26;
+    color: white;
+}
