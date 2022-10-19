@@ -1,12 +1,10 @@
-
+import React from 'react'
 import {   BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login/Login';
 import Signup from "./components/SignUp/SignUp"
-
-import './App.css';
-import React from 'react'
 import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -19,6 +17,7 @@ function App() {
       </Routes>
     </BrowserRouter>
       <Navbar />
+      <Footer />
     </div>
   );
 }
