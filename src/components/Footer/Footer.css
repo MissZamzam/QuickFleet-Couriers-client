@@ -6,7 +6,7 @@
 }
 
 .footer-row{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -14,7 +14,7 @@
 }
 
 .footer-left, .footer-right{
-    flex-basis: 45%;
+    flex-basis: 28%;
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -27,12 +27,12 @@
     color: #fff;
 }
 
-.footer-right h1{
-    color: #F2B035;
+.footer-right{
+    text-align: left;
 }
 
-.footer-right{
-    text-align: right;
+.footer-right h1{
+    color: #F2B035;
 }
 
 .footer-row h1{
@@ -51,7 +51,7 @@
 
 .footer-img{
     max-width: 370px;
-    opacity: 0.1;
+    opacity: 0.9;
     position: absolute;
     left: 50%;
     top: 35%;
@@ -69,7 +69,7 @@
     line-height: 40px;
     border: 1px solid #042123;
     margin: 40px 5px 0;
-    color: #042123;
+    color: #fff;
     cursor: pointer;
     transition: .8s;
 }
@@ -91,6 +91,6 @@
         font-size: 14px;
     }
     .footer-img{
-        top: 25%;
+        top: 15%;
     }
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 import './Footer.css'
+import FooterPic from '../Image/undraw_deliveries_2r4y.svg'
 
 function Footer() {
   return (
     <div>
         <section id="footer">
-            <img src=" " class="footer-img" alt=" " />
+            <img src={FooterPic} class="footer-img" alt=" " />
             <div class="footer-row">
                 <div class="footer-left">
                     <h1>Opening Hours</h1>
