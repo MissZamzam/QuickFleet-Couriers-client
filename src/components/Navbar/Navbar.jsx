@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Lorry from '../Image/My project-1.png'
 import "./Navbar.css"
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Home', 'Products', 'Services'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
