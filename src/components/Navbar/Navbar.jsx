@@ -158,6 +158,7 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
         </Toolbar>
+      <hr className="line"></hr>
       </Container>
     </AppBar>
   );
