@@ -4,7 +4,7 @@ import './App.css';
 import Login from './components/Login/Login';
 import Signup from "./components/SignUp/SignUp"
 import Navbar from './components/Navbar/Navbar'
-import Footer from './components/Footer/Footer'
+// import Footer from './components/Footer/Footer'
 
 function App() {
   return (
