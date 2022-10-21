@@ -19,7 +19,7 @@ function Package_Tracking ()
               value={receipt_no}
               onChange={(e) => setReceiptNumber(e.target.value)}
             />
-            {/* <i className="fa fa-search searchIcon" aria-hidden="true"></i> */}
+            <i className="fa fa-search searchIcon" aria-hidden="true"></i>
           </div>
           {/* <div className=" container package-receipt">
             <div className="house-details">
