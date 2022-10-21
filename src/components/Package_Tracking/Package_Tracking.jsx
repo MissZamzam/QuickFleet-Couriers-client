@@ -6,7 +6,7 @@ function Package_Tracking ()
   return (
     <div className="container-fluid bg">
       <div className="receipt-form">
-        {/* <form className="receiptNo-form">
+        <form className="receiptNo-form">
           <h5>Track Your Package Delivery </h5>
           <p>Enter the receipt number that you got from our offices</p>
           <div className="form-group">
@@ -20,7 +20,7 @@ function Package_Tracking ()
               onChange={(e) => setReceiptNumber(e.target.value)}
             />
             {/* <i className="fa fa-search searchIcon" aria-hidden="true"></i> */}
-          {/* </div> */}
+          </div>
           {/* <div className=" container package-receipt">
             <div className="house-details">
               <img src={Image3} className="houseIcon"></img>
@@ -33,7 +33,7 @@ function Package_Tracking ()
               <button className="receiptBtn">On Process</button>
             </div>
           </div> */}
-        {/* </form> */} 
+        </form>
       </div>
     </div>
   );
