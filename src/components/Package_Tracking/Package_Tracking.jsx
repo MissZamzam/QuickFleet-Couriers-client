@@ -21,7 +21,7 @@ function Package_Tracking ()
             />
             <i className="fa fa-search searchIcon" aria-hidden="true"></i>
           </div>
-          {/* <div className=" container package-receipt">
+          <div className=" container package-receipt">
             <div className="house-details">
               <img src={Image3} className="houseIcon"></img>
               <div className="receipt-details">
@@ -32,7 +32,7 @@ function Package_Tracking ()
             <div>
               <button className="receiptBtn">On Process</button>
             </div>
-          </div> */}
+          </div>
         </form>
       </div>
     </div>
