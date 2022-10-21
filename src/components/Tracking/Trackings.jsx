@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Tracking.css"
 
 function Trackings () {
     return (
