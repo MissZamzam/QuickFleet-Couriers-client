@@ -4,12 +4,12 @@ import './App.css';
 import Login from './components/Login/Login';
 import Signup from "./components/SignUp/SignUp"
 import Navbar from './components/Navbar/Navbar'
+import DeliveryForm from './components/DeliveryDetails/DeliveryForm'
 // import Footer from './components/Footer/Footer'
 
 function App() {
   return (
     <div className="App">
-
       <BrowserRouter>
         <Routes>
         <Route path='/Login' element={<Login />} />
@@ -17,6 +17,7 @@ function App() {
       </Routes>
     </BrowserRouter>
       <Navbar />
+      <DeliveryForm />
     </div>
   );
 }
