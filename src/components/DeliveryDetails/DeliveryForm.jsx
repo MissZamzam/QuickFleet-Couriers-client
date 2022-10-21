@@ -121,7 +121,8 @@
 // }
 
 
-import React from 'react'
+import React from 'react';
+import './DeliveryForm.css'
 
 function DeliveryForm() {
   return (
@@ -130,13 +131,13 @@ function DeliveryForm() {
             <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
                 <img class=" w-full h-24 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
                 <div class="p-6 flex flex-col justify-start">
-                    <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+                    <h5 class="text-gray-900 text-xl font-medium mb-2">Deliver To</h5>
                     <form class="w-full max-w-sm">
                         <div class="flex items-center border-b border-teal-500 py-2">
-                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Receiver Name" aria-label="Receiver Name" />
                         </div>
                         <div class="flex items-center border-b border-teal-500 py-2">
-                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Receiver Contact" aria-label="Receiver Contact" />
                         </div>
                     </form>
                 </div>
@@ -146,13 +147,13 @@ function DeliveryForm() {
             <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
                 <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
                 <div class="p-6 flex flex-col justify-start">
-                    <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+                    <h5 class="text-gray-900 text-xl font-medium mb-2">Instructions</h5>
                     <form class="w-full max-w-sm">
                         <div class="flex items-center border-b border-teal-500 py-2">
-                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Pickup Instructions" aria-label="Pickup Instructions" />
                         </div>
                         <div class="flex items-center border-b border-teal-500 py-2">
-                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Delivery Instructions" aria-label="Delivery Instructions" />
                         </div>
                     </form>
                 </div>
@@ -162,7 +163,7 @@ function DeliveryForm() {
             <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
                 <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
                 <div class="p-6 flex flex-col justify-start">
-                    <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+                    <h5 class="text-gray-900 text-xl font-medium mb-2">Package Details</h5>
                     <form class="w-full max-w-sm">
                         <div class="flex items-center border-b border-teal-500 py-2">
                             <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
@@ -174,6 +175,9 @@ function DeliveryForm() {
                 </div>
             </div>
         </div>
+        <button type='submit' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Deliver Courier Now
+        </button>
     </div>
   )
 }
