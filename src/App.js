@@ -13,7 +13,7 @@ import Delivery from './components/Delivery/Delivery';
 import Receipts from './components/Receipts/Receipts';
 import Receipt from './components/Receipts/Receipt';
 import Trackings from './components/Tracking/Trackings';
-// import Tracking from './components/Tracking/Trackings';
+import Tracking from './components/Tracking/Trackings';
 
 function App() {
   return (
