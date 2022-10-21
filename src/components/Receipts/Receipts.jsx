@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Receipts.css"
 
 function Receipts () {
     return (
