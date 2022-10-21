@@ -128,13 +128,17 @@ function DeliveryForm() {
     <div>
         <div class="flex justify-center mb-4">
             <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-                <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
+                <img class=" w-full h-24 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
                 <div class="p-6 flex flex-col justify-start">
                     <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-                    <p class="text-gray-700 text-base mb-4">
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    </p>
-                    <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
+                    <form class="w-full max-w-sm">
+                        <div class="flex items-center border-b border-teal-500 py-2">
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                        </div>
+                        <div class="flex items-center border-b border-teal-500 py-2">
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -143,10 +147,14 @@ function DeliveryForm() {
                 <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
                 <div class="p-6 flex flex-col justify-start">
                     <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-                    <p class="text-gray-700 text-base mb-4">
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    </p>
-                    <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
+                    <form class="w-full max-w-sm">
+                        <div class="flex items-center border-b border-teal-500 py-2">
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                        </div>
+                        <div class="flex items-center border-b border-teal-500 py-2">
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -155,10 +163,14 @@ function DeliveryForm() {
                 <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
                 <div class="p-6 flex flex-col justify-start">
                     <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-                    <p class="text-gray-700 text-base mb-4">
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    </p>
-                    <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
+                    <form class="w-full max-w-sm">
+                        <div class="flex items-center border-b border-teal-500 py-2">
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                        </div>
+                        <div class="flex items-center border-b border-teal-500 py-2">
+                            <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
