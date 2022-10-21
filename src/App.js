@@ -30,7 +30,7 @@ function App() {
         <Route path='/receipts' element={<Receipts />} /> 
         <Route path='/receipt/:id' element={<Receipt />} /> 
         <Route path='/trackings' element={<Trackings />} />
-        {/* <Route path='/tracking/:id' element={<Tracking />} /> */}
+        <Route path='/tracking/:id' element={<Tracking />} />
       </Routes>
     </BrowserRouter>
       
