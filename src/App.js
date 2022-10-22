@@ -1,12 +1,11 @@
-
+import React from 'react'
 import {   BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login/Login';
 import Signup from "./components/SignUp/SignUp"
-
-import './App.css';
-import React from 'react'
 import Navbar from './components/Navbar/Navbar'
+import DeliveryForm from './components/DeliveryDetails/DeliveryForm'
+// import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home';
 import Deliveries from './components/Delivery/Deliveries';
 import Delivery from './components/Delivery/Delivery';
@@ -33,6 +32,8 @@ function App() {
         <Route path='/tracking/:id' element={<Tracking />} />
       </Routes>
     </BrowserRouter>
+      <Navbar />
+      <DeliveryForm />
       
      
     </div>
