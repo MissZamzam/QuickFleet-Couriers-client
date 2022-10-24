@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
+import "./Profile.css"
 
 export default function PersonalProfile() {
   return (
@@ -13,26 +14,35 @@ export default function PersonalProfile() {
                   style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                     alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
-                  <MDBTypography tag="h5">Marie Horwitz</MDBTypography>
-                  <MDBCardText>Web Designer</MDBCardText>
-                  <MDBIcon far icon="edit mb-5" />
+                  {/* <MDBTypography tag="h5">Marie Horwitz</MDBTypography> */}
+                  {/* <MDBCardText>Web Designer</MDBCardText> */}
+                  {/* <MDBIcon far icon="edit mb-5" /> */}
                 </MDBCol>
+                
                 <MDBCol md="8">
                   <MDBCardBody className="p-4">
-                    <MDBTypography tag="h6">Information</MDBTypography>
+                    <MDBTypography tag="h6" className='text'> User Information</MDBTypography>
                     <hr className="mt-0 mb-4" />
                     <MDBRow className="pt-1">
-                      <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Email</MDBTypography>
-                        <MDBCardText className="text-muted">info@example.com</MDBCardText>
+                      <MDBCol size="4" className="mb-3">
+                        <MDBTypography tag="h6">Name</MDBTypography>
+                        <MDBCardText className="text-muted">Zamzam Hassan</MDBCardText>
                       </MDBCol>
-                      <MDBCol size="6" className="mb-3">
+                      <MDBCol size="4" className="mb-3">
+                        <MDBTypography tag="h6">Email</MDBTypography>
+                        <MDBCardText className="text-muted">Zamzam44@gmail.com</MDBCardText>
+                      </MDBCol>
+                      <MDBCol size="4" className="mb-3">
+                        <MDBTypography tag="h6">Phone Number</MDBTypography>
+                        <MDBCardText className="text-muted">+254 725853719</MDBCardText>
+                      </MDBCol>
+                      {/* <MDBCol size="6" className="mb-3">
                         <MDBTypography tag="h6">Phone</MDBTypography>
                         <MDBCardText className="text-muted">123 456 789</MDBCardText>
-                      </MDBCol>
+                      </MDBCol> */}
                     </MDBRow>
 
-                    <MDBTypography tag="h6">Information</MDBTypography>
+                    {/* <MDBTypography tag="h6">Information</MDBTypography>
                     <hr className="mt-0 mb-4" />
                     <MDBRow className="pt-1">
                       <MDBCol size="6" className="mb-3">
@@ -43,7 +53,7 @@ export default function PersonalProfile() {
                         <MDBTypography tag="h6">Phone</MDBTypography>
                         <MDBCardText className="text-muted">123 456 789</MDBCardText>
                       </MDBCol>
-                    </MDBRow>
+                    </MDBRow> */}
 
                     <div className="d-flex justify-content-start">
                       <a href="#!"><MDBIcon fab icon="facebook me-3" size="lg" /></a>
