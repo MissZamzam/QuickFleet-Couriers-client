@@ -44,3 +44,10 @@
     height: 100px;
     padding: 18px;
 }
+
+.nest2 img{
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+}
