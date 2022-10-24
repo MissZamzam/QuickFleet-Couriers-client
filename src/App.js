@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import {   BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-
 import React from 'react'
-import {   BrowserRouter, Route, Routes } from 'react-router-dom';
+// import {   BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { verify } from "./auth/Users";
 import Login from './components/Login/Login';
@@ -55,26 +54,25 @@ function App() {
 
   ) : (
     <h1>Loading</h1>
-      <BrowserRouter>
-      <Navbar />
-      <Home />
-        <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
-        <Route path='/Login' element={<Login />} />
-        <Route path='/Signup' element={<Signup />} />
-        <Route path='/deliveries' element={<Deliveries />} />
-        <Route path='/delivery/:id' element={<Delivery />} />
-        <Route path='/receipts' element={<Receipts />} /> 
-        <Route path='/receipt/:id' element={<Receipt />} /> 
-        <Route path='/trackings' element={<Trackings />} />
-        <Route path='/tracking/:id' element={<Tracking />} />
-      </Routes>
-    </BrowserRouter>
-      <Navbar />
-      <DeliveryForm />
+    //   <BrowserRouter>
+    //   <Navbar />
+    //   <Home />
+    //     <Routes>
+    //     {/* <Route path='/' element={<Home />} /> */}
+    //     <Route path='/Login' element={<Login />} />
+    //     <Route path='/Signup' element={<Signup />} />
+    //     <Route path='/deliveries' element={<Deliveries />} />
+    //     <Route path='/delivery/:id' element={<Delivery />} />
+    //     <Route path='/receipts' element={<Receipts />} /> 
+    //     <Route path='/receipt/:id' element={<Receipt />} /> 
+    //     <Route path='/trackings' element={<Trackings />} />
+    //     <Route path='/tracking/:id' element={<Tracking />} />
+    //   </Routes>
+    // </BrowserRouter>
+    //   <Navbar />
+    //   <DeliveryForm />
       
      
-    </div>
   );
 
 }
