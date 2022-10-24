@@ -1,0 +1,81 @@
+.bg{
+  height: 130vh !important;
+  background-image: url("./images/image1.png") !important;
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-color: #353D68;
+}
+
+.receipt-form{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+ 
+}
+.form-group{
+  display: flex;
+  
+}
+
+.receiptNo-form{
+  height: 40%;
+  width: 60%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F2B035;
+  border-radius: .8em;
+  /* position: absolute; */
+  /* z-index: 1; */
+  margin-bottom: -10em;
+}
+.receiptNo-form input{
+  width: 15em;
+  /* margin-top: .5em; */
+  /* margin-bottom: 1em; */
+  border: #1A1F3D 2px solid;
+  border-radius: .5em;
+
+}
+.searchIcon{
+  position: absolute;
+  margin-top: .5em;
+  margin-left: 13em;
+  float: right;
+  color: #ffff;
+  background-color: #F2B035;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.package-receipt{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.house-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-left: 1em;
+}
+.houseIcon{
+  height: 80px;
+  width: 90px;
+  object-fit: cover;
+}
+
+.receiptBtn{
+  border: none;
+  height: 2em;
+  width: 6em;
+  background-color: #272D55;
+  border-radius: .8em;
+  color: white;
+}
