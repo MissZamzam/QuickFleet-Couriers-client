@@ -16,7 +16,14 @@ import MenuItem from '@mui/material/MenuItem';
 import Lorry from '../Image/My project-1.png'
 import { NavLink, Link } from 'react-router-dom';
 
-const pages = ['Home', 'Services'];
+const pages = [
+  <NavLink to="/">
+    Home
+  </NavLink>,
+  <NavLink to="/services">
+    Services
+  </NavLink>
+];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
