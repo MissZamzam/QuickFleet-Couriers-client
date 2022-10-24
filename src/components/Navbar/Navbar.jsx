@@ -43,7 +43,7 @@ function ResponsiveAppBar() {
       <Container className="navbar" maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <img src={Lorry} alt="Lorry" />
+          <img src={Lorry} alt="Lorry" className='lorry' />
           <Typography
             variant="h6"
             noWrap
