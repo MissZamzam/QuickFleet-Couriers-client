@@ -1,6 +1,6 @@
 .bg{
   height: 130vh !important;
-  background-image: url("./images/image1.png") !important;
+  /* background-image: url("./images/image1.png") !important; */
   background-repeat: no-repeat;
   background-size:contain;
   background-color: #353D68;
@@ -11,11 +11,11 @@
   display: flex;
   justify-content: center;
   align-items:flex-end;
- 
+
 }
 .form-group{
   display: flex;
-  
+
 }
 
 .receiptNo-form{
