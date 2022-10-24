@@ -10,6 +10,11 @@ export default function Services() {
 
     const [services, setServices] = useState([])
 
+    useEffect(()=>{
+        fetch("")
+        .then((res) => res.json()) 
+        .then((data)=>setServices(data))
+    }, [])
 
 
   return (
