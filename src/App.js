@@ -10,8 +10,8 @@ import Navbar from './components/Navbar/Navbar'
 import DeliveryForm from './components/DeliveryDetails/DeliveryForm'
 // import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home';
-import Deliveries from './components/Delivery/Deliveries';
-import Delivery from './components/Delivery/Delivery';
+import Services from './components/Service/Services';
+import Service from './components/Service/Service';
 import Receipts from './components/Receipts/Receipts';
 import Receipt from './components/Receipts/Receipt';
 import Trackings from './components/Tracking/Trackings';
@@ -43,8 +43,8 @@ function App() {
     <Navbar/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/deliveries' element={<Deliveries />} />
-        <Route path='/delivery/:id' element={<Delivery />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='/service/:id' element={<Service />} />
         <Route path='/receipts' element={<Receipts />} />
         <Route path='/receipt/:id' element={<Receipt />} />
         <Route path='/trackings' element={<Trackings />} />
