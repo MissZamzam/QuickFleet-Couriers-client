@@ -5,20 +5,13 @@ export const getUser = async (id) => {
   return res.data;
 };
 
-export const getTeachers = async () => {
-  const res = await api.get(`/teachers`);
-  return res.data;
-};
 
 export const getUserPosts = async (id) => {
   const res = await api.get(`/users/${id}/posts`);
   return res.data;
 };
 
-export const getUserCourses = async (id) => {
-  const res = await api.get(`/users/${id}/courses`);
-  return res.data;
-};
+
 
 export const register = async (user) => {
   const res = await api.post(`/users`, { user });

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+import './Package_Tracking.css'
 
 function Package_Tracking ()
 {
@@ -23,7 +24,7 @@ function Package_Tracking ()
           </div>
           <div className=" container package-receipt">
             <div className="house-details">
-              <img src={Image3} className="houseIcon"></img>
+              {/* <img src={Image3} className="houseIcon"></img> */}
               <div className="receipt-details">
                 <h5>Quick Fleet</h5>
                 <p>#KEN23454634</p>
