@@ -48,8 +48,8 @@ function App() {
         <Route path='/receipt/:id' element={<Receipt />} />
         <Route path='/trackings' element={<Trackings />} />
         <Route path='/tracking/:id' element={<Tracking />} />
-      {/* <Route path='/Login' element={<Login authorized={authorized} setUserData={setUserData} />} /> */}
-      {/* <Route path='/Signup' element={<Signup authorized={authorized} setUserData={setUserData} />} /> */}
+        <Route path='/Login' element={<Login authorized={authorized} setUserData={setUserData} />} />
+        <Route path='/Signup' element={<Signup authorized={authorized} setUserData={setUserData} />} />
       {authorized ? (
         <></>
       ) : (

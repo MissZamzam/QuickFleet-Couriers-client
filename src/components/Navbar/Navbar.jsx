@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 import Lorry from '../Image/My project-1.png'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const pages = ['Home', 'Services'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -131,9 +131,11 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0 }}>
           <IconButton>
-          {/* <NavLink to="/login">
+          {/* <NavLink to="/login"> */}
+          <Link to="/login">
             <i class="fa fa-user" aria-hidden="true"></i>
-          </NavLink> */}
+          </Link>
+          {/* </NavLink> */}
           </IconButton>
             {/* <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
