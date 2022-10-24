@@ -7,9 +7,9 @@ return<>
 <div className="home">
     <div className="nest">
         <h1 className="caption">We Are Top Courier <br></br> and Mover Service <br></br> in Nairobi</h1>
-        <p className="first">An application where users can login to send packages.Just 
+        <p className="first">An application where users can login to send packages.Just
          <br></br>like Wells Fargo, Sendy etc.The application charge users</p>
-        <button>Our Solutions</button>
+        <button className="solutions">Our Solutions</button>
     <div className="nest2">
         <h2 className="town">55+ <br></br> Towns<br></br> Covered</h2>
         <h2 className="client">1000+ <br></br> <br></br> Satisfied Clients</h2>

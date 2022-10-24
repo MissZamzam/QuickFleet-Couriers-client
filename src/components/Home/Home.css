@@ -1,6 +1,6 @@
 .home{
     background: #272D55;
-    
+
 }
 .nest{
     margin: 30px;
@@ -21,13 +21,12 @@
     font-size: large;
     margin-bottom: 15px;
 }
-button{
+.solutions{
     background-color: #F2B035;
     padding: 16px 40px;
     border-radius: 27px;
     margin: 10px;
     margin-left: 139px;
-    
 }
 .town{
     background-color: #353D68;
