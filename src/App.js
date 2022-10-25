@@ -16,6 +16,7 @@ import Receipts from './components/Receipts/Receipts';
 import Receipt from './components/Receipts/Receipt';
 import Trackings from './components/Tracking/Trackings';
 import Tracking from './components/Tracking/Trackings';
+import Orders from './components/OrderForm/OrderForm'
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path='/receipts' element={<Receipts />} />
         <Route path='/receipt/:id' element={<Receipt />} />
         <Route path='/trackings' element={<Trackings />} />
+        <Route path='/orders' element={<Orders />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
         <Route path='/tracking/:id' element={<Tracking />} />
         <Route path='/Login' element={<Login authorized={authorized} setUserData={setUserData} />} />
