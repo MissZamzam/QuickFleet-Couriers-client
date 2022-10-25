@@ -8,7 +8,7 @@ import Login from './components/Login/Login';
 import Signup from "./components/SignUp/SignUp"
 import Navbar from './components/Navbar/Navbar'
 import DeliveryForm from './components/DeliveryDetails/DeliveryForm'
-// import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home';
 import Services from './components/Service/Services';
 import Service from './components/Service/Service';
@@ -65,6 +65,7 @@ function App() {
 
       )}
     </Routes>
+    <Footer />
   </BrowserRouter>
 
   </div>
