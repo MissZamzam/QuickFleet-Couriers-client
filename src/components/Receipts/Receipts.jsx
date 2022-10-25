@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import * as React from "react";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -9,6 +10,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
 import Receipt from "./Receipt"
+import { Box } from "@mui/material";
+
 import "./Receipts.css";
 
 function Receipts() {
@@ -25,12 +28,12 @@ function Receipts() {
       {
         field: "receiver_name",
         headerName: "Receiver Name",
-        type: "text",
+        type: "string",
         headerAlign: "center",
         align: "center",
       },
       {
-        field: "phone",
+        field: "nature_of_goods",
         headerName: "Nature Of Goods",
         flex: 1,
       },
@@ -67,8 +70,58 @@ function Receipts() {
       });
   }, []);
     return (
-      <>
-        {/* <TableContainer component={Paper}>
+         <Box m="20px">
+      {/* <Header
+        title="CONTACTS"
+        subtitle="List of Contacts for Future Reference"
+      /> */}
+      <Box
+        m="40px 0 0 0"
+        height="75vh"
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none",
+          },
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none",
+          },
+        //   "& .name-column--cell": {
+        //     color: colors.greenAccent[300],
+        //   },
+        //   "& .MuiDataGrid-columnHeaders": {
+        //     backgroundColor: colors.blueAccent[700],
+        //     borderBottom: "none",
+        //   },
+        //   "& .MuiDataGrid-virtualScroller": {
+        //     backgroundColor: colors.primary[400],
+        //   },
+        //   "& .MuiDataGrid-footerContainer": {
+        //     borderTop: "none",
+        //     backgroundColor: colors.blueAccent[700],
+        //   },
+        //   "& .MuiCheckbox-root": {
+        //     color: `${colors.greenAccent[200]} !important`,
+        //   },
+        //   "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+        //     color: `${colors.grey[100]} !important`,
+        //   },
+        }}
+      >
+        <DataGrid
+          rows={receipts}
+          columns={columns}
+          components={{ Toolbar: GridToolbar }}
+        />
+      </Box>
+    </Box>      
+    );
+}
+export default Receipts;
+
+
+
+{
+  /* <TableContainer component={Paper}>
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
@@ -80,12 +133,22 @@ function Receipts() {
                 <TableCell align="right">PickUp</TableCell>
                 <TableCell align="right">Destination</TableCell>
                 <TableCell align="right">Amount Paid</TableCell>
-                {/* <TableCell align="right">Delivery Id</TableCell> */}
-                {/* <TableCell align="right">View</TableCell> */}
-                {/* <TableCell align="right">Delete</TableCell> */}
-              {/* </TableRow> */}
-            {/* </TableHead> */}
-            {/* <TableBody>
+                {/* <TableCell align="right">Delivery Id</TableCell> */
+}
+{
+  /* <TableCell align="right">View</TableCell> */
+}
+{
+  /* <TableCell align="right">Delete</TableCell> */
+}
+{
+  /* </TableRow> */
+}
+{
+  /* </TableHead> */
+}
+{
+  /* <TableBody>
               {receipts.map((row) => (
                 <TableRow
                   key={row.id}
@@ -101,8 +164,10 @@ function Receipts() {
                   <TableCell align="right">{row.pickup}</TableCell>
                   <TableCell align="right">{row.destination}</TableCell>
                   <TableCell align="right">{row.amount_paid}</TableCell>
-                  {/* <TableCell align="right">{row.date}</TableCell> */}
-                  {/* <TableCell align="right">
+                  {/* <TableCell align="right">{row.date}</TableCell> */
+}
+{
+  /* <TableCell align="right">
                     <Link
                       to={`/receipts/${row.id}`}
                       onClick={() => <Receipt key={row.id} />}
@@ -113,9 +178,8 @@ function Receipts() {
                 </TableRow>
               ))}
             </TableBody>
-          </Table> */}
-        {/* </TableContainer> */} 
-      </>
-    );
+          </Table> */
 }
-export default Receipts;
+{
+  /* </TableContainer> */
+} 
