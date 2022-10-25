@@ -47,7 +47,19 @@ function Receipt() {
                 Receipt: <em>{receipt.receipt_no}</em>
               </h5>
               <p className="card-text text-center">
-                Sender: {receipt.invoice_no}
+                Sender: {receipt.sender_name}
+              </p>
+              <p className="card-text text-center">
+                Receiver: {receipt.receiver_name}
+              </p>
+              <p className="card-text text-center">
+                Nature of Goods: {receipt.nature_of_goods}
+              </p>
+              <p className="card-text text-center">
+                Pickup: {receipt.pickup}
+              </p>
+              <p className="card-text text-center">
+                Destination: {receipt.desination}
               </p>
               <p className="card-text text-center">
                 Amount Paid: {receipt.amount_paid}
