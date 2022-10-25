@@ -16,7 +16,7 @@ import Receipt from './components/Receipts/Receipt';
 import Trackings from './components/Tracking/Trackings';
 import Tracking from './components/Tracking/Trackings';
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
-import Dashboard from './Dashboard/Dashboard';
+import Dashboard from './Dashboard/scenes/Dashboard';
 
 function App() {
 
