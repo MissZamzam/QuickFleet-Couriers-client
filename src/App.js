@@ -16,6 +16,7 @@ import Receipt from './components/Receipts/Receipt';
 import Trackings from './components/Tracking/Trackings';
 import Tracking from './components/Tracking/Trackings';
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
+import Dashboard from './Dashboard/Dashboard';
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
         <Route path='/trackings' element={<Trackings />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
         <Route path='/tracking/:id' element={<Tracking />} />
+        <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/Login' element={<Login authorized={authorized} setUserData={setUserData} />} />
         <Route path='/Signup' element={<Signup authorized={authorized} setUserData={setUserData} />} />
       {authorized ? (
