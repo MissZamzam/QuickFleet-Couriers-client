@@ -24,7 +24,10 @@ export default function OrderForm() {
       <FormLabel
         style={{"justifyContent": 'center',
           "alignItems":"center",
-          "display": "flex"
+          "display": "flex",
+          "fontWeight": "bolder",
+          "color": "black",
+          "fontSize": "20px"
         }}
       >
         Place your order
@@ -64,7 +67,9 @@ export default function OrderForm() {
               id="outlined-password-input"
               label="Delivery Id"
             />
-            <Button variant="contained">Make Order</Button>
+            <Button variant="contained" style={{
+              "margin":"18px"
+            }}>Make Order</Button>
           </div>
         </div>
       </Box>
