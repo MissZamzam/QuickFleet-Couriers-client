@@ -3,6 +3,7 @@ import * as React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import Receipt from "./Receipt";
+import { useParams } from "react-router-dom";
 import { useTheme } from "@mui/material";
 import { Box } from "@mui/material";
 import { Button, Stack } from "@mui/material";
@@ -10,7 +11,7 @@ import "./Receipts.css";
 
 function Receipts() {
     const [ receipts, setReceipts ] = useState( [] );
-    const theme = useTheme();
+    const {id} = useParams();
     const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
     { field: "receipt_no", headerName: "Receipt.No" },
@@ -61,20 +62,12 @@ function Receipts() {
 
         return (
           <Stack direction="row" spacing={2}>
-            {/* <Button
-              variant="outlined"
-              color="warning"
-                    size="small" */}
             <Link
-              to={`/receipt/${receipts.id}`}
+              to={`/receipt/${id}`}
               onClick={() => <Receipt key={receipts.id} />}
             >
               <button className="viewBtn">View More</button>
             </Link>
-            {/* onClick={onClick} */}
-            {/* > */}
-            {/* View More
-            </Button> */}
             <Button
               variant="outlined"
               color="error"
