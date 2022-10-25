@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import Image5 from '../Image/logo.png'
 import "./Receipt.css";
 
 function Receipt() {
@@ -44,7 +45,7 @@ function Receipt() {
           <div className="card restcards" key={receipt.id}>
                       <div className="card-body">
                           <div className="applogo">
-                              
+                              <img src={Image5} />
                           </div>
               <h5 className="card-title text-center">
                 Receipt: <em>{receipt.receipt_no}</em>
@@ -80,8 +81,6 @@ function Receipt() {
           Print <i className="fa fa-print" aria-hidden="true"></i>
         </button>
       </div>
-
-      <h1>Receipt</h1>
     </>
   );
 }
