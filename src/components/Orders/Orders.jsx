@@ -13,7 +13,7 @@ import { Box } from "@mui/material";
 
 
 function Orders() {
-    const [ orders, setOrders ] = useState( [] );
+    const [ receipts, setReceipts ] = useState( [] );
     const columns = [
       { field: "id", headerName: "ID", flex: 0.5 },
       { field: "receipt_no", headerName: "Receipt.No" },
@@ -59,12 +59,12 @@ function Orders() {
 
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/orders")
+    fetch("http://127.0.0.1:3000/receipts")
       .then((response) => response.json())
       //   .then( ( response ) => console.log(response) )
       .then((data) => {
           console.log( data );
-          setOrders(data)
+          setReceipts(data)
       });
   }, []);
     return (
@@ -106,7 +106,7 @@ function Orders() {
         }}
       >
         <DataGrid
-          rows={orders}
+          rows={receipts}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />
