@@ -1,9 +1,9 @@
 import React from "react";
-import './Delivery.css'
+import './Service.css'
 
-function Delivery () {
+function Service () {
     return (
         <h1>Delivery</h1>
     )
 }
-export default Delivery;
+export default Service;
