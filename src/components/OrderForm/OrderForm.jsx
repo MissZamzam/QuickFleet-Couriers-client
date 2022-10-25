@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormLabel from '@mui/material/FormLabel'
 import "./OrderForm.css";
-import {useEffect, useState} from "react"
+import {useState} from "react"
 
 export default function OrderForm() {
 
@@ -18,6 +18,22 @@ export default function OrderForm() {
 
   function handleSubmit(e){
     e.preventDefault()
+    fetch('http://localhost:3000',{
+      method: 'POST',
+      headers:{
+        "Content-Type":'application/json'
+      },
+      body: JSON.stringify({
+        senderName,
+        receiverName,
+        natureOfGoods,
+        amountPaid,
+        pickup,
+        destination,
+        deliveryId,
+      })
+    })
+    .then(res=>res.json())
   }
 
   return (
