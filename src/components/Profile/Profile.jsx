@@ -13,7 +13,7 @@ export default function PersonalProfile() {
                 <MDBCol md="4" className="gradient-custom text-center text-white"
                   style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                    alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
+                    alt="Avatar" className="my-5 mx-6" style={{ width: '80px' }} fluid />
                   {/* <MDBTypography tag="h5">Marie Horwitz</MDBTypography> */}
                   {/* <MDBCardText>Web Designer</MDBCardText> */}
                   {/* <MDBIcon far icon="edit mb-5" /> */}
@@ -21,7 +21,7 @@ export default function PersonalProfile() {
                 
                 <MDBCol md="8">
                   <MDBCardBody className="p-4">
-                    <MDBTypography tag="h6" className='text'> User Information</MDBTypography>
+                    <MDBTypography tag="h6"> User Information</MDBTypography>
                     <hr className="mt-0 mb-4" />
                     <MDBRow className="pt-1">
                       <MDBCol size="4" className="mb-3">
