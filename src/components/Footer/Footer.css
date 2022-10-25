@@ -1,8 +1,9 @@
 #footer{
-    padding:100px 0 20px;
-    background: #272D55;
+    /* padding:100px 0 20px; */
+    background: #acb0ce;
     position: relative;
     color: #fff;
+    margin-top: 10%;
 }
 
 .footer-row{
@@ -51,7 +52,8 @@
 
 .footer-img{
     max-width: 370px;
-    width: 50%;
+    width: 30%;
+    height: 40%;
     opacity: 0.9;
     position: absolute;
     left: 50%;
