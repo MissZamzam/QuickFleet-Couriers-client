@@ -46,7 +46,7 @@ function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/service/:id' element={<Service />} />
         <Route path='/receipts' element={<Receipts />} />
-        <Route path='/receipt/:id' element={<Receipt />} />
+        <Route path='/receipts/:id' element={<Receipt />} />
         <Route path='/trackings' element={<Trackings />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
         <Route path='/tracking/:id' element={<Tracking />} />

@@ -63,7 +63,7 @@ function Receipts() {
         return (
           <Stack direction="row" spacing={2}>
             <Link
-              to={`/receipt/${id}`}
+              to={`/receipts/${id}`}
               onClick={() => <Receipt key={receipts.id} />}
             >
               <button className="viewBtn">View More</button>
@@ -104,26 +104,7 @@ function Receipts() {
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
           },
-            // "& .name-column--cell": {
-            //   color: colors.greenAccent[300],
-            // },
-          //   "& .MuiDataGrid-columnHeaders": {
-          //     backgroundColor: colors.blueAccent[700],
-          //     borderBottom: "none",
-          //   },
-          //   "& .MuiDataGrid-virtualScroller": {
-          //     backgroundColor: colors.primary[400],
-          //   },
-          //   "& .MuiDataGrid-footerContainer": {
-          //     borderTop: "none",
-          //     backgroundColor: colors.blueAccent[700],
-          //   },
-          //   "& .MuiCheckbox-root": {
-          //     color: `${colors.greenAccent[200]} !important`,
-          //   },
-          //   "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-          //     color: `${colors.grey[100]} !important`,
-          //   },
+            
         }}
        className="tableFields" >
         <DataGrid
