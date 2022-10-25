@@ -18,14 +18,14 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Receipts from "../../components/Receipts/Receipts";
 import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize";
-// import HouseIcon from "@mui/icons-material/House";
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import BungalowIcon from "@mui/icons-material/Bungalow";
 import GroupIcon from "@mui/icons-material/Group";
+import Orders from "../../components/Orders/Orders";
+import { Link } from "react-router-dom";
 import Services from "../../components/Service/Services";
-// /import PaymentsIcon from "@mui/icons-material/Payments";
 import { useNavigate } from 'react-router-dom'
 import { useState } from "react";
+import "./Dashboard.css"
 
 
 const drawerWidth = 240;
@@ -167,10 +167,11 @@ export default function Dashboard ( )
           {/* <Divider /> */}
           <List>
             {[
-              <a href="/dashboard">Dashbord</a>,
-              <a href="/deliveries">Deliveries</a>,
-              <a href="/orders">Orders</a>,
-              <a href="/receipts">Receipts</a>,
+              <Link to="/dashboard" element={<Dashboard/>}>Dashbord</Link>,
+              <Link to="/services" element={<Services/>}>Deliveries</Link>,
+              // <Link to="/deliveries" element={<Deliveries/>}>Deliveries</Link>,
+              <Link to="/orders" element={<Orders/>}>Orders</Link>,
+              <Link to="/receipts" element={<Receipts/>}>Receipts</Link>,
             ].map((text, index) => (
               <ListItem key={text} disablePadding sx={{ display: "block" }}>
                 <ListItemButton
@@ -205,29 +206,30 @@ export default function Dashboard ( )
         <Box component="main" sx={{ flexGrow: 1, p: 3 }} className="maindash">
           <DrawerHeader />
           <div className="typographs">
-            <Typography className="card container dashcards dashcard1">
+            {/* <Typography className="card container dashcards dashcard1">
               <div>
-                <Services/>
-                {/* <LocalShippingIcon className="localshippingicon" />
+                 <Deliveries/> 
+                 <Services/> 
+              <LocalShippingIcon className="localshippingicon" />
                 <h3 className="cardinfo">Deliveries</h3>
-                <p>Total Number Of Deliveries</p> */}
+                <p>Total Number Of Deliveries</p>
               </div>
-            </Typography>
-            <Typography className="card container dashcards dashcard2">
-              <div>
+            </Typography> */}
+            {/* <Typography className="card container dashcards dashcard2">
+             <div>
                 <GroupIcon className="tenanticon" />
                 <h3 className="cardinfo">Orders</h3>
                 <p>Total Number Of Orders</p>
-              </div>
-            </Typography>
-            <Typography className="table container table3">
+              </div> 
+            </Typography> */}
+            {/* <Typography className="table container table3">
               <div>
-               <Receipts/> 
-                {/* <PaymentsIcon className="payicon" />
+                <Receipts/>  
+               <PaymentsIcon className="payicon" />
                 <h3 className="cardinfo">Receipts</h3>
-                <p>A list of orders already Dispatched</p> */}
+                <p>A list of orders already Dispatched</p> 
               </div>
-            </Typography>
+            </Typography>  */}
           </div>
         </Box>
       </Box>
