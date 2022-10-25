@@ -50,6 +50,7 @@ function App() {
         <Route path='/receipt/:id' element={<Receipt />} />
         <Route path='/trackings' element={<Trackings />} />
         <Route path='/orders' element={<Orders />} />
+        <Route path='/ordercard' element={<} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
         <Route path='/tracking/:id' element={<Tracking />} />
         <Route path='/Login' element={<Login authorized={authorized} setUserData={setUserData} />} />

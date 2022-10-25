@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import FormLabel from '@mui/material/FormLabel'
 import "./OrderForm.css";
 import {useState} from "react"
+import { useNavigate } from 'react-router-dom';
 
 export default function OrderForm() {
 
@@ -15,10 +16,11 @@ export default function OrderForm() {
   const [pickup, setPickup] = useState('')
   const [destination, setDestination] = useState('')
   const [deliveryId, setDeliveryId] = useState('')
+  const navigate = useNavigate()
 
   function handleSubmit(e){
     e.preventDefault()
-    fetch('http://localhost:3000',{
+    fetch('http://localhost:3000/orders',{
       method: 'POST',
       headers:{
         "Content-Type":'application/json'
@@ -34,6 +36,7 @@ export default function OrderForm() {
       })
     })
     .then(res=>res.json())
+    navigate('/orderform')
   }
 
   return (
