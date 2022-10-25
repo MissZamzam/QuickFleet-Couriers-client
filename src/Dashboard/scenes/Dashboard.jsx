@@ -141,7 +141,7 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Box>
-              <Typography
+            <Typography
                 variant="h5"
                 fontWeight="600"
                 color={colors.grey[100]}
