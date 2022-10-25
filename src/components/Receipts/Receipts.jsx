@@ -35,12 +35,12 @@ function Receipts() {
         flex: 1,
       },
       {
-        field: "email",
+        field: "pickup",
         headerName: "PickUp",
         flex: 1,
       },
       {
-        field: "address",
+        field: "destination",
         headerName: "Destination",
         flex: 1,
       },
