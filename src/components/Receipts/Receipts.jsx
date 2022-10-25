@@ -66,7 +66,7 @@ function Receipts() {
               color="warning"
                     size="small" */}
             <Link
-              to={`/receipts/${receipts.id}`}
+              to={`/receipt/${receipts.id}`}
               onClick={() => <Receipt key={receipts.id} />}
             >
               <button className="viewBtn">View More</button>
