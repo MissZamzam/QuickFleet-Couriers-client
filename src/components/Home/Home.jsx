@@ -4,7 +4,7 @@ import "./Home.css"
 
 function Home(){
 return<>
-<div className="container d-flex mx-4 my-6 home">
+<div className="container row d-flex mx-4 my-6 home">
     <div className="col nest">
         <h1 className="caption">We Are Top Courier <br></br> and Mover Service <br></br> in Nairobi</h1>
         <p className="first">An application where users can login to send packages.Just
