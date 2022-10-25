@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import {   BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import React from 'react'
-// import {   BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { verify } from "./auth/Users";
 import Login from './components/Login/Login';
@@ -18,6 +17,7 @@ import Trackings from './components/Tracking/Trackings';
 import Tracking from './components/Tracking/Trackings';
 import Orders from './components/OrderForm/OrderForm'
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
+import Dashboard from './Dashboard/scenes/Dashboard';
 
 function App() {
 
@@ -52,6 +52,7 @@ function App() {
         <Route path='/orders' element={<Orders />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
         <Route path='/tracking/:id' element={<Tracking />} />
+        <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/Login' element={<Login authorized={authorized} setUserData={setUserData} />} />
         <Route path='/Signup' element={<Signup authorized={authorized} setUserData={setUserData} />} />
       {authorized ? (
