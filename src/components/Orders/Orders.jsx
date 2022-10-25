@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from "react";
 import * as React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
@@ -11,34 +9,32 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
-// import Receipt from "./Receipt"
 import { Box } from "@mui/material";
 
-// import "./Receipts.css";
 
-function Deliveries() {
-    const [ deliveries, setDeliveries ] = useState( [] );
+function Orders() {
+    const [ orders, setOrders ] = useState( [] );
     const columns = [
       { field: "id", headerName: "ID", flex: 0.5 },
-      { field: "order_no", headerName: "Order.No" },
+      { field: "receipt_no", headerName: "Receipt.No" },
       {
-        field: "user_name",
-        headerName: "User Name",
+        field: "sender_name",
+        headerName: "Sender Name",
         flex: 1,
         cellClassName: "name-column--cell",
       },
-      // {
-      //   field: "receiver_name",
-      //   headerName: "Receiver Name",
-      //   type: "string",
-      //   headerAlign: "center",
-      //   align: "center",
-      // },
-      // {
-      //   field: "nature_of_goods",
-      //   headerName: "Nature Of Goods",
-      //   flex: 1,
-      // },
+      {
+        field: "receiver_name",
+        headerName: "Receiver Name",
+        type: "string",
+        headerAlign: "center",
+        align: "center",
+      },
+      {
+        field: "nature_of_goods",
+        headerName: "Nature Of Goods",
+        flex: 1,
+      },
       {
         field: "pickup",
         headerName: "PickUp",
@@ -63,12 +59,12 @@ function Deliveries() {
 
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/deliveries")
+    fetch("http://127.0.0.1:3000/orders")
       .then((response) => response.json())
       //   .then( ( response ) => console.log(response) )
       .then((data) => {
           console.log( data );
-          setDeliveries(data)
+          setOrders(data)
       });
   }, []);
     return (
@@ -110,7 +106,7 @@ function Deliveries() {
         }}
       >
         <DataGrid
-          rows={deliveries}
+          rows={orders}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />
@@ -118,7 +114,7 @@ function Deliveries() {
     </Box>      
     );
 }
-export default Deliveries;
+export default Orders;
 
 
 
