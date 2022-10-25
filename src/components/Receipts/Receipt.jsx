@@ -42,7 +42,10 @@ function Receipt() {
       <div className="restbody">
         <div className="container bg-darksalmon">
           <div className="card restcards" key={receipt.id}>
-            <div className="card-body">
+                      <div className="card-body">
+                          <div className="applogo">
+                              
+                          </div>
               <h5 className="card-title text-center">
                 Receipt: <em>{receipt.receipt_no}</em>
               </h5>
@@ -59,12 +62,11 @@ function Receipt() {
                 Pickup: {receipt.pickup}
               </p>
               <p className="card-text text-center">
-                Destination: {receipt.desination}
+                Destination: {receipt.destination}
               </p>
               <p className="card-text text-center">
                 Amount Paid: {receipt.amount_paid}
               </p>
-              <p className="card-text text-center">Date: {receipt.date}</p>
             </div>
           </div>
         </div>
