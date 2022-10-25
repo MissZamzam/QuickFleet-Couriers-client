@@ -3,9 +3,23 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormLabel from '@mui/material/FormLabel'
-import "./OrderForm.css"
+import "./OrderForm.css";
+import {useEffect, useState} from "react"
 
 export default function OrderForm() {
+
+  const [senderName, setSenderName] = useState('')
+  const [receiverName, setReceiverName] = useState('')
+  const [natureOfGoods, setNatureOfGoods] = useState('')
+  const [amountPaid, setAmountPaid] = useState('')
+  const [pickup, setPickup] = useState('')
+  const [destination, setDestination] = useState('')
+  const [deliveryId, setDeliveryId] = useState('')
+
+  function handleSubmit(e){
+    e.preventDefault()
+  }
+
   return (
     <div className='form'>
       <Box
@@ -37,37 +51,51 @@ export default function OrderForm() {
             required
             id="outlined-required"
             label="Sender name"
+            value={senderName}
+            onChange={(e)=>setSenderName(e.target.value)}
           />
           <TextField
             id="outlined-disabled"
             label="Receiver name"
+            value={receiverName}
+            onChange={(e)=>setReceiverName(e.target.value)}
           />
           <div>
             <TextField
               id="outlined-password-input"
               label="Nature of goods"
+              value={natureOfGoods}
+              onChange={(e)=>setNatureOfGoods(e.target.value)}
             />
             <TextField
               id="outlined-read-only-input"
               label="Amount paid"
+              value={amountPaid}
+              onChange={(e)=>setAmountPaid(e.target.value)}
             />
           </div>
           <div>
             <TextField
               id="outlined-password-input"
               label="Pickup"
+              value={pickup}
+              onChange={(e)=>setPickup(e.target.value)}
             />
             <TextField
               id="outlined-read-only-input"
               label="Destination"
+              value={destination}
+              onChange={(e)=>setDestination(e.target.value)}
             />
           </div>
           <div>
             <TextField
               id="outlined-password-input"
               label="Delivery Id"
+              value={deliveryId}
+              onChange={(e)=>setDeliveryId(e.target.value)}
             />
-            <Button variant="contained" style={{
+            <Button type="submit" onSubmit={handleSubmit} variant="contained" style={{
               "margin":"18px"
             }}>Make Order</Button>
           </div>
