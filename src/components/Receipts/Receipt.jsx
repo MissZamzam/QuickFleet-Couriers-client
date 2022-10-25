@@ -45,6 +45,14 @@ function Receipt() {
           <div className="card restcards" key={receipt.id}>
             <div className="card-body">
               <div className="applogo">
+                <div>
+                  <h4>
+                    <strong>From,</strong>
+                  </h4>
+                  <p>Quick Fleet Courier Service</p>
+                  <p>Nairobi, Kenya</p>
+                  <p>quickfleet@yahoo.com</p>
+                </div>
                 <img src={Image5} />
               </div>
               <h5 className="card-title text-center">
