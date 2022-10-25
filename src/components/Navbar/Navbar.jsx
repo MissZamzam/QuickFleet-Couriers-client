@@ -22,7 +22,7 @@ const pages = [
   </NavLink>,
   <NavLink to="/services">
     Services
-  </NavLink>
+  </NavLink>,
 ];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
