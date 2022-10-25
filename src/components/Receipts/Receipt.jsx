@@ -31,7 +31,7 @@ function Receipt() {
     });
   }, [ id ] );
     
-    function handleSubmitInvoice() {
+    function handleSubmitReceipt() {
       window.print();
     }
 
@@ -43,30 +43,31 @@ function Receipt() {
       <div className="restbody">
         <div className="container bg-darksalmon">
           <div className="card restcards" key={receipt.id}>
-                      <div className="card-body">
-                          <div className="applogo">
-                              <img src={Image5} />
-                          </div>
+            <div className="card-body">
+              <div className="applogo">
+                <img src={Image5} />
+              </div>
               <h5 className="card-title text-center">
-                Receipt: <em>{receipt.receipt_no}</em>
+                <em>Receipt</em>: <strong>{receipt.receipt_no}</strong>
               </h5>
               <p className="card-text text-center">
-                Sender: {receipt.sender_name}
+                <em>Sender</em>: <strong> {receipt.sender_name}</strong>
               </p>
               <p className="card-text text-center">
-                Receiver: {receipt.receiver_name}
+                <em>Receiver</em>: <strong>{receipt.receiver_name}</strong>
               </p>
               <p className="card-text text-center">
-                Nature of Goods: {receipt.nature_of_goods}
+                <em>Nature of Goods</em>:{" "}
+                <strong>{receipt.nature_of_goods}</strong>
               </p>
               <p className="card-text text-center">
-                Pickup: {receipt.pickup}
+                <em>Pickup</em>: <strong>{receipt.pickup}</strong>
               </p>
               <p className="card-text text-center">
-                Destination: {receipt.destination}
+                <em>Destination</em>: <strong>{receipt.destination}</strong>
               </p>
               <p className="card-text text-center">
-                Amount Paid: {receipt.amount_paid}
+                <em>Amount Paid</em>: <strong>{receipt.amount_paid}</strong>
               </p>
             </div>
           </div>
@@ -76,7 +77,7 @@ function Receipt() {
           className="btn btn-primary my-4 printBtn"
           data-toggle="modal"
           data-target="#exampleModal"
-          onClick={handleSubmitInvoice}
+          onClick={handleSubmitReceipt}
         >
           Print <i className="fa fa-print" aria-hidden="true"></i>
         </button>
