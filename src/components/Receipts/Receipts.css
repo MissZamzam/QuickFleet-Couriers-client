@@ -1,0 +1,12 @@
+.receiptTable{
+    background-color: #f2f2f2;
+    border-radius: .5em;
+}
+
+.viewBtn{
+    border:orange 1px solid;
+    border-radius: .5em;
+    height: 2.5em;
+    width: 5.5em;
+    color: orange;
+}
