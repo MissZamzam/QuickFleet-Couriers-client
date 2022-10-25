@@ -27,7 +27,7 @@ function Receipts() {
     {
       field: "nature_of_goods",
       headerName: "Nature Of Goods",
-      flex: 1,
+        flex: 1,
     },
     {
       field: "pickup",
@@ -44,7 +44,20 @@ function Receipts() {
       headerName: "Amount Paid",
       flex: 1,
       },
+    //   { field:<Link to={`/receipts/${receipts.id}`} onClick={() => <Receipt key={receipts.id} />}>
+    //   <button className="viewBtn">View More</button>
+    //       </Link>,
+    //       headerName:"View",
+    //   
   ];
+    // const buttons = [
+    //     {
+    //         field: <Link to={ `/receipts/${receipts.id}` } onClick={ () => <Receipt key={ receipts.id } /> }>
+    //             <button className="viewBtn">View More</button>
+    //         </Link>,
+    //         headerName: "View",
+    //     }
+    // ];
 
   useEffect(() => {
     fetch("http://127.0.0.1:3000/receipts")
@@ -91,7 +104,8 @@ function Receipts() {
       >
         <DataGrid
           rows={receipts}
-          columns={columns}
+                  columns={ columns }
+                //   buttons= {buttons}
           components={{ Toolbar: GridToolbar }}
         />
       </Box>
