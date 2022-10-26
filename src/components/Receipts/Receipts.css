@@ -12,9 +12,6 @@
 }
 
 .addReceipt{
-    width: 5em;
-    height: 2em;
-    background-color: #f29d35;
     margin-right: 2em;
     margin-top: .5em;
     margin-bottom: -1em;
@@ -22,8 +19,3 @@
     float: right;
 }
 
-.addReceipt button{
-    text-align: center;
-    color: white;
-   
-}
