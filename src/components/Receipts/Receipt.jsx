@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import Image5 from '../Image/logo.png'
+import Image5 from "../Image/logo.png";
 import "./Receipt.css";
 
 function Receipt() {
@@ -29,11 +29,11 @@ function Receipt() {
         );
       }
     });
-  }, [ id ] );
-    
-    function handleSubmitReceipt() {
-      window.print();
-    }
+  }, [id]);
+
+  function handleSubmitReceipt() {
+    window.print();
+  }
 
   if (status === "pending") return <h1>Loading...</h1>;
   if (status === "rejected") return <h1>Error: {error.error}</h1>;
@@ -45,38 +45,67 @@ function Receipt() {
           <div className="card restcards" key={receipt.id}>
             <div className="card-body">
               <div className="applogo">
-                <div>
-                  <h4>
-                    <strong>From,</strong>
-                  </h4>
-                  <p>Quick Fleet Courier Service</p>
-                  <p>Nairobi, Kenya</p>
-                  <p>quickfleet@yahoo.com</p>
-                </div>
                 <img src={Image5} />
+                <div className="address">
+                  <div senderAddress>
+                    <h4>
+                      <strong>From:</strong>
+                    </h4>
+                    <p>{receipt.sender_name}</p>
+                    <p>{receipt.pickup}</p>
+                    <p>Nairobi, Kenya</p>
+                  </div>
+                  <div className="receiverAddress">
+                    <h4>
+                      <strong>To:</strong>
+                    </h4>
+                    <p>{receipt.receiver_name}</p>
+                    <p>{receipt.destination}</p>
+                    <p>Nairobi, Kenya</p>
+
+                    <div className="receiptId">
+                      <h4>
+                        <strong>Receipt#:</strong> {receipt.id}
+                      </h4>
+                      <h4>
+                        <strong>Price:</strong> {receipt.amount_paid}
+                      </h4>
+                      <h4>
+                        <strong>Currency</strong> Kenya Shillings
+                      </h4>
+                    </div>
+                  </div>
+                  <hr></hr>
+                </div>
               </div>
-              <h5 className="card-title text-center">
-                <em>Receipt</em>: <strong>{receipt.receipt_no}</strong>
-              </h5>
-              <p className="card-text text-center">
-                <em>Sender</em>: <strong> {receipt.sender_name}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Receiver</em>: <strong>{receipt.receiver_name}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Nature of Goods</em>:{" "}
-                <strong>{receipt.nature_of_goods}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Pickup</em>: <strong>{receipt.pickup}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Destination</em>: <strong>{receipt.destination}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Amount Paid</em>: <strong>{receipt.amount_paid}</strong>
-              </p>
+              <div className=" card receiptDetails">
+                <div  className="sec1card">
+                  <h5 className="card-title text-center rec_no">
+                    <strong>Receipt</strong>: {receipt.receipt_no}
+                  </h5>
+                  <p className="card-text text-center">
+                    <strong>Sender</strong>:  {receipt.sender_name}
+                  </p>
+                  <p className="card-text text-center">
+                    <strong>Receiver</strong>: {receipt.receiver_name}
+                  </p>
+                  <p className="card-text text-center">
+                    <strong>Nature of Goods</strong>:{" "}
+{receipt.nature_of_goods}
+                  </p>
+                </div>
+                <div className="sec2card">
+                  <p className="card-text text-center">
+                    <strong>Pickup</strong>: {receipt.pickup}
+                  </p>
+                  <p className="card-text text-center">
+                    <strong>Destination</strong>:{receipt.destination}
+                  </p>
+                  <p className="card-text text-center">
+                    <strong>Amount Paid</strong>: {receipt.amount_paid}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
