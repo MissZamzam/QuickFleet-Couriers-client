@@ -260,11 +260,11 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import Deliveries from "./Deliveries";
 import { mainListItems,secondaryListItems } from './Listitems';
-import Orders from './Orders';
-//  import { mainListItems, secondaryListItems } from './listItems';
+import Orders from '../../components/Orders/Orders';
+import Receipts from '../../components/Receipts/Receipt';
 import Chart from '../Chart';
+import Deliveries from './Deliveries';
 // import Deposits from './Deposits';
 // import Orders from './Orders';
 
@@ -273,7 +273,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Quickfleet.com
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -336,6 +336,7 @@ function DashboardContent() {
   };
 
   return (
+    
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
@@ -367,9 +368,9 @@ function DashboardContent() {
               Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+               {/* <Badge badgeContent={4} color="secondary">
+                <NotificationsIcon /> 
+              </Badge>  */}
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -421,7 +422,7 @@ function DashboardContent() {
                   <Chart />
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
+             
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
@@ -434,13 +435,19 @@ function DashboardContent() {
                   <Deliveries/>
                 </Paper>
               </Grid>
+              </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Link to="/orders" element={<Orders/>}></Link>
+                  <Orders/>
                 </Paper>
               </Grid>
-            </Grid>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Receipts/>
+                </Paper>
+              </Grid>
+           
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>

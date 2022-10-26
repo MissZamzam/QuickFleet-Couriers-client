@@ -10,6 +10,10 @@ import PeopleIcon from '@mui/icons-material/People';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import Receipts from '../../components/Receipts/Receipt';
+import Orders from '../../components/Orders/Orders';
+import { Link } from 'react-router-dom';
+import Login from '../../components/Login/Login';
+import Deliveries from "./Deliveries";
 
 export const mainListItems = (
   <React.Fragment>
@@ -23,25 +27,29 @@ export const mainListItems = (
       <ListItemIcon>
         <LocalShippingIcon />
       </ListItemIcon>
-      <ListItemText primary="Deliveries" />
+      {/* <ListItemText primary="Deliveries" /> */}
+      <Link to="/deliveryform" element={<Deliveries/>}>Deliveries</Link>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      {/* <ListItemText primary="Orders" /> */}
+      <Link to="/orders" element={<Orders/>}>Orders</Link>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      {/* <ListItemText primary="Customers" /> */}
+      <Link to="/users" element={<Login/>}>Customers</Link>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
         <PaymentsIcon />
       </ListItemIcon>
-      <ListItemText primary="Receipts" element={<Receipts/>}/>
+      {/* <ListItemText primary="Receipts" element={<Receipts/>}/> */}
+      <Link to="/receipts" element={<Receipts/>}>Receipts</Link>
     </ListItemButton>
     
   </React.Fragment>
