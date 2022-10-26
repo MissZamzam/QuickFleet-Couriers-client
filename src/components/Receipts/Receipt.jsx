@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import Image5 from '../Image/logo.png'
+import Image5 from "../Image/logo.png";
 import "./Receipt.css";
 
 function Receipt() {
@@ -29,11 +29,11 @@ function Receipt() {
         );
       }
     });
-  }, [ id ] );
-    
-    function handleSubmitReceipt() {
-      window.print();
-    }
+  }, [id]);
+
+  function handleSubmitReceipt() {
+    window.print();
+  }
 
   if (status === "pending") return <h1>Loading...</h1>;
   if (status === "rejected") return <h1>Error: {error.error}</h1>;
