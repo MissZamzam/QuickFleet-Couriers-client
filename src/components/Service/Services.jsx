@@ -5,6 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 // import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import ReactReadMoreReadLess from "react-read-more-read-less";
+
 
 export default function Services() {
 
@@ -18,7 +20,7 @@ export default function Services() {
 
 
   return (
-<div class="grid gap-10 px-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">    
+<div class="grid gap-10 px-5 mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">    
     {services.map((service)=>{
             return(
                 
@@ -35,7 +37,14 @@ export default function Services() {
                     {service.category}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    {service.description}
+                    <ReactReadMoreReadLess
+                charLimit={100}
+                readMoreText={"Read more ▼"}
+                readLessText={"Read less ▲"}
+                style={{"color": "blue"}}
+                >
+                {service.description}
+            </ReactReadMoreReadLess>
                 </Typography>
                 </CardContent>
                 {/* <CardActions>

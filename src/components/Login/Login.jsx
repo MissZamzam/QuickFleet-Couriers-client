@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { login } from '../../auth/Users';
+import "./Login.css"
 
 export default function Login({ authorized, setUserData }) {
 
@@ -38,8 +39,8 @@ export default function Login({ authorized, setUserData }) {
     return (
         <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-                <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
-                   Sign in
+                <h1 className="text-3xl font-semibold text-center text-purple-700">
+                <span className='quick'>Log</span><span className='fleet'>In</span>
                 </h1>
                 <form onSubmit={handleSubmit} className="mt-6">
                     <div className="mb-2">
@@ -74,12 +75,12 @@ export default function Login({ authorized, setUserData }) {
                     </div>
                     <a
                         href=" "
-                        className="text-xs text-purple-600 hover:underline"
+                        className="text-xs text-blue-600"
                     >
                         Forget Password?
                     </a>
                     <div className="mt-6">
-                        <button type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+                        <button type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600 login">
                             Login
                         </button>
                     </div>

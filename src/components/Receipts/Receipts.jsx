@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import * as React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
+// import Receipt from "./Receipt"
 import Receipt from "./Receipt";
 // import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
