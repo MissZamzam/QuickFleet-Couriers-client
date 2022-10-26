@@ -163,6 +163,144 @@ function Receipts({onAddingReceipt}) {
             + Receipt
           </button>
         </div>
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  Add Tenant
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="addtenant-pg">
+                  <form className="adding-form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="exampleInputEmail1">Full Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        autoComplete="off"
+                        className="form-control"
+                        placeholder="enter tenant name..."
+                        value={receipt_no}
+                        onChange={(e) => setReceiptNumber(e.target.value)}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleInputEmail1">Age</label>
+                      <input
+                        type="number{ >= 18}"
+                        id="age"
+                        autoComplete="off"
+                        className="form-control"
+                        placeholder="enter tenant age..."
+                        value={sender_name}
+                        onChange={(e) => setSender(e.target.value)}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleInputEmail1">Gender</label>
+                      <input
+                        type="ext"
+                        id="gender"
+                        autoComplete="off"
+                        className="form-control"
+                        placeholder="enter tenant gender..."
+                        value={setReceiver}
+                        onChange={(e) => setReceiver(e.target.value)}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleInputEmail1">Contact</label>
+                      <input
+                        type="tel"
+                        id="contact"
+                        autoComplete="off"
+                        className="form-control"
+                        placeholder="enter tenant contact..."
+                        value={nature_of_goods}
+                        onChange={(e) => setNatureGoods(e.target.value)}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleInputEmail1">Room</label>
+                      <input
+                        type="text"
+                        id="room-no"
+                        autoComplete="off"
+                        className="form-control"
+                        placeholder="enter tenant room..."
+                        value={pickup}
+                        onChange={(e) => setPickup(e.target.value)}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleInputEmail1">Room</label>
+                      <input
+                        type="text"
+                        id="room-no"
+                        autoComplete="off"
+                        className="form-control"
+                        placeholder="enter tenant room..."
+                        value={destination}
+                        onChange={(e) => setDestination(e.target.value)}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleInputEmail1">Room</label>
+                      <input
+                        type="text"
+                        id="room-no"
+                        autoComplete="off"
+                        className="form-control"
+                        placeholder="enter tenant room..."
+                        value={amount_paid}
+                        onChange={(e) => setAmount(e.target.value)}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <button type="submit" className="btn btn-primary">
+                        {isLoading ? "Loading..." : "Add"}{" "}
+                        <i className="fa fa-sign-in" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div className="form-group">
+                      {errors.map((err) => (
+                        <div key={err}>{err}</div>
+                      ))}
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" className="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <Box
           m="40px 0 0 0"
           height="75vh"
