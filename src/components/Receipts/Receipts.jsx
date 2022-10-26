@@ -10,7 +10,15 @@ import { Button, Stack } from "@mui/material";
 import "./Receipts.css";
 
 function Receipts() {
+  
+  // receipts.map( ( recp ) =>
+  // {
+  //   console.log(recp)
+  // })
+  // console.log( receipt )
+  
   const [receipts, setReceipts] = useState([]);
+  // const [receipt, setReceipt] = useState({})
   const {id} = useParams();
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
@@ -62,6 +70,9 @@ function Receipts() {
           return alert(JSON.stringify(currentRow, null, 4));
         };
 
+        // const handleReceipt = ( receipt ){
+        //   setReceipt( receipt )
+        // };
         return (
           <Stack spacing={1}>
             {/* <>
@@ -100,10 +111,11 @@ function Receipts() {
       .then((response) => response.json())
       //   .then( ( response ) => console.log(response) )
       .then((data) => {
-        console.log(data);
+        console.log(data.id);
         setReceipts(data);
       });
-  }, []);
+  }, [] );
+  
   return (
     <Box m="20px" className="receiptTable">
       <Box
