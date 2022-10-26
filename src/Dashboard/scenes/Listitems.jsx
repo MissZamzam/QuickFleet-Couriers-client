@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 import Login from '../../components/Login/Login';
 import Deliveries from "./Deliveries";
 
+
 export const mainListItems = (
   <React.Fragment>
     <ListItemButton>
@@ -58,25 +59,26 @@ export const mainListItems = (
 export const secondaryListItems = (
   <React.Fragment>
     <ListSubheader component="div" inset>
-      Saved reports
+    {/* Saved reports */}
     </ListSubheader>
     <ListItemButton>
       <ListItemIcon>
-        <AssignmentIcon />
+        {/* <AssignmentIcon /> */}
       </ListItemIcon>
-      <ListItemText primary="Current month" />
+      
+      {/* <ListItemText primary="Current month" /> */}
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <AssignmentIcon />
+        {/* <AssignmentIcon /> */}
       </ListItemIcon>
-      <ListItemText primary="Last quarter" />
+      {/* <ListItemText primary="Last quarter" /> */}
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <AssignmentIcon />
+        {/* <AssignmentIcon /> */}
       </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      {/* <ListItemText primary="Year-end sale" /> */}
     </ListItemButton>
   </React.Fragment>
 );
