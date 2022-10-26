@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import * as React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import Receipt from "./Receipt"
 import Receipt from "./Receipt";
 import { useParams } from "react-router-dom";
@@ -9,7 +9,7 @@ import { Box } from "@mui/material";
 import { Button, Stack } from "@mui/material";
 import "./Receipts.css";
 
-function Receipts() {
+function Receipts({onAddingReceipt}) {
   
   // receipts.map( ( recp ) =>
   // {
@@ -17,9 +17,19 @@ function Receipts() {
   // })
   // console.log( receipt )
   
-  const [receipts, setReceipts] = useState([]);
+  const [ receipts, setReceipts ] = useState( [] );
+  const [receipt_no, setReceiptNumber] = useState("");
+  const [sender_name, setSender] = useState("");
+  const [receiver_name, setReceiver] = useState("");
+  const [nature_of_goods, setNatureGoods] = useState("");
+  const [ pickup, setPickup ] = useState( "" );
+  const [ destination, setDestination ] = useState( "" );
+  const [amount_paid, setAmount] = useState("");
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   // const [receipt, setReceipt] = useState({})
-  const {id} = useParams();
+  const { id } = useParams();
+  const navigate = useNavigate();
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
 
@@ -73,23 +83,10 @@ function Receipts() {
         // const handleReceipt = ( receipt ){
         //   setReceipt( receipt )
         // };
+
+
         return (
           <Stack spacing={1}>
-            {/* <>
-              {receipts.map((receipt) => {
-                return <div>
-                   
-                </div>;
-              })}
-              <Link to={`/receipts/${receipts.id}`}>
-                <button
-                  className="viewBtn"
-                  onClick={() => <Receipt key={receipts.id} />}
-                >
-                  View More
-                </button>
-              </Link>
-            </> */}
             {receipts.map((receipt) => {
               return (
                 <Link
@@ -115,12 +112,56 @@ function Receipts() {
         setReceipts(data);
       });
   }, [] );
+
+
+   function handleSubmit(e) {
+     e.preventDefault();
+     setErrors([]);
+     setIsLoading(true);
+     fetch("http://127.0.0.1:3000/receipts", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify({
+         receipt_no,
+         sender_name,
+         receiver_name,
+         nature_of_goods,
+         pickup,
+         destination,
+         amount_paid
+       }),
+     }).then((response) => {
+       setIsLoading(false);
+       if (response.ok) {
+         response.json().then((newReceipt) => {
+           console.log(newReceipt);
+           onAddingReceipt(newReceipt);
+
+           navigate(`/receipts/${id}`);
+           setErrors([]);
+         });
+
+         // navigate("/dashboard");
+       } else {
+         response.json().then((err) => setErrors(err.errors));
+       }
+     });
+   }
   
   return (
     <>
       <Box m="20px" className="receiptTable">
         <div className="addReceipt">
-          <button>+Receipt</button>
+          <button
+            type="button"
+            className="btn btn-primary my-4"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            + Receipt
+          </button>
         </div>
         <Box
           m="40px 0 0 0"
