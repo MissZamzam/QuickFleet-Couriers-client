@@ -252,22 +252,20 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
+// import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+// import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems,secondaryListItems } from './Listitems';
 import Orders from '../../components/Orders/Orders';
-import Receipts from '../../components/Receipts/Receipt';
+import Receipts from '../../components/Receipts/Receipts';
 import Chart from '../Chart';
 import Deliveries from './Deliveries';
 
-// import Deposits from './Deposits';
-// import Orders from './Orders';
 
 function Copyright(props) {
   return (
@@ -447,15 +445,22 @@ function DashboardContent() {
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders/>
-                </Paper>
-              </Grid>
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  {/* <Receipts/> */}
+                  <Deliveries/>
                 </Paper>
               </Grid>
            
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Orders/>
+                </Paper>
+              </Grid>
+          
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Receipts/>
+                </Paper>
+              </Grid>
+              
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
