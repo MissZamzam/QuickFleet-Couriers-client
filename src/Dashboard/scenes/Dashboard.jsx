@@ -265,6 +265,7 @@ import Orders from '../../components/Orders/Orders';
 import Receipts from '../../components/Receipts/Receipt';
 import Chart from '../Chart';
 import Deliveries from './Deliveries';
+
 // import Deposits from './Deposits';
 // import Orders from './Orders';
 
@@ -336,6 +337,13 @@ function DashboardContent() {
   };
 
   return (
+    <Box m="20px">
+    {/* HEADER */}
+    <Box display="flex" justifyContent="space-between" alignItems="center">
+      {/* <Header title="DASHBOARD" subtitle="Welcome to your dashboard" /> */}
+
+      </Box>
+      
     
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
@@ -423,7 +431,7 @@ function DashboardContent() {
                 </Paper>
               </Grid>
              
-              <Grid item xs={12} md={4} lg={3}>
+              {/* <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
                     p: 2,
@@ -434,7 +442,7 @@ function DashboardContent() {
                 >
                   <Deliveries/>
                 </Paper>
-              </Grid>
+              </Grid> */}
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
@@ -453,6 +461,7 @@ function DashboardContent() {
         </Box>
       </Box>
     </ThemeProvider>
+    </Box>
   );
 }
 
