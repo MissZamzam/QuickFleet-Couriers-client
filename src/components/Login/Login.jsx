@@ -75,7 +75,7 @@ export default function Login({ authorized, setUserData }) {
                     </div>
                     <a
                         href=" "
-                        className="text-xs text-purple-600 hover:underline"
+                        className="text-xs text-blue-600"
                     >
                         Forget Password?
                     </a>
