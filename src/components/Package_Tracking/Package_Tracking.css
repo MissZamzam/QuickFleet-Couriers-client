@@ -1,9 +1,11 @@
 .bg{
   height: 130vh !important;
-  /* background-image: url("./images/image1.png") !important; */
+  background-image: url("../Image/TrackImg.png") !important;
   background-repeat: no-repeat;
   background-size:contain;
   background-color: #353D68;
+  object-fit: cover;
+  margin-top: -5em;
 }
 
 .receipt-form{
@@ -19,7 +21,7 @@
 }
 
 .receiptNo-form{
-  height: 40%;
+  height: 30%;
   width: 60%;
   align-items: center;
   display: flex;
@@ -36,12 +38,13 @@
   /* margin-top: .5em; */
   /* margin-bottom: 1em; */
   border: #1A1F3D 2px solid;
+  margin-top: .5em;
   border-radius: .5em;
 
 }
 .searchIcon{
   position: absolute;
-  margin-top: .5em;
+  margin-top: .9em;
   margin-left: 13em;
   float: right;
   color: #ffff;
