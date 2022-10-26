@@ -108,7 +108,7 @@ function Receipts({onAddingReceipt}) {
       .then((response) => response.json())
       //   .then( ( response ) => console.log(response) )
       .then((data) => {
-        console.log(data.id);
+        console.log(data);
         setReceipts(data);
       });
   }, [] );
@@ -135,9 +135,9 @@ function Receipts({onAddingReceipt}) {
      }).then((response) => {
        setIsLoading(false);
        if (response.ok) {
-         response.json().then((newReceipt) => {
-           console.log(newReceipt);
-           onAddingReceipt(newReceipt);
+         response.json().then((data) => {
+           console.log(data);
+           onAddingReceipt(data);
 
            navigate(`/receipts/${id}`);
            setErrors([]);
@@ -174,7 +174,7 @@ function Receipts({onAddingReceipt}) {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Add Tenant
+                  Add Receipt
                 </h5>
                 <button
                   type="button"
@@ -264,10 +264,10 @@ function Receipts({onAddingReceipt}) {
                       <label htmlFor="exampleInputEmail1">Room</label>
                       <input
                         type="text"
-                        id="room-no"
+                        id="amount"
                         autoComplete="off"
                         className="form-control"
-                        placeholder="enter tenant room..."
+                        placeholder="enter price..."
                         value={amount_paid}
                         onChange={(e) => setAmount(e.target.value)}
                       />
