@@ -117,28 +117,33 @@ function Receipts() {
   }, [] );
   
   return (
-    <Box m="20px" className="receiptTable">
-      <Box
-        m="40px 0 0 0"
-        height="75vh"
-        sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-        }}
-        className="tableFields"
-      >
-        <DataGrid
-          rows={receipts}
-          columns={columns}
-          //   buttons= {buttons}
-          components={{ Toolbar: GridToolbar }}
-        />
+    <>
+      <Box m="20px" className="receiptTable">
+        <div className="addReceipt">
+          <button>+Receipt</button>
+        </div>
+        <Box
+          m="40px 0 0 0"
+          height="75vh"
+          sx={{
+            "& .MuiDataGrid-root": {
+              border: "none",
+            },
+            "& .MuiDataGrid-cell": {
+              borderBottom: "none",
+            },
+          }}
+          className="tableFields"
+        >
+          <DataGrid
+            rows={receipts}
+            columns={columns}
+            //   buttons= {buttons}
+            components={{ Toolbar: GridToolbar }}
+          />
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
 export default Receipts;
