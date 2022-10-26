@@ -4,18 +4,19 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 // import Receipt from "./Receipt"
 import Receipt from "./Receipt";
-import { useParams } from "react-router-dom";
-import { useTheme } from "@mui/material";
+// import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import { Button, Stack } from "@mui/material";
 import "./Receipts.css";
 
 function Receipts() {
-    const [ receipts, setReceipts ] = useState( [] );
-    const {id} = useParams();
-    const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "receipt_no", headerName: "Receipt.No" },
+  const [ receipts, setReceipts ] = useState( [] );
+    // const {id} = useParams();
+  const columns = [
+      { field: "id", headerName: "ID", flex: 0.5 },
+    
+      { field: "receipt_no", headerName: "Receipt.No" },
+    
     {
       field: "sender_name",
       headerName: "Sender Name",
@@ -62,21 +63,20 @@ function Receipts() {
         };
 
         return (
-          <Stack direction="row" spacing={2}>
-            <Link
-              to={`/receipts/${id}`}
-              onClick={() => <Receipt key={receipts.id} />}
-            >
-              <button className="viewBtn">View More</button>
-            </Link>
-            <Button
-              variant="outlined"
-              color="error"
-              size="small"
-              onClick={onClick}
-            >
-              Delete
-            </Button>
+          <Stack direction="row" spacing={ 1 }>
+            {
+              receipts.map( ( receipt ) =>
+              {
+                return (
+                  <Link
+                    to={`/receipts/${receipt.id}`}
+                    onClick={() => <Receipt key={receipts.id} />}
+                  >
+                    <button className="viewBtn">View More</button>
+                  </Link>
+                );
+              })
+            }
           </Stack>
         );
       },
