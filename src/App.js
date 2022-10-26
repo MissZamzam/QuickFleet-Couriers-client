@@ -52,6 +52,7 @@ function App() {
         <Route path='/trackings' element={<Trackings />} />
         <Route path='/order' element={<OrderForm />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
+        <Route path='/deliveryform' element={<DeliveryForm/>} />
         <Route path='/tracking/:id' element={<Tracking />} />
         <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/Login' element={<Login authorized={authorized} setUserData={setUserData} />} />
