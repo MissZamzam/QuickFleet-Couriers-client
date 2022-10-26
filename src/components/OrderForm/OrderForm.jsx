@@ -36,7 +36,7 @@ export default function OrderForm() {
       })
     })
     .then(res=>res.json())
-    navigate('/orderform')
+    navigate('/ordercard')
   }
 
   return (
