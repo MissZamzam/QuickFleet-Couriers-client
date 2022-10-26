@@ -6,14 +6,15 @@ import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PeopleIcon from '@mui/icons-material/People';
+// import PeopleIcon from '@mui/icons-material/People';
 import PaymentsIcon from '@mui/icons-material/Payments';
-import AssignmentIcon from '@mui/icons-material/Assignment';
 import Receipts from '../../components/Receipts/Receipt';
 import Orders from '../../components/Orders/Orders';
 import { Link } from 'react-router-dom';
-import Login from '../../components/Login/Login';
-import Deliveries from "./Deliveries";
+// import Login from '../../components/Login/Login';
+import Deliveries from './Deliveries';
+// import Deliveries from './Deliveries';
+// import Deliveries from "./Deliveries";
 
 
 export const mainListItems = (
@@ -29,7 +30,7 @@ export const mainListItems = (
         <LocalShippingIcon />
       </ListItemIcon>
       {/* <ListItemText primary="Deliveries" /> */}
-      <Link to="/deliveryform" element={<Deliveries/>}>Deliveries</Link>
+      <Link to="/deliveries" element={<Deliveries/>}>Deliveries</Link>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
@@ -40,18 +41,19 @@ export const mainListItems = (
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      {/* <ListItemText primary="Customers" /> */}
-      <Link to="/users" element={<Login/>}>Customers</Link>
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
         <PaymentsIcon />
       </ListItemIcon>
       {/* <ListItemText primary="Receipts" element={<Receipts/>}/> */}
       <Link to="/receipts" element={<Receipts/>}>Receipts</Link>
     </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        {/* <PeopleIcon /> */}
+      </ListItemIcon>
+      {/* <ListItemText primary="Customers" /> */}
+      {/* <Link to="/users" element={<Login/>}>Customers</Link> */}
+    </ListItemButton>
+    
     
   </React.Fragment>
 );
