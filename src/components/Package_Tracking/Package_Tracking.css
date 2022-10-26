@@ -1,6 +1,5 @@
 .bg{
   height: 130vh !important;
-  /* background-image: url("./images/image1.png") !important; */
   background-repeat: no-repeat;
   background-size:contain;
   background-color: #353D68;
@@ -27,14 +26,10 @@
   justify-content: center;
   background-color: #F2B035;
   border-radius: .8em;
-  /* position: absolute; */
-  /* z-index: 1; */
   margin-bottom: -10em;
 }
 .receiptNo-form input{
   width: 15em;
-  /* margin-top: .5em; */
-  /* margin-bottom: 1em; */
   border: #1A1F3D 2px solid;
   border-radius: .5em;
 
