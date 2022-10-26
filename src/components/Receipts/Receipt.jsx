@@ -46,10 +46,10 @@ function Receipt() {
             <div className="card-body">
               <div className="applogo">
                 <img src={Image5} />
-                <div className="adress">
+                <div className="address">
                   <div senderAddress>
                     <h4>
-                      <strong>From,</strong>
+                      <strong>From:</strong>
                     </h4>
                     <p>{receipt.sender_name}</p>
                     <p>{receipt.pickup}</p>
@@ -57,7 +57,7 @@ function Receipt() {
                   </div>
                   <div className="receiverAddress">
                     <h4>
-                      <strong>To,</strong>
+                      <strong>To:</strong>
                     </h4>
                     <p>{receipt.receiver_name}</p>
                     <p>{receipt.destination}</p>
@@ -65,28 +65,30 @@ function Receipt() {
                   </div>
                 </div>
               </div>
-              <h5 className="card-title text-center">
-                <em>Receipt</em>: <strong>{receipt.receipt_no}</strong>
-              </h5>
-              <p className="card-text text-center">
-                <em>Sender</em>: <strong> {receipt.sender_name}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Receiver</em>: <strong>{receipt.receiver_name}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Nature of Goods</em>:{" "}
-                <strong>{receipt.nature_of_goods}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Pickup</em>: <strong>{receipt.pickup}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Destination</em>: <strong>{receipt.destination}</strong>
-              </p>
-              <p className="card-text text-center">
-                <em>Amount Paid</em>: <strong>{receipt.amount_paid}</strong>
-              </p>
+              <div className=" card receiptDetails">
+                <h5 className="card-title text-center">
+                  <em>Receipt</em>: <strong>{receipt.receipt_no}</strong>
+                </h5>
+                <p className="card-text text-center">
+                  <em>Sender</em>: <strong> {receipt.sender_name}</strong>
+                </p>
+                <p className="card-text text-center">
+                  <em>Receiver</em>: <strong>{receipt.receiver_name}</strong>
+                </p>
+                <p className="card-text text-center">
+                  <em>Nature of Goods</em>:{" "}
+                  <strong>{receipt.nature_of_goods}</strong>
+                </p>
+                <p className="card-text text-center">
+                  <em>Pickup</em>: <strong>{receipt.pickup}</strong>
+                </p>
+                <p className="card-text text-center">
+                  <em>Destination</em>: <strong>{receipt.destination}</strong>
+                </p>
+                <p className="card-text text-center">
+                  <em>Amount Paid</em>: <strong>{receipt.amount_paid}</strong>
+                </p>
+              </div>
             </div>
           </div>
         </div>
