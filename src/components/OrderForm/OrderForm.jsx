@@ -133,6 +133,12 @@ function OrderForm() {
   const [destination, setDestination] = useState('')
   const navigate = useNavigate()
 
+  function handleSubmit(e){
+    fetch("")
+    .then((r)=> r.json())
+    .then((data)=> console.log(data))
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
