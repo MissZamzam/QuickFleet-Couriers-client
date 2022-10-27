@@ -14,7 +14,7 @@ export const getUserPosts = async (id) => {
 
 
 export const register = async (user) => {
-  const res = await api.post(`/users`, { user });
+  const res = await api.post(`/signup`, { user });
   const { token } = res.data;
   if (token) {
     localStorage.setItem("authToken", token);

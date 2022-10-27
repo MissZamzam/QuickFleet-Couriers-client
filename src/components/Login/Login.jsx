@@ -1,37 +1,76 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../auth/Users';
 
-export default function Login({ authorized, setUserData }) {
+export default function Login({setUser, user}) {
 
     // const history = useHistory()
+    const navigate = useNavigate()
 
-    const [user, setUser] = useState({
-        username: "",
+    const [form, setForm] = useState({
         email: "",
-        password: "",
-        is_admin: false,
+        password: ""
+
       });
 
       const handleChange = (e) => {
         const { name, value } = e.target;
-        setUser({
-          ...user,
-          [name]: value,
-        });
+        setForm({...form,[name]: value})
       };
 
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        const createUser = async () => {
-          const newUser = await login(user);
-          setUserData(newUser);
-          setTimeout(() => {
-            // history.push("/");
-          }, 500);
-        };
-        createUser();
-      };
+    //   const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     const createUser = async () => {
+    //       const newUser = await login(user);
+    //       setForm(newUser);
+    //       setTimeout(() => {
+    //         // history.push("/");
+    //       }, 500);
+    //     };
+    //     createUser();
+    //   };
+
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     fetch("http://localhost:3001/users/login",{
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({user: {
+    //             email:form.email,
+    //             password: form.password
+    //         }},
+    //         )
+    //     })
+    //     .then(response => response.json())
+    //     .then(user =>{
+    //         console.log(user)
+    //         // localStorage.setItem("user_id", JSON.stringify(user.id))
+    //         setUser(user)
+    //         navigate("/")
+    //     }
+    //     ).catch(err => console.log("Login error", err));
+
+    // }
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        axios.post("http://localhost:3004/signin",{
+            email: form.email,
+            password: form.password
+        })
+        .then((res) => {setUser(res); navigate("/")})
+        //  sessionStorage.setItem("user_id", JSON.stringify(user.id))
+        .finally(()=>
+        setUser({
+            email: "",
+            password: ""
+        }))
+        
+    }
 
 
 
@@ -51,7 +90,7 @@ export default function Login({ authorized, setUserData }) {
                         </label>
                         <input
                             name='email'
-                            value={user.email}
+                            value={form.email}
                             onChange={handleChange}
                             type="email"
                             className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -67,7 +106,7 @@ export default function Login({ authorized, setUserData }) {
                         <input
                             name='password'
                             onChange={handleChange}
-                            value={user.password}
+                            value={form.password}
                             type="password"
                             className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />

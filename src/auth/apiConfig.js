@@ -3,7 +3,7 @@ import axios from "axios";
 const base =
   process.env.NODE_ENV === "production"
     ? "https://talentree-back-end.herokuapp.com"
-    : "http://localhost:4040";
+    : "http://localhost:3004";
 
 const api = axios.create({
   baseURL: base,

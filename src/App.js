@@ -18,30 +18,43 @@ import Trackings from './components/Tracking/Trackings';
 import Tracking from './components/Tracking/Trackings';
 import Orders from './components/OrderForm/OrderForm'
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
+import axios from 'axios';
 
 function App() {
 
+  const [user, setUser] = useState(null)
 
-  const [authorized, setAuthorized] = useState(null);
-  const [userData, setUserData] = useState({});
+  // const [authorized, setAuthorized] = useState(null);
+  // const [userData, setUserData] = useState({});
+
+  // useEffect(() => {
+  //   const reverify = async () => {
+  //     try {
+  //       const currUser = await verify();
+  //       setUserData(currUser);
+  //       setAuthorized(true);
+  //     } catch (error) {
+  //       setAuthorized(false);
+  //     }
+  //   };
+  //   reverify();
+  // }, []);
 
   useEffect(() => {
-    const reverify = async () => {
-      try {
-        const currUser = await verify();
-        setUserData(currUser);
-        setAuthorized(true);
-      } catch (error) {
-        setAuthorized(false);
+    fetch("http://localhost:3004/me")
+    .then((r) => {
+      if(r.ok){
+        r.json().then((user) => setUser(user))
       }
-    };
-    reverify();
-  }, []);
+    })
+  })
 
-  return authorized === true || authorized === false ? (
+
+  // authorized === true || authorized === false ?
+  return  (   
     <div className="App">
     <BrowserRouter>
-    <Navbar/>
+    <Navbar user={user} setUser={setUser}/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/services' element={<Services />} />
@@ -52,27 +65,28 @@ function App() {
         <Route path='/orders' element={<Orders />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
         <Route path='/tracking/:id' element={<Tracking />} />
-        <Route path='/Login' element={<Login authorized={authorized} setUserData={setUserData} />} />
-        <Route path='/Signup' element={<Signup authorized={authorized} setUserData={setUserData} />} />
-      {authorized ? (
+        <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
+        <Route path='/Signup' element={<Signup  />} />
+      {/* {authorized ? (
         <></>
       ) : (
         <Navigate to="/login"/>
 
 
-      )}
+      )} */}
     </Routes>
     <Footer />
   </BrowserRouter>
 
   </div>
 
-  ) : (
-    <h1>Loading</h1>
+  ) 
+  // : (
+  //   <h1>Loading</h1>
 
 
 
-  );
+  // );
 
 }
 
