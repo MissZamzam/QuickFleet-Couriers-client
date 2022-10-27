@@ -17,8 +17,15 @@ export default function MultiActionAreaCard() {
 
     function handleDelete(order){
         fetch(`http://localhost:3000/orders/${order.id}`,{
-            method: 'DELETE'
+            method: 'DELETE',
         })
+        // .then((r)=>r.json())
+        // .then(()=>{
+        //     const deleting = orders.filter((order) => order.order !== order);
+        //     setOrders(deleting)
+        // })
+        // .catch((error) => console.log(error));
+        // alert("You've successfully canceled the order")
     }
 
   return (
