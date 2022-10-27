@@ -10,15 +10,22 @@ export default function MultiActionAreaCard() {
     const [orders, setOrders] = useState([])
 
     useEffect(() =>{
-        fetch('http://localhost:3000/orders')
+        fetch('http://127.0.0.1:3000/orders')
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [])
 
     function handleDelete(order){
         fetch(`http://localhost:3000/orders/${order.id}`,{
-            method: 'DELETE'
+            method: 'DELETE',
         })
+        // .then((r)=>r.json())
+        // .then(()=>{
+        //     const deleting = orders.filter((order) => order.order !== order);
+        //     setOrders(deleting)
+        // })
+        // .catch((error) => console.log(error));
+        // alert("You've successfully canceled the order")
     }
 
   return (
@@ -62,9 +69,12 @@ export default function MultiActionAreaCard() {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="small" color="primary">
-                    Share
-                    </Button>
+                    <button class="bg-green-500 text-white font-bold py-2 px-4 rounded">
+                      EDIT ORDER
+                    </button>
+                    <button class="bg-red-500 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDelete(order)}>
+                      CANCEL ORDER
+                    </button>
                 </CardActions>
                 </Card>
             </>
