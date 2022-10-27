@@ -62,9 +62,12 @@ export default function MultiActionAreaCard() {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="small" color="primary">
-                    Share
-                    </Button>
+                    <button class="bg-green-500 text-white font-bold py-2 px-4 rounded">
+                      EDIT ORDER
+                    </button>
+                    <button class="bg-red-500 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDelete(order)}>
+                      CANCEL ORDER
+                    </button>
                 </CardActions>
                 </Card>
             </>

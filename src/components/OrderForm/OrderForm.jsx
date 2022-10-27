@@ -152,7 +152,7 @@ function OrderForm() {
       ),
     })
     .then((r)=> console.log(r))
-    // navigate('/ordercard')
+    navigate('/ordercard')
     // console.log(r.json())
   }
 
