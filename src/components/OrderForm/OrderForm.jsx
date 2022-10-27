@@ -133,15 +133,21 @@ function OrderForm() {
   const [destination, setDestination] = useState('')
   const navigate = useNavigate()
 
-  function handleSubmit(e){
-    fetch("")
-    .then((r)=> r.json())
-    .then((data)=> console.log(data))
+  function handleSubmit(e) {
+    e.preventDefault()
   }
+
+  // function handleSubmit(e){
+    useEffect(()=>{
+      fetch("http://localhost:3000/orders")
+      .then((r)=> r.json())
+      .then((data)=> console.log(data))
+    }, [])
+  // }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sender Name</label>
           <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={senderName} required />
