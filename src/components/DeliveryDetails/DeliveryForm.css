@@ -12,7 +12,7 @@ button{
     margin-top: 2em;
 }
 .deliveryformCard1{
-    background-color: #f2b035;
+    background-color: #FF8261;
 }
 .deliveryformimg{
     margin-top: .5em;
@@ -28,4 +28,16 @@ button{
 }
 img{
     object-fit: cover;
+}
+
+.deliveryBtn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+button{
+    margin-top: 2em;
+    color: #ffff;
+    border:  3px solid #ffff;
+    background-color: #272D55 !important;
 }

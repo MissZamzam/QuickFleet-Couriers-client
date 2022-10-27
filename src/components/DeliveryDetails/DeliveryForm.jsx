@@ -250,12 +250,14 @@ function DeliveryForm() {
           </div>
         </div>
       </div>
-      <button
-        type="submit"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Deliver Courier Now
-      </button>
+      <div className='deliveryBtn'>
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Deliver Courier Now
+        </button>
+      </div>
     </div>
   );
 }
