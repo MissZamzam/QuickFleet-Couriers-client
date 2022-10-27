@@ -20,6 +20,7 @@ import Deliveries from './Dashboard/scenes/Deliveries';
 import Orders from './components/Orders/Orders';
 // import Orders from './components/OrderForm/OrderForm'
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
+import OrderCard from './components/OrderForm/OrderCard'
 import Profile from './components/Profile/Profile'
 import Dashboard from './Dashboard/scenes/Dashboard';
 
@@ -53,6 +54,9 @@ function App() {
         <Route path='/receipts' element={<Receipts />} />
         <Route path='/receipts/:id' element={<Receipt />} />
         <Route path='/trackings' element={<Trackings />} />
+        <Route path='/orders' element={<Orders />} />
+        <Route path='/ordercard' element={<OrderCard />} />
+        <Route path='/deliveryForm' element={<DeliveryForm />} />
         <Route path='/order' element={<OrderForm />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
         <Route path='/deliveries' element={<Deliveries />} />

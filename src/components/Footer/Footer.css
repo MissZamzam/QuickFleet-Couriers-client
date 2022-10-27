@@ -1,8 +1,11 @@
+.footerback{
+    /* padding:100px 0 20px; */
+
 #footer{
     background: #090c22;
     position: relative;
     color: #fff;
-    margin-top: 10%;
+    /* margin-top: 10%; */
 }
 
 .footer-row{
