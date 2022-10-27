@@ -139,13 +139,16 @@ function DeliveryForm() {
 
   return (
     <div>
-      <div class="flex justify-center mb-4">
+      <div class="flex justify-center mb-4 deliveryformCards">
         <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-          <img
-            class=" w-full h-28 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg deliveryImg"
-            src={Image1}
-            alt=""
-          />
+          <div className="deliveryformimg">
+            <img
+              class=" w-full h-28 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg deliveryImg"
+              src={Image1}
+              alt=""
+            />
+          </div>
+
           <div class="p-6 flex flex-col justify-start">
             <h5 class="text-gray-900 text-xl font-medium mb-2">Deliver To</h5>
             <form class="w-full max-w-sm">
@@ -175,11 +178,13 @@ function DeliveryForm() {
       </div>
       <div class="flex justify-center mb-4">
         <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-          <img
-            class=" w-full h-28 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg deliveryImg"
-            src={Image2}
-            alt=""
-          />
+          <div className="deliveryformimg">
+            <img
+              class=" w-full h-28 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg deliveryImg"
+              src={Image2}
+              alt=""
+            />
+          </div>
           <div class="p-6 flex flex-col justify-start">
             <h5 class="text-gray-900 text-xl font-medium mb-2">Instructions</h5>
             <form class="w-full max-w-sm">
@@ -209,11 +214,13 @@ function DeliveryForm() {
       </div>
       <div class="flex justify-center mb-4">
         <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-          <img
-            class=" w-full h-28 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg deliveryImg"
-            src={Image3}
-            alt=""
-          />
+          <div className="deliveryformimg">
+            <img
+              class=" w-full h-28 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg deliveryImg"
+              src={Image3}
+              alt=""
+            />
+          </div>
           <div class="p-6 flex flex-col justify-start">
             <h5 class="text-gray-900 text-xl font-medium mb-2">
               Package Details

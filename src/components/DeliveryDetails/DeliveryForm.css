@@ -4,3 +4,25 @@ button{
     align-items: center;
     position: relative;
 }
+
+.deliveryformCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+.deliveryformimg{
+margin-top: .5em;
+    background-color: #f2b035;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1.5em;
+    margin-bottom: .5em;
+
+}
+/* img{
+    margin-top: 1em;
+    background-color: #f2b035;
+} */
