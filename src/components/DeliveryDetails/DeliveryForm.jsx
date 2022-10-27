@@ -21,11 +21,9 @@ function DeliveryForm() {
                     <form class="w-full max-w-sm">
                         <div class="flex items-center py-2">
                             <TextField id="standard-basic" label="Receiver Name" value={receiverName} variant="standard" onChange={(e)=> setReceiverName(e.target.value)} />
-                            {/* <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Receiver Name" aria-label="Receiver Name" /> */}
                         </div>
                         <div class="flex items-center py-2">
                         <TextField id="standard-basic" label="Receiver Contact" value={receiverContact} variant="standard" onChange={(e)=> setReceiverContact(e.target.value)} />
-                            {/* <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Receiver Contact" aria-label="Receiver Contact" /> */}
                         </div>
                     </form>
                 </div>
@@ -39,11 +37,9 @@ function DeliveryForm() {
                     <form class="w-full max-w-sm">
                         <div class="flex items-center py-2">
                             <TextField id="standard-basic" label="Receiver Contact" value={pickupInstructions} variant="standard" onChange={(e)=> setPickupInstructions(e.target.value)} />
-                            {/* <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Pickup Instructions" aria-label="Pickup Instructions" /> */}
                         </div>
                         <div class="flex items-center py-2">
                             <TextField id="standard-basic" label="Receiver Contact" value={deliveryInstructions} variant="standard" onChange={(e)=> setDeliveryInstructions(e.target.value)} />
-                            {/* <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Delivery Instructions" aria-label="Delivery Instructions" /> */}
                         </div>
                     </form>
                 </div>
@@ -57,11 +53,9 @@ function DeliveryForm() {
                     <form class="w-full max-w-sm">
                         <div class="flex items-center py-2">
                             <TextField id="standard-basic" label="Receiver Contact" value={packageType} variant="standard" onChange={(e)=> setPackageType(e.target.value)} />
-                            {/* <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Select Package Type" aria-label="Package Type" /> */}
                         </div>
                         <div class="flex items-center py-2">
                             <TextField id="standard-basic" label="Receiver Contact" value={packageDetails} variant="standard" onChange={(e)=> setPackageDetails(e.target.value)} />
-                            {/* <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Package Details" aria-label="Package Details" /> */}
                         </div>
                     </form>
                 </div>
