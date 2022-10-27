@@ -186,7 +186,7 @@ function DeliveryForm() {
               <div class="flex items-center py-2">
                 <TextField
                   id="standard-basic"
-                  label="Receiver Contact"
+                  label="Pickup Instructions"
                   value={pickupInstructions}
                   variant="standard"
                   onChange={(e) => setPickupInstructions(e.target.value)}
@@ -196,7 +196,7 @@ function DeliveryForm() {
               <div class="flex items-center py-2">
                 <TextField
                   id="standard-basic"
-                  label="Receiver Contact"
+                  label="Delivery Instructions"
                   value={deliveryInstructions}
                   variant="standard"
                   onChange={(e) => setDeliveryInstructions(e.target.value)}
@@ -222,7 +222,7 @@ function DeliveryForm() {
               <div class="flex items-center py-2">
                 <TextField
                   id="standard-basic"
-                  label="Receiver Contact"
+                  label="Select Package Type"
                   value={packageType}
                   variant="standard"
                   onChange={(e) => setPackageType(e.target.value)}
@@ -232,7 +232,7 @@ function DeliveryForm() {
               <div class="flex items-center py-2">
                 <TextField
                   id="standard-basic"
-                  label="Receiver Contact"
+                  label="Package Details"
                   value={packageDetails}
                   variant="standard"
                   onChange={(e) => setPackageDetails(e.target.value)}
