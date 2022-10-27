@@ -135,45 +135,55 @@ function OrderForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-
+    fetch('http://127.0.0.1:3000/orders',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(
+        {
+          senderName,
+          receiverName,
+          natureOfGoods,
+          amountPaid,
+          pickup,
+          destination,
+        }
+      ),
+    })
+    .then((r)=> console.log(r))
+    // navigate('/ordercard')
+    // console.log(r.json())
   }
-
-  // function handleSubmit(e){
-    useEffect(()=>{
-      fetch("http://localhost:3000/orders")
-      .then((r)=> r.json())
-      .then((data)=> console.log(data))
-    }, [])
-  // }
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sender Name</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={senderName} required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={senderName} onChange={(e)=>setSenderName(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Receiver Name</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={receiverName} required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={receiverName} onChange={(e)=>setReceiverName(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nature of Goods</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={natureOfGoods} required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={natureOfGoods} onChange={(e)=>setNatureOfGoods(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Amount Paid</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={amountPaid} required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={amountPaid} onChange={(e)=>setAmountPaid(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pickup</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={pickup} required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={pickup} onChange={(e)=>setPickup(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Destination</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={destination} required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={destination} onChange={(e)=>setDestination(e.target.value)} required />
         </div>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button type='submit' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Place Your Order
         </button>
       </form>
