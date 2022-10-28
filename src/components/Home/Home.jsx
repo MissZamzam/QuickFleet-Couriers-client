@@ -7,7 +7,7 @@ return<>
 {/* <div className="container home">
     <div className="col nest">
         <h1 className="caption">We Are Top Courier <br></br> and Mover Service <br></br> in Nairobi</h1>
-        {/* <h1>Why QuickFleet?</h1> */}
+        <h1>Why QuickFleet?</h1> 
         <p className="first">
 
 QuickFleet is the most trusted courier service company offering you the best service in your time.It is easier now to transfer your products through us. <br></br>

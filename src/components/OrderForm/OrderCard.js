@@ -12,13 +12,26 @@ export default function MultiActionAreaCard() {
     useEffect(() =>{
         fetch('http://127.0.0.1:3000/orders')
         .then(res => res.json())
-        .then(data => setOrders(data))
+        .then(data => 
+            setOrders(data))
     }, [])
 
-    function handleDelete(order){
-        fetch(`http://localhost:3000/orders/${order.id}`,{
+    function handleDelete(id){
+        fetch(`http://localhost:3000/orders/${id}`,{
             method: 'DELETE',
         })
+
+        .then((response) => response.json())
+
+        .then(() => {        
+          const deleting = orders.filter((table) => table.id !== id);   
+               setOrders(deleting);     
+              console.log('data')
+              })
+        .catch((err) => console.log(err));    alert("delete was successful");  
+    
+
+
         // .then((r)=>r.json())
         // .then(()=>{
         //     const deleting = orders.filter((order) => order.order !== order);
@@ -30,7 +43,7 @@ export default function MultiActionAreaCard() {
 
   return (
     <div>
-    { orders.map(order => {
+    { orders.map(table => {
         return(
             <>
                 <Card sx={{ maxWidth: 345 }}>
@@ -46,25 +59,31 @@ export default function MultiActionAreaCard() {
                         Your Order Details
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {order.senderName}
+                        sender Name:
+                        {table.senderName}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {order.receiverName}
+                        Receiver Name:
+                        {table.receiverName}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {order.natureOfGoods}
+                        Nature of Goods:
+                        {table.natureOfGoods}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {order.amountPaid}
+                        Amount:
+                        {table.amountPaid}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {order.pickup}
+                        Pickup:
+                        {table.pickup}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {order.destination}
+                        Destination:
+                        {table.destination}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {order.senderName}
+                        {table.senderName}
                     </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -72,7 +91,7 @@ export default function MultiActionAreaCard() {
                     <button class="bg-green-500 text-white font-bold py-2 px-4 rounded">
                       EDIT ORDER
                     </button>
-                    <button class="bg-red-500 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDelete(order)}>
+                    <button class="bg-red-500 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDelete(table.id)}>
                       CANCEL ORDER
                     </button>
                 </CardActions>
