@@ -49,6 +49,7 @@ export default function MultiActionAreaCard() {
         return(
             <>
             <br></br>
+                <br></br>
                 <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                     <CardMedia
