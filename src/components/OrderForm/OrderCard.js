@@ -16,9 +16,10 @@ export default function MultiActionAreaCard() {
             setOrders(data))
     }, [])
 
+
     function handleDelete(id){
         fetch(`http://localhost:3000/orders/${id}`,{
-            method: 'DELETE',
+            method: "DELETE",
         })
 
         .then((response) => response.json())
@@ -43,16 +44,18 @@ export default function MultiActionAreaCard() {
 
   return (
     <div>
-    { orders.map(table => {
+
+    {orders.map((table) => {
         return(
             <>
+            <br></br>
                 <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                     <CardMedia
                     component="img"
                     height="140"
                     alt="Delivery Van"
-                    image="https://images.pexels.com/photos/11356987/pexels-photo-11356987.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    image="https://i.pinimg.com/236x/98/23/1a/98231afda5095531306831dad557eef4.jpg"
                     />
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -82,9 +85,9 @@ export default function MultiActionAreaCard() {
                         Destination:
                         {table.destination}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    {/* <Typography variant="body2" color="text.secondary">
                         {table.senderName}
-                    </Typography>
+                    </Typography> */}
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
