@@ -184,6 +184,7 @@ function DeliveryForm() {
         </button>
       </div>
     </div>
+    </div>
   );
 }
 
