@@ -71,7 +71,7 @@ function Package_Tracking() {
             </div>
             {filteredData.length != 0 && (
               <div className="dataResults">
-                {filteredData.slice(0, 3).map((receipt, index) => {
+                {filteredData.map((receipt, index) => {
                   return (
                     <a className="dataItem" href="/receipts" target="blank">
                       {/* { receipt.receipt_no } */}
