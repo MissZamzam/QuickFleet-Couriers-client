@@ -25,6 +25,7 @@ function Package_Tracking() {
     event.preventDefault();
 
     const searchWord = event.target.value;
+    setWordEntered(searchWord)
 
     const newFilter = receipts.filter( ( receipt ) =>
     {
@@ -36,11 +37,6 @@ function Package_Tracking() {
       setFilteredData( newFilter );
       console.log(newFilter);
     }
-
-      const clearInput = () => {
-        setFilteredData([]);
-        setWordEntered("");
-      };
 
     // setFilteredData( newFilter ); 
   }
@@ -62,14 +58,14 @@ function Package_Tracking() {
                 autoComplete="off"
                 className="form-control"
                 placeholder="enter your receipt.no..."
+                value={wordEntered}
                 onChange={handleFilter}
-                // value={receipt_no}
               />
               <div className="searchIcon">
                 {filteredData.length === 0 ? (
                   <SearchIcon />
                 ) : (
-                  <CloseIcon id="clearBtn" onClick={clearInput} />
+                  <CloseIcon className="clearBtn" onClick={clearInput} />
                 )}
               </div>
             </div>
