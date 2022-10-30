@@ -16,10 +16,6 @@ export default function Login({setUser, user}) {
     
     // const { setAuth } = useAuth();
     const [errors, setErrors] = useState([]);
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-      });
 
     const navigate = useNavigate();
     // const location = useLocation();
