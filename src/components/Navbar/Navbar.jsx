@@ -51,9 +51,6 @@ const Navbar = ({setUsers, user}) => {
                     </>
                 )}
 
-
-
-                
             </div>
 
             <button class = "navbar-toggler border-0" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navMenu">
@@ -68,16 +65,6 @@ const Navbar = ({setUsers, user}) => {
                     <li class = "nav-item px-2 py-2">
                         <a class = "nav-link text-uppercase text-dark" href = "/Service">Service</a>
                     </li>
-
-                    {/* <li class = "nav-item px-2 py-2">
-                        <a class = "nav-link text-uppercase text-dark" href = "">blogs</a>
-                    </li>
-                    <li class = "nav-item px-2 py-2">
-                        <a class = "nav-link text-uppercase text-dark" href = "#about">about us</a>
-                    </li>
-                    <li class = "nav-item px-2 py-2 border-0">
-                        <a class = "nav-link text-uppercase text-dark" href="/Contact">Contact</a>
-                    </li> */}
                 </ul>
             </div>
         </div>
