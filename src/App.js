@@ -40,17 +40,6 @@ function App() {
   //   reverify();
   // }, []);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3004/me")
-  //   .then((r) => {
-  //     if(r.ok){
-  //       r.json().then((user) => console.log(user.data))
-  //     }
-  //   })
-  // },[])
-
-
-  // export const UserContext = createContext()
 
 
   // authorized === true || authorized === false ?
