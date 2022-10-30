@@ -32,19 +32,26 @@ function Receipts({ onAddingReceipt }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const columns = [
-    { field: "id", headerName: "ID", width: 50 },
+    { field: "id", headerName: "ID", width: 50, align: "center" },
 
-    { field: "receipt_no", headerName: "Receipt.No", width: 100 },
+    {
+      field: "receipt_no",
+      headerName: "Receipt.No",
+      width: 170,
+      align: "center",
+    },
 
     {
       field: "sender_name",
       headerName: "Sender Name",
-      width: 125,
+      width: 150,
+      align: "center",
     },
     {
       field: "receiver_name",
       headerName: "Receiver Name",
-      width: 125,
+      width: 150,
+      align: "center",
     },
     {
       field: "nature_of_goods",
@@ -52,32 +59,36 @@ function Receipts({ onAddingReceipt }) {
       type: "singleSelect",
       valueOptions: ["Flamable", "Perishable", "Fragile"],
       editable: true,
-      width: 125,
+      width: 150,
+      align: "center",
     },
     {
       field: "pickup",
       headerName: "PickUp",
-      width: 100,
+      width: 130,
+      align: "center",
     },
     {
       field: "destination",
       headerName: "Destination",
-      width: 100,
+      width: 130,
+      align: "center",
     },
     {
       field: "amount_paid",
       headerName: "Amount Paid",
-      width: 100,
+      width: 130,
+      align: "center",
     },
-  
+
     {
       field: "Route",
       headerName: "View",
-      // type: "actions",
-      width: 170,
+      type: "actions",
+      width: 130,
+      align: "center",
 
-      renderCell: ( cellValues ) =>
-      {
+      renderCell: (cellValues) => {
         console.log(cellValues);
 
         return (
@@ -88,16 +99,6 @@ function Receipts({ onAddingReceipt }) {
             >
               <button className="viewBtn">View More</button>
             </Link>
-            {/* {receipts.map((receipt) => {
-              return (
-                <Link
-                  to={`/receipts/${receipt.id}`}
-                  onClick={() => <Receipt key={receipt.id} />}
-                >
-                  <button className="viewBtn">View More</button>
-                </Link>
-              );
-            })} */}
           </>
         );
       },
