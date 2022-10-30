@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, createContext } from 'react';
 import {   BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import React from 'react'
 // import {   BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -40,20 +40,25 @@ function App() {
   //   reverify();
   // }, []);
 
-  useEffect(() => {
-    fetch("http://localhost:3004/me")
-    .then((r) => {
-      if(r.ok){
-        r.json().then((user) => setUser(user))
-      }
-    })
-  })
+  // useEffect(() => {
+  //   fetch("http://localhost:3004/me")
+  //   .then((r) => {
+  //     if(r.ok){
+  //       r.json().then((user) => console.log(user.data))
+  //     }
+  //   })
+  // },[])
+
+
+  // export const UserContext = createContext()
 
 
   // authorized === true || authorized === false ?
   return  (   
+
+
     <div className="App">
-    <BrowserRouter>
+    {/* <BrowserRouter> */}
     <Navbar user={user} setUser={setUser}/>
       <Routes>
         <Route path='/' element={<Home />} />
@@ -76,7 +81,7 @@ function App() {
       )} */}
     </Routes>
     <Footer />
-  </BrowserRouter>
+  {/* </BrowserRouter> */}
 
   </div>
 

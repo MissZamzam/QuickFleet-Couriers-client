@@ -1,28 +1,33 @@
 import axios from 'axios'
+import { useEffect } from 'react'
 // import bag from "../assets/svgs/bag.png"
+import { UserContext } from '../../hooks/useContext'
 
 
-const Navbar = ({setUser, user}) => {
+const Navbar = ({setUsers, user}) => {
 
-    // const handleLogout = () => {
-    //     axios.delete("http://localhost:3001/logout")
-    //     .then((data) => {
-    //         if(data.ok){
-    //             setUser(null)
-    //         }
-    //     })
-    // }
+
 
     const handleLogout = () =>{
-        fetch("http://localhost:3004/signin",{
+        fetch("http://localhost:3004/signout",{
             method:"DELETE"
         })
         .then((r) => {
             if (r.ok){
-                setUser(null)
+                setUsers(null)
             }
         })
     }
+    
+    // useEffect(() => {
+    //     fetch("http://localhost:3004/me")
+    //     .then((r) => {
+    //       if(r.ok){
+    //         r.json().then((user) => console.log(user))
+    //       }
+    //     })
+    
+    //   })
 
 
   return (

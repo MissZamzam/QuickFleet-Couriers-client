@@ -24,7 +24,7 @@ export const register = async (user) => {
 };
 
 export const login = async (user) => {
-  const res = await api.post("/users/login", { user });
+  const res = await api.post("/signin", { user });
   const { token } = res.data;
   if (token) {
     localStorage.setItem("authToken", token);
@@ -37,7 +37,7 @@ export const verify = async () => {
   const token = localStorage.getItem("authToken");
   if (token) {
     api.defaults.headers.common.authorization = `Bearer ${token}`;
-    const res = await api.get("/users/verify");
+    const res = await api.get("/me");
     return res.data;
   }
 };

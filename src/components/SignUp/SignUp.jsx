@@ -29,7 +29,7 @@ export default function Registration() {
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        axios.post("http://localhost:3004/signup",{
+        axios.post("/users/signup",{
             email: user.email,
             password: user.password,
             username: user.username,
