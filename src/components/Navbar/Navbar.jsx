@@ -8,16 +8,16 @@ const Navbar = ({setUsers, user}) => {
 
 
 
-    // const handleLogout = () =>{
-    //     fetch("http://localhost:3004/signout",{
-    //         method:"DELETE"
-    //     })
-    //     .then((r) => {
-    //         if (r.ok){
-    //             setUsers(null)
-    //         }
-    //     })
-    // }
+    const handleLogout = () =>{
+        fetch("users/signout",{
+            method:"DELETE"
+        })
+        .then((r) => {
+            if (r.ok){
+                setUsers(null)
+            }
+        })
+    }
     
     // useEffect(() => {
     //     fetch("http://localhost:3004/me")
