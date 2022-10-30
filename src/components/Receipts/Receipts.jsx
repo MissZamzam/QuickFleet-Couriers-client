@@ -4,7 +4,6 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Link, useNavigate } from "react-router-dom";
-// import Receipt from "./Receipt"
 import Receipt from "./Receipt";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
@@ -23,8 +22,9 @@ function Receipts({ onAddingReceipt }) {
   const [amount_paid, setAmount] = useState("");
   const [errors, setErrors] = useState([]);
   const [ isLoading, setIsLoading ] = useState( false );
-  const [pageSize, setPageSize] = useState(5);
-  // const [receipt, setReceipt] = useState({})
+  const [ pageSize, setPageSize ] = useState( 5 );
+  const [rowId, setRowId] = useState(null);
+  const [receipt, setReceipt] = useState({})
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -52,7 +52,7 @@ function Receipts({ onAddingReceipt }) {
       type: "singleSelect",
       valueOptions: ["Flamable", "Perishable", "Fragile"],
       editable: true,
-      width: 125
+      width: 125,
     },
     {
       field: "pickup",
@@ -69,38 +69,39 @@ function Receipts({ onAddingReceipt }) {
       headerName: "Amount Paid",
       width: 100,
     },
-    // {
-    //   field: "action",
-    //   headerName: "Action",
-    //   width: 180,
-    //   sortable: false,
+  
+    {
+      field: "Route",
+      headerName: "View",
+      // type: "actions",
+      width: 170,
 
-    //   renderCell: (params) => {
-    //     const onClick = (e) => {
-    //       const currentRow = params.row;
-    //       return alert(JSON.stringify(currentRow, null));
-    //     };
+      renderCell: ( cellValues ) =>
+      {
+        console.log(cellValues);
 
-    //     // const handleReceipt = ( receipt ){
-    //     //   setReceipt( receipt )
-    //     // };
-
-    //     return (
-    //       <Stack spacing={1}>
-    //         {receipts.map((receipt) => {
-    //           return (
-    //             <Link
-    //               to={`/receipts/${receipt.id}`}
-    //               onClick={() => <Receipt key={receipt.id} />}
-    //             >
-    //               <button className="viewBtn">View More</button>
-    //             </Link>
-    //           );
-    //         })}
-    //       </Stack>
-    //     );
-    //   },
-    // },
+        return (
+          <>
+            <Link
+              to={`/receipts/${cellValues.id}`}
+              onClick={() => <Receipt key={receipt.id} />}
+            >
+              <button className="viewBtn">View More</button>
+            </Link>
+            {/* {receipts.map((receipt) => {
+              return (
+                <Link
+                  to={`/receipts/${receipt.id}`}
+                  onClick={() => <Receipt key={receipt.id} />}
+                >
+                  <button className="viewBtn">View More</button>
+                </Link>
+              );
+            })} */}
+          </>
+        );
+      },
+    },
   ];
 
   useEffect(() => {
@@ -341,6 +342,7 @@ function Receipts({ onAddingReceipt }) {
               top: params.isFirstVisible ? 0 : 4,
               bottom: params.isLastVisible ? 0 : 4,
             })}
+            onCellEditCommit={(params) => setRowId(params.id)}
             // components={{ Toolbar: GridToolbar }}
           />
         </Box>
