@@ -1,17 +1,48 @@
-import axios from 'axios';
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
+// import React, { useState } from 'react';
+// import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../auth/Users';
+import { useRef, useState, useEffect } from 'react';
+import useAuth from '../../hooks/useAuth';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+
+import axios from "../../api/axios"
+const LOGIN_URL = '/signin';
+
 
 export default function Login({setUser, user}) {
+    
 
-    // const history = useHistory()
-    const navigate = useNavigate()
+    // const { setAuth } = useAuth();
+    const [errors, setErrors] = useState([]);
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+      });
+
+    const navigate = useNavigate();
+    // const location = useLocation();
+    // const from = location.state?.from?.pathname || "/";
+
+    // const userRef = useRef();
+    // const errRef = useRef();
+
+    // const [email, setUser] = useState('');
+    // const [password, setPwd] = useState('');
+    // const [errMsg, setErrMsg] = useState('');
+
+    // useEffect(() => {
+    //     userRef.current.focus();
+    // }, [])
+
+    // useEffect(() => {
+    //     setErrMsg('');
+    // }, [email, password])
+
 
     const [form, setForm] = useState({
         email: "",
         password: ""
-
       });
 
       const handleChange = (e) => {
@@ -34,7 +65,7 @@ export default function Login({setUser, user}) {
 
     // const handleSubmit = (e) => {
     //     e.preventDefault();
-    //     fetch("http://localhost:3001/users/login",{
+    //     fetch("http://localhost:3004/users/login",{
     //         method: "POST",
     //         headers: {
     //             "Content-Type": "application/json",
@@ -48,29 +79,91 @@ export default function Login({setUser, user}) {
     //     .then(response => response.json())
     //     .then(user =>{
     //         console.log(user)
-    //         // localStorage.setItem("user_id", JSON.stringify(user.id))
+    //         // sessionStorage.setItem("user_id", JSON.stringify(user.id))
     //         setUser(user)
-    //         navigate("/")
+    //         // navigate("/")
     //     }
     //     ).catch(err => console.log("Login error", err));
 
     // }
 
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        axios.post("http://localhost:3004/signin",{
-            email: form.email,
-            password: form.password
-        })
-        .then((res) => {setUser(res); navigate("/")})
-        //  sessionStorage.setItem("user_id", JSON.stringify(user.id))
-        .finally(()=>
-        setUser({
-            email: "",
-            password: ""
-        }))
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     try {
+    //         const response = await axios.post(LOGIN_URL,
+    //             JSON.stringify({ email, password }),
+    //             {
+    //                 headers: { 'Content-Type': 'application/json' }
+    //                 // withCredentials: true
+    //             }
+    //         );
+    //         console.log(JSON.stringify(response?.data));
+    //         //console.log(JSON.stringify(response));
+    //         const accessToken = response?.data?.accessToken;
+    //         const roles = response?.data?.role;
+    //         console.log(response)
+    //         setAuth({ email, password, roles, accessToken });
+    //         setUsers('');
+    //         setPwd('');
+    //         navigate(from, { replace: true });
+    //     } catch (err) {
+    //         if (!err?.response) {
+    //             setErrMsg('No Server Response');
+    //         } else if (err.response?.status === 400) {
+    //             setErrMsg('Missing Username or Password');
+    //         } else if (err.response?.status === 401) {
+    //             setErrMsg('Unauthorized');
+    //         } else {
+    //             setErrMsg('Login Failed');
+    //         }
+    //         errRef.current.focus();
+    //     }
+    // }
+
+    // const handleSubmit = (e) =>{
+    //     e.preventDefault()
+    //     axios.post("/users/signin",{
+    //         email: form.email,
+    //         password: form.password
+    //     })
+    //     .then((res) => {console.log(res.data); 
+    //     // sessionStorage.setItem("user_id", JSON.stringify(user.id))
+
+    // })
+    //     .finally(()=>
+    //     setUser({
+    //         email: "",
+    //         password: ""
+    //     }))
         
-    }
+    // }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // post user credentialas to login route
+    
+        fetch("/users/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }).then((res) => {
+          if (res.ok) {
+            res.json().then((user) => {
+              setUser(user);
+              navigate("/home");
+              console.log(user);
+              sessionStorage.setItem("user", JSON.stringify(user));
+              console.log(user);
+              // alert(errors);
+            });
+          } else {
+            res.json().then((error) => setErrors(error.errors));
+          }
+        });
+      };
 
 
 
@@ -80,6 +173,8 @@ export default function Login({setUser, user}) {
                 <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
                    Sign in
                 </h1>
+            {/* <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> */}
+
                 <form onSubmit={handleSubmit} className="mt-6">
                     <div className="mb-2">
                         <label
@@ -89,6 +184,7 @@ export default function Login({setUser, user}) {
                             Email
                         </label>
                         <input
+                            // ref={userRef}
                             name='email'
                             value={form.email}
                             onChange={handleChange}
@@ -104,6 +200,7 @@ export default function Login({setUser, user}) {
                             Password
                         </label>
                         <input
+                            // ref={userRef}
                             name='password'
                             onChange={handleChange}
                             value={form.password}
@@ -118,7 +215,7 @@ export default function Login({setUser, user}) {
                         Forget Password?
                     </a>
                     <div className="mt-6">
-                        <button type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+                        <button  className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
                             Login
                         </button>
                     </div>
