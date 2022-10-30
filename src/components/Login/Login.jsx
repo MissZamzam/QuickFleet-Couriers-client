@@ -9,10 +9,11 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from "../../api/axios"
 const LOGIN_URL = '/signin';
 
+//ALERT PLEASE DONT DELETE COMMENTED OUT CODE THIS WILL BE IMPLIMENTED IN FUTURE
+
 
 export default function Login({setUser, user}) {
     
-
     // const { setAuth } = useAuth();
     const [errors, setErrors] = useState([]);
     const [formData, setFormData] = useState({
