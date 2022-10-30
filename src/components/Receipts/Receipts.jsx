@@ -12,11 +12,6 @@ import { Button, Stack } from "@mui/material";
 import "./Receipts.css";
 
 function Receipts({ onAddingReceipt }) {
-  // receipts.map( ( recp ) =>
-  // {
-  //   console.log(recp)
-  // })
-  // console.log( receipt )
 
   const [receipts, setReceipts] = useState([]);
   const [receipt_no, setReceiptNumber] = useState("");
@@ -36,55 +31,51 @@ function Receipts({ onAddingReceipt }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
+    { field: "id", headerName: "ID", width: 50 },
 
-    { field: "receipt_no", headerName: "Receipt.No" },
+    { field: "receipt_no", headerName: "Receipt.No", width: 170 },
 
     {
       field: "sender_name",
       headerName: "Sender Name",
-      flex: 1,
-      cellClassName: "name-column--cell",
+      width: 170,
     },
     {
       field: "receiver_name",
       headerName: "Receiver Name",
-      flex: 1,
-      cellClassName: "name-column--cell",
+      width: 170,
     },
     {
       field: "nature_of_goods",
       headerName: "Nature Of Goods",
-      flex: 1,
+      type: "singleSelect",
+      valueOptions: ["Flamable", "Perishable", "Fragile"],
+      editable: true,
+      width: 125,
     },
     {
       field: "pickup",
       headerName: "PickUp",
-      flex: 1,
+      width: 100,
     },
     {
       field: "destination",
       headerName: "Destination",
-      flex: 1,
+      width: 100,
     },
     {
       field: "amount_paid",
       headerName: "Amount Paid",
-      flex: 1,
+      width: 100,
     },
     {
       field: "action",
       headerName: "Action",
       width: 180,
+      align: "center",
       sortable: false,
-      disableClickEventBubbling: true,
 
       renderCell: (params) => {
-        const onClick = (e) => {
-          const currentRow = params.row;
-          return alert(JSON.stringify(currentRow, null, 4));
-        };
-
         // const handleReceipt = ( receipt ){
         //   setReceipt( receipt )
         // };
@@ -331,6 +322,14 @@ function Receipts({ onAddingReceipt }) {
             },
           }}
         >
+          {/* <Typography
+            variant="h3"
+            component="h3"
+            sx={{ textAlign: "center", mt: 3, mb: 3 }}
+          >
+            Manage Receipts
+          </Typography> */}
+
           <DataGrid
             rows={receipts}
             columns={columns}
