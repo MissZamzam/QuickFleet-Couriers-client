@@ -22,7 +22,8 @@ function Receipts({ onAddingReceipt }) {
   const [destination, setDestination] = useState("");
   const [amount_paid, setAmount] = useState("");
   const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [ isLoading, setIsLoading ] = useState( false );
+  const [pageSize, setPageSize] = useState(5);
   // const [receipt, setReceipt] = useState({})
   const { id } = useParams();
   const navigate = useNavigate();
@@ -33,17 +34,17 @@ function Receipts({ onAddingReceipt }) {
   const columns = [
     { field: "id", headerName: "ID", width: 50 },
 
-    { field: "receipt_no", headerName: "Receipt.No", width: 170 },
+    { field: "receipt_no", headerName: "Receipt.No", width: 100 },
 
     {
       field: "sender_name",
       headerName: "Sender Name",
-      width: 170,
+      width: 125,
     },
     {
       field: "receiver_name",
       headerName: "Receiver Name",
-      width: 170,
+      width: 125,
     },
     {
       field: "nature_of_goods",
@@ -51,7 +52,7 @@ function Receipts({ onAddingReceipt }) {
       type: "singleSelect",
       valueOptions: ["Flamable", "Perishable", "Fragile"],
       editable: true,
-      width: 125,
+      width: 125
     },
     {
       field: "pickup",
@@ -68,34 +69,38 @@ function Receipts({ onAddingReceipt }) {
       headerName: "Amount Paid",
       width: 100,
     },
-    {
-      field: "action",
-      headerName: "Action",
-      width: 180,
-      align: "center",
-      sortable: false,
+    // {
+    //   field: "action",
+    //   headerName: "Action",
+    //   width: 180,
+    //   sortable: false,
 
-      renderCell: (params) => {
-        // const handleReceipt = ( receipt ){
-        //   setReceipt( receipt )
-        // };
+    //   renderCell: (params) => {
+    //     const onClick = (e) => {
+    //       const currentRow = params.row;
+    //       return alert(JSON.stringify(currentRow, null));
+    //     };
 
-        return (
-          <Stack spacing={1}>
-            {receipts.map((receipt) => {
-              return (
-                <Link
-                  to={`/receipts/${receipt.id}`}
-                  onClick={() => <Receipt key={receipt.id} />}
-                >
-                  <button className="viewBtn">View More</button>
-                </Link>
-              );
-            })}
-          </Stack>
-        );
-      },
-    },
+    //     // const handleReceipt = ( receipt ){
+    //     //   setReceipt( receipt )
+    //     // };
+
+    //     return (
+    //       <Stack spacing={1}>
+    //         {receipts.map((receipt) => {
+    //           return (
+    //             <Link
+    //               to={`/receipts/${receipt.id}`}
+    //               onClick={() => <Receipt key={receipt.id} />}
+    //             >
+    //               <button className="viewBtn">View More</button>
+    //             </Link>
+    //           );
+    //         })}
+    //       </Stack>
+    //     );
+    //   },
+    // },
   ];
 
   useEffect(() => {
@@ -310,6 +315,9 @@ function Receipts({ onAddingReceipt }) {
             </div>
           </div>
         </Modal>
+        <Typography variant="h3" component="h3" sx={{ textAlign: "center" }}>
+          Manage Receipts
+        </Typography>
         <Box
           m="40px 0 0 0"
           height="75vh"
@@ -322,18 +330,18 @@ function Receipts({ onAddingReceipt }) {
             },
           }}
         >
-          {/* <Typography
-            variant="h3"
-            component="h3"
-            sx={{ textAlign: "center", mt: 3, mb: 3 }}
-          >
-            Manage Receipts
-          </Typography> */}
-
           <DataGrid
             rows={receipts}
             columns={columns}
-            components={{ Toolbar: GridToolbar }}
+            getRowId={(row) => row.id}
+            rowsPerPageOptions={[5, 10, 20]}
+            pageSize={pageSize}
+            onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+            getRowSpacing={(params) => ({
+              top: params.isFirstVisible ? 0 : 4,
+              bottom: params.isLastVisible ? 0 : 4,
+            })}
+            // components={{ Toolbar: GridToolbar }}
           />
         </Box>
       </Box>
