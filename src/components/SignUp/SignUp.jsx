@@ -45,12 +45,12 @@ export default function Registration() {
             }
         })
         .finally(()=>
-        // setUser({
-        //     username:"",
-        //     email: "",
-        //     password: "",
-        //     password_confirmation:""    
-        // }))
+        setUser({
+            username:"",
+            email: "",
+            password: "",
+            password_confirmation:""    
+        }))
         
     }
     return (
