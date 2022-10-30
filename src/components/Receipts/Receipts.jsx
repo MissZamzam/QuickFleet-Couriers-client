@@ -344,7 +344,7 @@ function Receipts({ onAddingReceipt }) {
               bottom: params.isLastVisible ? 0 : 4,
             })}
             onCellEditCommit={(params) => setRowId(params.id)}
-            // components={{ Toolbar: GridToolbar }}
+            components={{ Toolbar: GridToolbar }}
           />
         </Box>
       </Box>
