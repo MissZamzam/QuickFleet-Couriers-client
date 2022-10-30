@@ -44,18 +44,6 @@ const Navbar = ({setUsers, user}) => {
                 ) : (
                     <>
 
-                {/* <button type = "button" class = "btn position-relative">
-                <a tabindex="0" class="btn btn-sm btn-dark" role="button" data-mdb-toggle="popover" data-mdb-trigger="focus" title="Dismissible popover"data-mdb-content="And here's some amazing content. It's very engaging. Right?"
->
-<i class="fa-solid fa-circle-user"> </i>
-</a>
-                    <a href="" style={{color:"black"}}><i class="fa-solid fa-circle-user"></i></a>
-                </button> */}
-
-                {/* <button type = "button" class = "btn position-relative">
-                    <a href="/cart" style={{color:"black"}}><i class="fa-solid fa-basket-shopping"></i></a>
-                </button> */}
-
                 <button type = "button" class = "btn position-relative">
                     <a href="/login" style={{color:"black"}}><i class="fa-solid fa-user"></i></a>
                 </button>
