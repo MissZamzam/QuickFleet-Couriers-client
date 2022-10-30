@@ -7,7 +7,6 @@ export default function Registration() {
 
     const [errMsg, setErrMsg] = useState('');
 
-
     const [user, setUser] = useState({
         username:"",
         email: "",
