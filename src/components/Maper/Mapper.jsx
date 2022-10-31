@@ -25,7 +25,7 @@ const Mapper = () => {
 
 
         </GoogleMap>
-        <iframe  style={{border:"0", height:"100vh", width:"100%"}} loading="lazy" allowFullScreen src="https://www.google.com/maps/embed/v1/view?zoom=10&center=-1.2921,36.8219&key=AIzaSyBdotwo1ZYLLG9Rxj-TyWpK6gm68X04WGE"></iframe>
+        <iframe style={{border:"0", height:"100vh", width:"100%"}} loading="lazy" allowFullScreen src="https://www.google.com/maps/embed/v1/view?zoom=10&center=-1.2921,36.8219&key=AIzaSyBdotwo1ZYLLG9Rxj-TyWpK6gm68X04WGE"></iframe>
 
     </div>
   )
