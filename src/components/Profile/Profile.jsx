@@ -1,7 +1,17 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Profile.css'
 
 function Profile() {
+
+  const [user, setUser] = useState([])
+
+  useEffect(() => {
+    fetch('/users')
+    .then((res)=> res.json())
+    .then((data) => setUser(data))
+  }, [])
+
+
   return (
     <div>
       <div class="background"></div>
