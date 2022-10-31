@@ -17,6 +17,7 @@ import Receipt from './components/Receipts/Receipt';
 import Trackings from './components/Tracking/Trackings';
 import Tracking from './components/Tracking/Trackings';
 import Orders from './components/OrderForm/OrderForm'
+import OrderCard from './components/OrderForm/OrderCard'
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
 import axios from 'axios';
 import Mapper from './components/Maper/Mapper';
@@ -58,6 +59,7 @@ function App() {
         <Route path='/receipt/:id' element={<Receipt />} />
         <Route path='/trackings' element={<Trackings />} />
         <Route path='/orders' element={<Orders />} />
+        <Route path='/ordercard' element={<OrderCard />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
         <Route path='/tracking/:id' element={<Tracking />} />
         <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
