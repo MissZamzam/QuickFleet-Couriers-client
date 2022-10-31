@@ -53,7 +53,7 @@ function App() {
     <Navbar user={user} setUser={setUser}/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/services' element={<Services />} />
+        <Route path='/service' element={<Services />} />
         <Route path='/service/:id' element={<Service />} />
         <Route path='/receipts' element={<Receipts />} />
         <Route path='/receipt/:id' element={<Receipt />} />
