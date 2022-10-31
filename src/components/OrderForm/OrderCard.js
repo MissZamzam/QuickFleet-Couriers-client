@@ -28,7 +28,18 @@ export default function MultiActionAreaCard() {
             setOrders(data))
     }, [])
 
+    const handleSubmit = (id)=>{
     
+        // axios.patch("/orders",{
+            // senderName:"",
+            // receiverName:"",
+            // natureOfGoods:"",
+            // amountPaid:"",
+            // pickup:"",
+            // destination:""
+        // })
+      
+
 
 
     function handleDelete(id){
