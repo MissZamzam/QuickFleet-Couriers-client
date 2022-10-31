@@ -29,7 +29,7 @@ export default function MultiActionAreaCard() {
                setOrders(deleting);     
               console.log('data')
               })
-        .catch((err) => console.log(err));    alert("delete was successful");  
+        // .catch((err) => console.log(err));    alert("delete was successful");  
     
 
 
@@ -56,7 +56,7 @@ export default function MultiActionAreaCard() {
                     component="img"
                     height="140"
                     alt="Delivery Van"
-                    image="https://i.pinimg.com/236x/98/23/1a/98231afda5095531306831dad557eef4.jpg"
+                    image="https://images.unsplash.com/photo-1513885045260-6b3086b24c17?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                     />
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
