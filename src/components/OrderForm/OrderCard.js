@@ -11,6 +11,8 @@ import { idID } from '@mui/material/locale';
 
 export default function MultiActionAreaCard() {
     const [orders, setOrders] = useState([])
+    const [tableId, settableId] = useState(0)
+
 
     const [senderName, setSenderName] = useState('')
     const [receiverName, setReceiverName] = useState('')
@@ -26,14 +28,47 @@ export default function MultiActionAreaCard() {
             setOrders(data))
     }, [])
 
-    const handleSubmit = (e)=>{
-        e.preventDefault()
-        console.log("pressed")
+    const handleSubmit = (id)=>{
+    
+        // axios.patch("/orders",{
+            // senderName:"",
+            // receiverName:"",
+            // natureOfGoods:"",
+            // amountPaid:"",
+            // pickup:"",
+            // destination:""
+        // })
+        fetch(`/orders/${id}`,{
+            method:"PATCH",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                senderName: senderName,
+                receiverName: receiverName,
+                natureOfGoods: natureOfGoods,
+                amountPaid: amountPaid,
+                pickup: pickup,
+                destination: destination
+            })
+        })
+        .then(res=>{
+            if(res.ok){
+                res.json().then(console.log)
+            }
+        })
     }
 
-    const handleUpdate = () =>{
-        
-    }
+    // const handleUpdate = (table, id) =>{
+    //     settableId(id)
+    //     setSenderName(table.senderName)
+    //     setReceiverName(table.receiverName)
+    //     setNatureOfGoods(table.natureOfGoods)
+    //     setAmountPaid(table.amountPaid)
+    //     setPickup(table.pickup)
+    //     setDestination(table.destination)
+    //     console.log(table)
+    // }
 
 
 
@@ -67,10 +102,8 @@ export default function MultiActionAreaCard() {
 
     {orders.map((table) => {
         return(
-            <>
-            <br></br>
-                <br></br>
-                <Card sx={{ maxWidth: 345 }}>
+            <div class="grid gap-10 px-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <Card sx={{ maxWidth: 345 }} style={{backgroundColor: 'white'}}>
                 <CardActionArea>
                     <CardMedia
                     component="img"
@@ -78,7 +111,7 @@ export default function MultiActionAreaCard() {
                     alt="Delivery Van"
                     image="https://images.unsplash.com/photo-1513885045260-6b3086b24c17?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                     />
-                    <CardContent>
+                    <CardContent style={{backgroundColor: 'white'}}>
                     <Typography gutterBottom variant="h5" component="div">
                         Your Order Details
                     </Typography>
@@ -112,8 +145,7 @@ export default function MultiActionAreaCard() {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button onClick={()=> handleUpdate(table, table.id)} type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         UPDATE ORDER
                     </button>
                     <button class="bg-red-500 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDelete(table.id)}>
@@ -121,15 +153,12 @@ export default function MultiActionAreaCard() {
                     </button>
                 </CardActions>
                 </Card>
-            </>
+            </div>
+            
         )
     })}
 
 
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -141,7 +170,7 @@ export default function MultiActionAreaCard() {
       </div>
       <div class="modal-body">
         
-      <form onSubmit={handleSubmit}>
+      <form>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sender Name</label>
           <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={senderName} onChange={(e)=>setSenderName(e.target.value)} required />
@@ -173,7 +202,7 @@ export default function MultiActionAreaCard() {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onClick={handleSubmit} type="button" class="btn btn-primary">Save changes</button>
+        <button onClick={() => handleSubmit(tableId)} type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
