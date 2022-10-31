@@ -121,6 +121,7 @@
 // }
 
 import React, {useState} from 'react'
+import "./OrderForm.css"
 import { useNavigate } from 'react-router-dom'
 
 function OrderForm() {
@@ -135,7 +136,7 @@ function OrderForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    fetch('http://127.0.0.1:3000/orders',{
+    fetch('/orders',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -156,7 +157,7 @@ function OrderForm() {
   }
 
   return (
-    <div>
+    <div className='Order'>
       <form onSubmit={handleSubmit}>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sender Name</label>

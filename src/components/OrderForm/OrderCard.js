@@ -10,7 +10,7 @@ export default function MultiActionAreaCard() {
     const [orders, setOrders] = useState([])
 
     useEffect(() =>{
-        fetch('http://127.0.0.1:3000/orders')
+        fetch('/orders')
         .then(res => res.json())
         .then(data => 
             setOrders(data))
@@ -18,7 +18,7 @@ export default function MultiActionAreaCard() {
 
 
     function handleDelete(id){
-        fetch(`http://localhost:3000/orders/${id}`,{
+        fetch(`/orders/${id}`,{
             method: "DELETE",
         })
 
@@ -93,7 +93,7 @@ export default function MultiActionAreaCard() {
                 </CardActionArea>
                 <CardActions>
                     <button class="bg-green-500 text-white font-bold py-2 px-4 rounded">
-                      EDIT ORDER
+                      CHANGE ORDER
                     </button>
                     <button class="bg-red-500 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDelete(table.id)}>
                       CANCEL ORDER
