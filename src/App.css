@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -9,3 +10,7 @@ body{
     position: relative;
     background: #272D55;
 }
+
+/* .routes{
+    margin-top: 10%;
+} */

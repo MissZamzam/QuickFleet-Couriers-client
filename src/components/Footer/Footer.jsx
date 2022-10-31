@@ -4,8 +4,8 @@ import FooterPic from '../Image/undraw_deliveries_2r4y.svg'
 
 function Footer() {
   return (
-    <div>
-        <section id="footer">
+    <div class="container-fluid footerback ">
+        <section id="w-100% footer">
             <img src={FooterPic} class="footer-img" alt=" " />
             <div class="footer-row">
                 <div class="footer-left">
