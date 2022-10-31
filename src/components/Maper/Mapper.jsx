@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import './Mapper.css'
 import {GoogleMap, useLoadScript} from '@react-google-maps/api'
 
@@ -14,6 +15,22 @@ const Mapper = () => {
     })
 
     if(!isLoaded)return <div>Loading...</div>;
+
+    // var axios = require('axios');
+
+    // var config = {
+    //   method: 'get',
+    //   url: 'https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyBdotwo1ZYLLG9Rxj-TyWpK6gm68X04WGE',
+    //   headers: { }
+    // };
+    
+    // axios(config)
+    // .then(function (response) {
+    //   console.log(JSON.stringify(response.data));
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
 
     // return <Map />
     
