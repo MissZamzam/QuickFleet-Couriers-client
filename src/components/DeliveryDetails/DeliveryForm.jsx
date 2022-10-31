@@ -16,7 +16,7 @@ function DeliveryForm() {
 
   return (
     <div>
-        <div class="flex justify-center mb-4">
+        {/* <div class="flex justify-center mb-4">
             <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
                 <img class=" w-full h-24 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
                 <div class="p-6 flex flex-col justify-start">
@@ -62,7 +62,7 @@ function DeliveryForm() {
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> */}
 
       <div class="flex justify-center mb-4">
         <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg deliveryformCard1">
@@ -184,7 +184,7 @@ function DeliveryForm() {
         </button>
       </div>
     </div>
-    </div>
+    // </div>
   );
 }
 
