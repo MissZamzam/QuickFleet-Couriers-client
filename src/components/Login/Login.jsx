@@ -1,10 +1,11 @@
 // import axios from 'axios';
-// import React, { useState } from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../auth/Users';
+import "./Login.css"
 import { useRef, useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+// import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import axios from "../../api/axios"
 const LOGIN_URL = '/signin';
@@ -13,7 +14,7 @@ const LOGIN_URL = '/signin';
 
 
 export default function Login({setUser, user}) {
-    
+
     // const { setAuth } = useAuth();
     const [errors, setErrors] = useState([]);
 
@@ -124,7 +125,7 @@ export default function Login({setUser, user}) {
     //         email: form.email,
     //         password: form.password
     //     })
-    //     .then((res) => {console.log(res.data); 
+    //     .then((res) => {console.log(res.data);
     //     // sessionStorage.setItem("user_id", JSON.stringify(user.id))
 
     // })
@@ -133,13 +134,13 @@ export default function Login({setUser, user}) {
     //         email: "",
     //         password: ""
     //     }))
-        
+
     // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // post user credentialas to login route
-    
+
         fetch("/users/login", {
           method: "POST",
           headers: {
@@ -150,7 +151,7 @@ export default function Login({setUser, user}) {
           if (res.ok) {
             res.json().then((user) => {
               setUser(user);
-              navigate("/home");
+              navigate("/orders");
               console.log(user);
               sessionStorage.setItem("user", JSON.stringify(user));
               console.log(user);
@@ -167,8 +168,8 @@ export default function Login({setUser, user}) {
     return (
         <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-                <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
-                   Sign in
+                <h1 className="text-3xl font-semibold text-center text-purple-700">
+                <span className='quick'>Log</span><span className='fleet'>In</span>
                 </h1>
             {/* <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> */}
 
@@ -207,11 +208,13 @@ export default function Login({setUser, user}) {
                     </div>
                     <a
                         href=" "
-                        className="text-xs text-purple-600 hover:underline"
+                        className="text-xs text-blue-600"
                     >
                         Forget Password?
                     </a>
                     <div className="mt-6">
+                        {/* <button type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600" />
+                        <button type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600 login" /> */}
                         <button  className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
                             Login
                         </button>

@@ -1,9 +1,11 @@
 .bg{
   height: 130vh !important;
-  /* background-image: url("./images/image1.png") !important; */
+  background-image: url("../Image/TrackImg.png") !important;
   background-repeat: no-repeat;
   background-size:contain;
   background-color: #353D68;
+  object-fit: cover;
+  margin-top: -5em;
 }
 
 .receipt-form{
@@ -13,11 +15,30 @@
   align-items:flex-end;
 
 }
-.form-group{
-  display: flex;
+/* .form-group{
+  display: ;
 
+} */
+.dataResults{
+  margin-top: 5px;
+  width: 200px;
+  height: 60px;
+  background-color: #ffff;
+  box-shadow: rgba(0, 0, 0, 0.35) ;
+  overflow: hidden;
+  overflow-y: auto;
 }
-
+.dataResults .dataItem{
+  width: 200px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+}
+a:hover{
+  background-color: lightgray;
+}
 .receiptNo-form{
   height: 40%;
   width: 60%;
@@ -27,22 +48,20 @@
   justify-content: center;
   background-color: #F2B035;
   border-radius: .8em;
-  /* position: absolute; */
-  /* z-index: 1; */
-  margin-bottom: -10em;
+  margin-bottom: -11em;
 }
 .receiptNo-form input{
-  width: 15em;
-  /* margin-top: .5em; */
-  /* margin-bottom: 1em; */
+  width: 13em;
   border: #1A1F3D 2px solid;
+  margin-top: .2em;
   border-radius: .5em;
 
 }
 .searchIcon{
-  position: absolute;
-  margin-top: .5em;
-  margin-left: 13em;
+  /* position: absolute; */
+  cursor: pointer;
+  margin-right: .3em;
+  margin-top: -2em;
   float: right;
   color: #ffff;
   background-color: #F2B035;
@@ -78,4 +97,5 @@
   background-color: #272D55;
   border-radius: .8em;
   color: white;
+  /* margin-top: -.3em; */
 }

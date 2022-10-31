@@ -45,9 +45,8 @@
     padding: 18px;
 }
 
-.nest2 img{
+.pickman img{
     width: 50vw;
     height: 50vh;
     position: relative;
-    overflow: hidden;
 }
