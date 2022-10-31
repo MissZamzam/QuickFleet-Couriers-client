@@ -170,30 +170,30 @@ export default function MultiActionAreaCard() {
       </div>
       <div class="modal-body">
         
-      <form>
+      <form onSubmit={handleSubmit}>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sender Name</label>
           <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={senderName} onChange={(e)=>setSenderName(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Receiver Name</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={receiverName} value)} required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={receiverName} onChange={(e)=>setReceiverName(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nature of Goods</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={natureOfGoods} value)} required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={natureOfGoods} onChange={(e)=>setNatureOfGoods(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Amount Paid</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={amountPaid}required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={amountPaid} onChange={(e)=>setAmountPaid(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pickup</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={pickup}  required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={pickup} onChange={(e)=>setPickup(e.target.value)} required />
         </div>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Destination</label>
-          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={destination} value)} required />
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={destination} onChange={(e)=>setDestination(e.target.value)} required />
         </div>
         {/* <button type='submit' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Place Your Order
