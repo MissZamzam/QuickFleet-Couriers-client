@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, createContext } from 'react';
 import {   BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import React from 'react'
 import './App.css';
@@ -23,30 +23,38 @@ import PackageTracking from './components/Package_Tracking/Package_Tracking';
 import OrderCard from './components/OrderForm/OrderCard'
 import Profile from './components/Profile/Profile'
 import Dashboard from './Dashboard/scenes/Dashboard';
+import axios from 'axios';
+import Mapper from './components/Maper/Mapper';
 
 function App() {
 
+  const [user, setUser] = useState(null)
 
-  const [authorized, setAuthorized] = useState(null);
-  const [userData, setUserData] = useState({});
+  // const [authorized, setAuthorized] = useState(null);
+  // const [userData, setUserData] = useState({});
 
-  useEffect(() => {
-    const reverify = async () => {
-      try {
-        const currUser = await verify();
-        setUserData(currUser);
-        setAuthorized(true);
-      } catch (error) {
-        setAuthorized(false);
-      }
-    };
-    reverify();
-  }, []);
+  // useEffect(() => {
+  //   const reverify = async () => {
+  //     try {
+  //       const currUser = await verify();
+  //       setUserData(currUser);
+  //       setAuthorized(true);
+  //     } catch (error) {
+  //       setAuthorized(false);
+  //     }
+  //   };
+  //   reverify();
+  // }, []);
 
-  return authorized === true || authorized === false ? (
+
+
+  // authorized === true || authorized === false ?
+  return  (
+
+
     <div className="App">
-    <BrowserRouter>
-    <Navbar/>
+    {/* <BrowserRouter> */}
+    <Navbar user={user} setUser={setUser}/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/services' element={<Services />} />
@@ -75,18 +83,14 @@ function App() {
 
 
       )}
+        <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
+        <Route path='/Signup' element={<Signup  />} />
+        <Route path='/Mapper' element={<Mapper  />} />
     </Routes>
     <Footer />
-  </BrowserRouter>
-
   </div>
 
-  ) : (
-    <h1>Loading</h1>
-
-
-
-  );
+  )
 
 }
 
