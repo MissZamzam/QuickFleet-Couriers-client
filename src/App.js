@@ -63,23 +63,12 @@ function App() {
         <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
         <Route path='/Signup' element={<Signup  />} />
         <Route path='/Mapper' element={<Mapper  />} />
-      {/* {authorized ? (
-        <></>
-      ) : (
-        <Navigate to="/login"/>
-
-
-      )} */}
     </Routes>
     <Footer />
-  {/* </BrowserRouter> */}
-
   </div>
 
   ) 
-  // : (
-  //   <h1>Loading</h1>
-  // );
+
 }
 
 export default App;
