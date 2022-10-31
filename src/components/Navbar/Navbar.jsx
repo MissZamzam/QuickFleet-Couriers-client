@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 // import bag from "../assets/svgs/bag.png"
 import { UserContext } from '../../hooks/useContext'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = ({setUsers, user}) => {
@@ -31,11 +32,9 @@ const Navbar = ({setUsers, user}) => {
 
                 { user ? (
                     <div class = "navbar-nav mx-auto text-center">
-                    <button class = "btn position-relative" onClick={handleLogout}>
-                        Logout
-                    </button>
-
-
+                        <button class = "btn position-relative" onClick={handleLogout}>
+                            Logout
+                        </button>
                     </div>
                 ) : (
                     <>
@@ -56,10 +55,14 @@ const Navbar = ({setUsers, user}) => {
             <div class = "collapse navbar-collapse order-lg-1" id = "navMenu">
                 <ul class = "navbar-nav mx-auto text-center">
                     <li class = "nav-item px-2 py-2">
-                        <a class = "nav-link text-uppercase text-light" href = "/">home</a>
+                        <Link to='/' class='text-uppercase text-light'>
+                            Home
+                        </Link>
                     </li>
                     <li class = "nav-item px-2 py-2">
-                        <a class = "nav-link text-uppercase text-light" href = "/Service">Service</a>
+                        <Link to='/services' class='text-uppercase text-light'>
+                            Service
+                        </Link>
                     </li>
                 </ul>
             </div>
