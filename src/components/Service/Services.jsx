@@ -13,7 +13,7 @@ export default function Services() {
     const [services, setServices] = useState([])
 
     useEffect(()=>{
-        fetch("http://127.0.0.1:3000/services")
+        fetch("/services")
         .then((res) => res.json()) 
         .then((data)=>setServices(data))
     }, [])
