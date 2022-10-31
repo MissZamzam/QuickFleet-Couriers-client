@@ -16,9 +16,6 @@ import "./Deliveries.css"
 
 function Deliveries() {
   
-  
-
-  
 const[deliveries, setDeliveries]= useState([])
 
 
