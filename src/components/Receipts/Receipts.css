@@ -8,6 +8,7 @@
     border-radius: .5em;
     height: 2.5em;
     width: 5.5em;
+    margin-top: .5em;
     color: orange;
 }
 
@@ -17,5 +18,8 @@
     margin-bottom: -1em;
     border-radius: .5em;
     float: right;
+}
+columns{
+    text-align: center;
 }
 
