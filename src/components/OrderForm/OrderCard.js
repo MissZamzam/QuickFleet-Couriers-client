@@ -21,7 +21,16 @@ export default function MultiActionAreaCard() {
     const [pickup, setPickup] = useState('')
     const [destination, setDestination] = useState('')
 
-  
+    useEffect(() =>{
+        fetch('/orders')
+        .then(res => res.json())
+        .then(data => 
+            setOrders(data))
+    }, [])
+
+    
+
+
     function handleDelete(id){
         fetch(`/orders/${id}`,{
             method: "DELETE",
