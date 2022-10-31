@@ -1,6 +1,7 @@
 import { useEffect, useState, createContext } from 'react';
 import {   BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import React from 'react'
+// import {   BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { verify } from "./auth/Users";
 import Login from './components/Login/Login';
@@ -15,14 +16,9 @@ import Receipts from './components/Receipts/Receipts';
 import Receipt from './components/Receipts/Receipt';
 import Trackings from './components/Tracking/Trackings';
 import Tracking from './components/Tracking/Trackings';
-import OrderForm from './components/OrderForm/OrderForm';
-import Deliveries from './Dashboard/scenes/Deliveries';
-// import Orders from './components/Orders/Orders';
 import Orders from './components/OrderForm/OrderForm'
-import PackageTracking from './components/Package_Tracking/Package_Tracking';
 import OrderCard from './components/OrderForm/OrderCard'
-import Profile from './components/Profile/Profile'
-import Dashboard from './Dashboard/scenes/Dashboard';
+import PackageTracking from './components/Package_Tracking/Package_Tracking';
 import axios from 'axios';
 import Mapper from './components/Maper/Mapper';
 
@@ -60,20 +56,12 @@ function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/service/:id' element={<Service />} />
         <Route path='/receipts' element={<Receipts />} />
-        <Route path='/receipts/:id' element={<Receipt />} />
+        <Route path='/receipt/:id' element={<Receipt />} />
         <Route path='/trackings' element={<Trackings />} />
         <Route path='/orders' element={<Orders />} />
         <Route path='/ordercard' element={<OrderCard />} />
-        <Route path='/deliveryForm' element={<DeliveryForm />} />
-        <Route path='/order' element={<OrderForm />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
-        <Route path='/deliveries' element={<Deliveries />} />
-        <Route path='/orders' element={<Orders/>} />
-        <Route path='/deliveryform' element={<DeliveryForm/>} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/deliveryForm' element={<DeliveryForm />} />
         <Route path='/tracking/:id' element={<Tracking />} />
-        <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
         <Route path='/Signup' element={<Signup  />} />
         <Route path='/Mapper' element={<Mapper  />} />
