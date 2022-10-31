@@ -14,63 +14,7 @@ export default function MultiActionAreaCard() {
     const [tableId, settableId] = useState(0)
 
 
-    const [senderName, setSenderName] = useState('')
-    const [receiverName, setReceiverName] = useState('')
-    const [natureOfGoods, setNatureOfGoods] = useState('')
-    const [amountPaid, setAmountPaid] = useState('')
-    const [pickup, setPickup] = useState('')
-    const [destination, setDestination] = useState('')
-
-    useEffect(() =>{
-        fetch('/orders')
-        .then(res => res.json())
-        .then(data => 
-            setOrders(data))
-    }, [])
-
-    const handleSubmit = (id)=>{
-    
-        // axios.patch("/orders",{
-            // senderName:"",
-            // receiverName:"",
-            // natureOfGoods:"",
-            // amountPaid:"",
-            // pickup:"",
-            // destination:""
-        // })
-        fetch(`/orders/${id}`,{
-            method:"PATCH",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify({
-                senderName: senderName,
-                receiverName: receiverName,
-                natureOfGoods: natureOfGoods,
-                amountPaid: amountPaid,
-                pickup: pickup,
-                destination: destination
-            })
-        })
-        .then(res=>{
-            if(res.ok){
-                res.json().then(console.log)
-            }
-        })
-    }
-
-    const handleUpdate = (table, id) =>{
-        settableId(id)
-        setSenderName(table.senderName)
-        setReceiverName(table.receiverName)
-        setNatureOfGoods(table.natureOfGoods)
-        setAmountPaid(table.amountPaid)
-        setPickup(table.pickup)
-        setDestination(table.destination)
-        console.log(table)
-    }
-
-
+   
 
     function handleDelete(id){
         fetch(`/orders/${id}`,{
