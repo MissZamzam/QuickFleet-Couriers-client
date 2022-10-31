@@ -5,9 +5,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+// import axios from '../../api/axios';
+import axios from 'axios';
+import { idID } from '@mui/material/locale';
 
 export default function MultiActionAreaCard() {
     const [orders, setOrders] = useState([])
+
+    const [senderName, setSenderName] = useState('')
+    const [receiverName, setReceiverName] = useState('')
+    const [natureOfGoods, setNatureOfGoods] = useState('')
+    const [amountPaid, setAmountPaid] = useState('')
+    const [pickup, setPickup] = useState('')
+    const [destination, setDestination] = useState('')
 
     useEffect(() =>{
         fetch('/orders')
@@ -15,6 +25,16 @@ export default function MultiActionAreaCard() {
         .then(data => 
             setOrders(data))
     }, [])
+
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        console.log("pressed")
+    }
+
+    const handleUpdate = () =>{
+        
+    }
+
 
 
     function handleDelete(id){
@@ -92,8 +112,9 @@ export default function MultiActionAreaCard() {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <button class="bg-green-500 text-white font-bold py-2 px-4 rounded">
-                      CHANGE ORDER
+                    
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        UPDATE ORDER
                     </button>
                     <button class="bg-red-500 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDelete(table.id)}>
                       CANCEL ORDER
@@ -103,6 +124,62 @@ export default function MultiActionAreaCard() {
             </>
         )
     })}
+
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Order</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      <form onSubmit={handleSubmit}>
+        <div class="mb-6">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sender Name</label>
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={senderName} onChange={(e)=>setSenderName(e.target.value)} required />
+        </div>
+        <div class="mb-6">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Receiver Name</label>
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={receiverName} onChange={(e)=>setReceiverName(e.target.value)} required />
+        </div>
+        <div class="mb-6">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nature of Goods</label>
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={natureOfGoods} onChange={(e)=>setNatureOfGoods(e.target.value)} required />
+        </div>
+        <div class="mb-6">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Amount Paid</label>
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={amountPaid} onChange={(e)=>setAmountPaid(e.target.value)} required />
+        </div>
+        <div class="mb-6">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pickup</label>
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={pickup} onChange={(e)=>setPickup(e.target.value)} required />
+        </div>
+        <div class="mb-6">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Destination</label>
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={destination} onChange={(e)=>setDestination(e.target.value)} required />
+        </div>
+        {/* <button type='submit' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Place Your Order
+        </button> */}
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button onClick={handleSubmit} type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
+  </div>
+</div>
+
+    </div>
+
   );
 }
