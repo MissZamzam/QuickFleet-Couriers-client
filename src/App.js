@@ -64,6 +64,7 @@ function App() {
           <Route path='/orderform' element={<OrderForm />} />
           <Route path='/ordercard' element={<OrderCard />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/deliveryform' element={<DeliveryForm />} />
           {/* <Route path='/orders' element={<Orders />} /> */}
           <Route path='/packagetrackings' element={<PackageTracking />} />
           <Route path='/tracking/:id' element={<Tracking />} />

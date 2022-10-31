@@ -18,10 +18,9 @@ export default function Services() {
 
 
   return (
-<div class="grid gap-10 px-5 mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="grid gap-10 px-5 mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-12">
     {services.map((service)=>{
             return(
-
                 <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                 component="img"
