@@ -10,27 +10,27 @@ export default function MultiActionAreaCard() {
     const [orders, setOrders] = useState([])
 
     useEffect(() =>{
-        fetch('http://127.0.0.1:3000/orders')
+        fetch('http://127.0.0.1:3004/orders')
         .then(res => res.json())
-        .then(data => 
+        .then(data =>
             setOrders(data))
     }, [])
 
 
     function handleDelete(id){
-        fetch(`http://localhost:3000/orders/${id}`,{
+        fetch(`http://localhost:3004/orders/${id}`,{
             method: "DELETE",
         })
 
         .then((response) => response.json())
 
-        .then(() => {        
-          const deleting = orders.filter((table) => table.id !== id);   
-               setOrders(deleting);     
+        .then(() => {
+          const deleting = orders.filter((table) => table.id !== id);
+               setOrders(deleting);
               console.log('data')
               })
-        .catch((err) => console.log(err));    alert("delete was successful");  
-    
+        .catch((err) => console.log(err));    alert("delete was successful");
+
 
 
         // .then((r)=>r.json())
@@ -47,7 +47,7 @@ export default function MultiActionAreaCard() {
 
     {orders.map((table) => {
         return(
-            <>
+            <div class="mt-24">
             <br></br>
                 <br></br>
                 <Card sx={{ maxWidth: 345 }}>
@@ -100,7 +100,7 @@ export default function MultiActionAreaCard() {
                     </button>
                 </CardActions>
                 </Card>
-            </>
+            </div>
         )
     })}
     </div>
