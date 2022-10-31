@@ -19,6 +19,7 @@ import Tracking from './components/Tracking/Trackings';
 import Orders from './components/OrderForm/OrderForm'
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
 import axios from 'axios';
+import Mapper from './components/Maper/Mapper';
 
 function App() {
 
@@ -61,6 +62,7 @@ function App() {
         <Route path='/tracking/:id' element={<Tracking />} />
         <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
         <Route path='/Signup' element={<Signup  />} />
+        <Route path='/Mapper' element={<Mapper  />} />
       {/* {authorized ? (
         <></>
       ) : (
