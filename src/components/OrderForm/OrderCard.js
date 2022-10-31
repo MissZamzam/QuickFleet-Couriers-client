@@ -38,7 +38,26 @@ export default function MultiActionAreaCard() {
             // pickup:"",
             // destination:""
         // })
-      
+        fetch(`/orders/${id}`,{
+            method:"PATCH",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                senderName: senderName,
+                receiverName: receiverName,
+                natureOfGoods: natureOfGoods,
+                amountPaid: amountPaid,
+                pickup: pickup,
+                destination: destination
+            })
+        })
+        .then(res=>{
+            if(res.ok){
+                res.json().then(console.log)
+            }
+        })
+    }
 
 
 
