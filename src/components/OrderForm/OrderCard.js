@@ -14,8 +14,14 @@ export default function MultiActionAreaCard() {
     const [tableId, settableId] = useState(0)
 
 
-   
+    const [senderName, setSenderName] = useState('')
+    const [receiverName, setReceiverName] = useState('')
+    const [natureOfGoods, setNatureOfGoods] = useState('')
+    const [amountPaid, setAmountPaid] = useState('')
+    const [pickup, setPickup] = useState('')
+    const [destination, setDestination] = useState('')
 
+  
     function handleDelete(id){
         fetch(`/orders/${id}`,{
             method: "DELETE",
