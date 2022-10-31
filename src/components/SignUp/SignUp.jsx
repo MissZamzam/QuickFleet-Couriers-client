@@ -1,8 +1,58 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./SignUp.css"
 
 export default function Registration() {
+
+    const [errMsg, setErrMsg] = useState('');
+
+    const [user, setUser] = useState({
+        username:"",
+        email: "",
+        password: "",
+        password_confirmation:""
+
+      });
+
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setUser({...user,[name]: value})
+      };
+
+
+    useEffect(() => {
+        setErrMsg('');
+    },[])
+
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        axios.post("/users/signup",{
+            email: user.email,
+            password: user.password,
+            username: user.username,
+            password_confirmation: user.password_confirmation
+        })
+        .then((res) => {setUser(res)})
+        .catch((err) => {
+            if(!err?.response){
+                console.log(err.response.status)
+            }
+            else if(err.response?.status === 422){
+                console.log(`here ${err.response.message}`)
+            }
+        })
+        .finally(()=>
+        setUser({
+            username:"",
+            email: "",
+            password: "",
+            password_confirmation:""
+        }))
+
+    }
     return (
         <div>
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
@@ -15,18 +65,20 @@ export default function Registration() {
                     </a>
                 </div>
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div>
                             <label
                                 htmlFor="name"
                                 className="block text-sm font-medium text-gray-700 undefined"
                             >
-                                Name
+                                Username
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    onChange={handleChange}
+                                    value={user.username}
                                     type="text"
-                                    name="name"
+                                    name="username"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 />
                             </div>
@@ -40,6 +92,8 @@ export default function Registration() {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    onChange={handleChange}
+                                    value={user.email}
                                     type="email"
                                     name="email"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -55,6 +109,8 @@ export default function Registration() {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    onChange={handleChange}
+                                    value={user.password}
                                     type="password"
                                     name="password"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -70,6 +126,8 @@ export default function Registration() {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    onChange={handleChange}
+                                    value={user.password_confirmation}
                                     type="password"
                                     name="password_confirmation"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -83,7 +141,8 @@ export default function Registration() {
                             Forget Password?
                         </a>
                         <div className="flex items-center mt-4">
-                            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md focus:outline-none focus:bg-600 signup">
+                            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md focus:outline-none focus:bg-600 signup" />
+                            <button type="submin" className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
                                 Register
                             </button>
                         </div>

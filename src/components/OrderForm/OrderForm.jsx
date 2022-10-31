@@ -9,17 +9,17 @@
 
 // export default function OrderForm() {
 
-  // const [senderName, setSenderName] = useState('')
-  // const [receiverName, setReceiverName] = useState('')
-  // const [natureOfGoods, setNatureOfGoods] = useState('')
-  // const [amountPaid, setAmountPaid] = useState('')
-  // const [pickup, setPickup] = useState('')
-  // const [destination, setDestination] = useState('')
-  // const navigate = useNavigate()
+//   const [senderName, setSenderName] = useState('')
+//   const [receiverName, setReceiverName] = useState('')
+//   const [natureOfGoods, setNatureOfGoods] = useState('')
+//   const [amountPaid, setAmountPaid] = useState('')
+//   const [pickup, setPickup] = useState('')
+//   const [destination, setDestination] = useState('')
+//   const navigate = useNavigate()
 
 //   function handleSubmit(e){
 //     e.preventDefault();
-//     fetch('http://127.0.0.1:3000/orders', {
+//     fetch('http://127.0.0.1:3004/orders', {
 //       method: 'POST',
 //       headers: {
 //           "Content-Type": "application/json",
@@ -51,7 +51,8 @@
 //           autoComplete="off"
 //           style={{"background":"white",
 //           "padding":'20px',
-//           "marginTop":"40px",
+//           "marginTop":"150px",
+//           "marginBottom":"50px",
 //           "width":'100%',
 //           }}
 //         >
@@ -135,7 +136,7 @@ function OrderForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    fetch('http://127.0.0.1:3000/orders',{
+    fetch('http://127.0.0.1:3004/orders',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -153,13 +154,12 @@ function OrderForm() {
     })
     .then((r)=> console.log(r))
     navigate('/ordercard')
-    // console.log(r.json())
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div class="mb-6">
+        <div class="mb-6 mt-24">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sender Name</label>
           <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={senderName} onChange={(e)=>setSenderName(e.target.value)} required />
         </div>

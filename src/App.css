@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -8,4 +9,13 @@ body{
     height: 100vh;
     position: relative;
     background: #272D55;
+}
+
+/* .navbarr{
+    margin-bottom: 20%;
+} */
+
+.routes{
+    /* margin-top: 10%; */
+    padding: 10%
 }
