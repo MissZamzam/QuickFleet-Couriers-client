@@ -47,7 +47,7 @@ export default function MultiActionAreaCard() {
 
     {orders.map((table) => {
         return(
-            <>
+            <div class="mt-24">
             <br></br>
                 <br></br>
                 <Card sx={{ maxWidth: 345 }}>
@@ -100,7 +100,7 @@ export default function MultiActionAreaCard() {
                     </button>
                 </CardActions>
                 </Card>
-            </>
+            </div>
         )
     })}
     </div>
