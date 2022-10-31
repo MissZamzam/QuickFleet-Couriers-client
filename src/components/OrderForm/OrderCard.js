@@ -59,16 +59,16 @@ export default function MultiActionAreaCard() {
         })
     }
 
-    // const handleUpdate = (table, id) =>{
-    //     settableId(id)
-    //     setSenderName(table.senderName)
-    //     setReceiverName(table.receiverName)
-    //     setNatureOfGoods(table.natureOfGoods)
-    //     setAmountPaid(table.amountPaid)
-    //     setPickup(table.pickup)
-    //     setDestination(table.destination)
-    //     console.log(table)
-    // }
+    const handleUpdate = (table, id) =>{
+        settableId(id)
+        setSenderName(table.senderName)
+        setReceiverName(table.receiverName)
+        setNatureOfGoods(table.natureOfGoods)
+        setAmountPaid(table.amountPaid)
+        setPickup(table.pickup)
+        setDestination(table.destination)
+        console.log(table)
+    }
 
 
 
