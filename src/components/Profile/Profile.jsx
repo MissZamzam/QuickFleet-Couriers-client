@@ -35,8 +35,8 @@ function Profile() {
                         <div class="social-media-wrapper">
                           <a href=" " class="social-icon"><i class="fa-solid fa-pencil" aria-hidden="true"></i></a>
                           <a href=" " class="social-icon"><i class="fa fa-envelope" aria-hidden="true">{user.email}</i></a>
-                          {/* <a href=" " class="social-icon"><i class="fab fa-github-square" aria-hidden="true"></i></a>
-                          <a href=" " class="social-icon"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a>
+                           <a href=" " class="social-icon"><i class="fa fa-phone">{user.telephone}</i></a>
+                          {/*<a href=" " class="social-icon"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a>
                           <a href=" " class="social-icon"><i class="fab fa-instagram" aria-hidden="true"></i></a> */}
                         </div>
                       </div>
@@ -48,7 +48,7 @@ function Profile() {
         </div>
       </div>
       <div class="row options-row">
-            <div>
+            <div class='options'>
               <p>Make a booking with us and have the best experience</p>
               <button class="btn">
                 <Link to="/orderform" >
@@ -59,6 +59,12 @@ function Profile() {
               <button class="btn">
                 <Link to="/ordercard" >
                   Manage Your Orders
+                </Link>
+              </button>
+              <p>Track your Orders</p>
+              <button class="btn">
+                <Link to="/packagetrackings" >
+                  Track Your Order
                 </Link>
               </button>
             </div>

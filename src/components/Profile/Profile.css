@@ -222,3 +222,11 @@
 .fab:hover {
   top: -5px;
 }
+
+.options p{
+  font-size: 20px;
+}
+
+.options button{
+  margin-top: 2%;
+}

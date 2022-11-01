@@ -21,7 +21,7 @@ function Package_Tracking ()
   console.log(singleReceipt.receipt_no);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/receipts").then((response) => {
+    fetch("/receipts").then((response) => {
       if (response.ok) {
         response.json().then((receipts) => {
           console.log( receipts );
@@ -66,8 +66,8 @@ function Package_Tracking ()
   //     console.log(receipts);
   //   })
   // }, [])
-  
-  
+
+
   return (
     <div className="container-fluid bg">
       <div className="receipt-form">
