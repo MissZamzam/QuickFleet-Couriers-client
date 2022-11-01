@@ -60,7 +60,7 @@ function Receipts({ onAddingReceipt }) {
       field: "nature_of_goods",
       headerName: "Nature Of Goods",
       type: "singleSelect",
-      valueOptions: ["Flamable", "Perishable", "Fragile"],
+      valueOptions: ["Flammable", "Perishable", "Fragile", "Bulk", "Medical"],
       editable: true,
       width: 150,
       align: "center",
@@ -230,23 +230,34 @@ function Receipts({ onAddingReceipt }) {
                       />
                     </div>
                     <div className="form-group">
+                    <label htmlFor="exampleInputEmail1">Nature of Goods</label>
+                    <input
+                      type="text"
+                      id="nature of goods"
+                      autoComplete="off"
+                      className="form-control"
+                      placeholder="enter nature of goods..."
+                      value={nature_of_goods}
+                      onChange={(e) => setNatureGoods(e.target.value)}
+                    />
+                  </div>
+                    {/* <div className="form-group">
                       <label htmlFor="exampleInputEmail1">
                         Nature of Goods
                       </label>
                       <select
                         className="form-select"
-                        placeholder="enter pickup place.."
-                        value={nature_of_goods}
                         aria-label="Default select example"
+                        // onChange={(e) => setNatureGoods(e.target.value)}
                       >
                         <option selected>Select</option>
-                        <option value="1">Flammable</option>
-                        <option value="2">Fragile</option>
-                        <option value="3">Perishable</option>
-                        <option value="3">Bulk</option>
-                        <option value="3">Medical</option>
-                      </select>
-                    </div>
+                        <option value="Flammable">Flammable</option>
+                        <option value="Fragile">Fragile</option>
+                        <option value="Perishable">Perishable</option>
+                        <option value="Bulk">Bulk</option>
+                        <option value="Medical">Medical</option>
+                      </select> */}
+                    {/* </div> */}
                     <div className="form-group">
                       <label htmlFor="exampleInputEmail1">Pickup</label>
                       <input
