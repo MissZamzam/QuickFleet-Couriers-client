@@ -7,13 +7,13 @@ function Profile() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch('http://127.0.0.1:3004/use_profiles')
+    fetch('/use_profiles')
     .then((res)=> res.json())
     .then((data) => setUsers(data))
   }, [])
 
   return (
-    <div class="container cont">
+    <div class="container cont mb-10">
       <div class="row user-row">
         <div>
             {users.map((user)=>{
@@ -36,8 +36,6 @@ function Profile() {
                           <a href=" " class="social-icon"><i class="fa-solid fa-pencil" aria-hidden="true"></i></a>
                           <a href=" " class="social-icon"><i class="fa fa-envelope" aria-hidden="true">{user.email}</i></a>
                            <a href=" " class="social-icon"><i class="fa fa-phone">{user.telephone}</i></a>
-                          {/*<a href=" " class="social-icon"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a>
-                          <a href=" " class="social-icon"><i class="fab fa-instagram" aria-hidden="true"></i></a> */}
                         </div>
                       </div>
                     </div>
@@ -48,26 +46,28 @@ function Profile() {
         </div>
       </div>
       <div class="row options-row">
-            <div class='options'>
-              <p>Make a booking with us and have the best experience</p>
-              <button class="btn">
-                <Link to="/orderform" >
-                  Book appointment
-                </Link>
-              </button>
-              <p>Check your Orders</p>
-              <button class="btn">
-                <Link to="/ordercard" >
-                  Manage Your Orders
-                </Link>
-              </button>
-              <p>Track your Orders</p>
-              <button class="btn">
-                <Link to="/packagetrackings" >
-                  Track Your Order
-                </Link>
-              </button>
-            </div>
+      <div class="box">
+        <div class='options'>
+        <p>Book your Orders</p>
+          <button class="btn">
+            <Link to="/orderform" >
+              Book Orders
+            </Link>
+          </button>
+          <p>Check your Orders</p>
+          <button class="btn">
+            <Link to="/ordercard" >
+              Manage Your Orders
+            </Link>
+          </button>
+          <p>Track your Orders</p>
+          <button class="btn">
+            <Link to="/packagetrackings" >
+              Track Your Order
+            </Link>
+          </button>
+        </div>
+      </div>
       </div>
     </div>
   )

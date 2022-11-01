@@ -1,11 +1,11 @@
 // import axios from 'axios';
-// import React, { useState } from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../auth/Users';
 import "./Login.css"
 import { useRef, useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+// import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import axios from "../../api/axios"
 const LOGIN_URL = '/signin';
@@ -169,7 +169,7 @@ export default function Login({setUser, user}) {
         <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
                 <h1 className="text-3xl font-semibold text-center text-purple-700">
-                <span className='quick'>Log</span><span className='fleet'>In</span>
+                <span>Log</span><span className='fleet'>In</span>
                 </h1>
             {/* <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> */}
 
