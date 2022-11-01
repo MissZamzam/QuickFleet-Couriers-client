@@ -17,14 +17,16 @@ import Receipts from './components/Receipts/Receipts';
 import Receipt from './components/Receipts/Receipt';
 import Trackings from './components/Tracking/Trackings';
 import Tracking from './components/Tracking/Trackings';
-import Orders from './components/OrderForm/OrderForm';
+import Orders from './components/Orders/Orders';
 import OrderCard from './components/OrderForm/OrderCard';
 import OrderForm from './components/OrderForm/OrderForm';
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
+import Dashboard from './components/Dashboard/scenes/Dashboard';
+import Deliveries from './components/Dashboard/scenes/Deliveries';
 
 // import OrderCard from './components/OrderForm/OrderCard'
 // import Profile from './components/Profile/Profile';
- import Dashboard from './components/Dashboard/scenes/Dashboard';
+
 // import Dashboard from './Dashboard/scenes/Dashboard';
 
 // import Dashboard from './Dashboard/scenes/Dashboard';
@@ -95,9 +97,10 @@ function App() {
           <Route path='/ordercard' element={<OrderCard />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/dashboard' element={<Dashboard/>} />
+          <Route path='/deliveries' element={<Deliveries/>} />
           <Route path='/deliveryform' element={<DeliveryForm />} />
           <Route path='/deliveryform' element={<DeliveryForm />} />
-          {/* <Route path='/orders' element={<Orders />} /> */}
+          <Route path='/orders' element={<Orders />} />
           <Route path='/packagetrackings' element={<PackageTracking />} />
           <Route path='/tracking/:id' element={<Tracking />} />
           <Route path='/Login' element={<Login user={user} setUser={setUser} />} />

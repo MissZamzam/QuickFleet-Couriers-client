@@ -14,55 +14,33 @@ function DeliveryForm() {
     const [packageType, setPackageType] = useState('')
     const [packageDetails, setPackageDetails] = useState('')
 
+    function handleSubmit(e) {
+      e.preventDefault()
+      fetch('http://127.0.0.1:3004/deliveries',{
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        }, 
+        
+        body: JSON.stringify(
+          {
+          receiverName,
+          receiverContact,
+          pickupInstructions,
+          deliveryInstructions,
+          packageType,
+          packageDetails,
+          }
+        ),
+
+      })
+      .theb((r) => r.json())
+    }
+
   return (
+
     <div>
-        {/* <div class="flex justify-center mb-4">
-            <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-                <img class=" w-full h-24 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
-                <div class="p-6 flex flex-col justify-start">
-                    <h5 class="text-gray-900 text-xl font-medium mb-2">Deliver To</h5>
-                    <form class="w-full max-w-sm">
-                        <div class="flex items-center py-2">
-                            <TextField id="standard-basic" label="Receiver Name" value={receiverName} variant="standard" onChange={(e)=> setReceiverName(e.target.value)} />
-                        </div>
-                        <div class="flex items-center py-2">
-                        <TextField id="standard-basic" label="Receiver Contact" value={receiverContact} variant="standard" onChange={(e)=> setReceiverContact(e.target.value)} />
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="flex justify-center mb-4">
-            <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-                <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
-                <div class="p-6 flex flex-col justify-start">
-                    <h5 class="text-gray-900 text-xl font-medium mb-2">Instructions</h5>
-                    <form class="w-full max-w-sm">
-                        <div class="flex items-center py-2">
-                            <TextField id="standard-basic" label="Receiver Contact" value={pickupInstructions} variant="standard" onChange={(e)=> setPickupInstructions(e.target.value)} />
-                        </div>
-                        <div class="flex items-center py-2">
-                            <TextField id="standard-basic" label="Receiver Contact" value={deliveryInstructions} variant="standard" onChange={(e)=> setDeliveryInstructions(e.target.value)} />
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="flex justify-center mb-4">
-            <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-                <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
-                <div class="p-6 flex flex-col justify-start">
-                    <h5 class="text-gray-900 text-xl font-medium mb-2">Package Details</h5>
-                    <form class="w-full max-w-sm">
-                        <div class="flex items-center py-2">
-                            <TextField id="standard-basic" label="Receiver Contact" value={packageType} variant="standard" onChange={(e)=> setPackageType(e.target.value)} />
-                        </div>
-                        <div class="flex items-center py-2">
-                            <TextField id="standard-basic" label="Receiver Contact" value={packageDetails} variant="standard" onChange={(e)=> setPackageDetails(e.target.value)} />
-                        </div>
-                    </form>
-                </div>
-            </div> */}
+        
 
       <div class="flex justify-center mb-4">
         <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg deliveryformCard1">
@@ -76,7 +54,7 @@ function DeliveryForm() {
 
           <div class="p-6 flex flex-col justify-start">
             <h5 class="text-gray-900 text-xl font-medium mb-2">Deliver To</h5>
-            <form class="w-full max-w-sm">
+            <form class="w-full max-w-sm" onSubmit={handleSubmit}>
               <div class="flex items-center py-2">
                 <TextField
                   id="standard-basic"

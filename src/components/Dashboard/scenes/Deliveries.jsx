@@ -167,13 +167,13 @@ function Deliveries({ onAddingDelivery }) {
   }, []);
 
   async function getDeliveries() {
-    let result = await fetch("http://127.0.0.1:3000/deliveries");
+    let result = await fetch("/deliveries");
     result = await result.json();
     setDeliveries(result);
   }
 
   function deleteDelivery(id) {
-    fetch(`http://127.0.0.1:3000/deliveries/${id}`, {
+    fetch(`/deliveries/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -193,7 +193,7 @@ function Deliveries({ onAddingDelivery }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("http://127.0.0.1:3000/deliveries", {
+    fetch("/deliveries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -213,7 +213,7 @@ function Deliveries({ onAddingDelivery }) {
           console.log(newDelivery);
           onAddingDelivery(newDelivery);
 
-          navigate(`/http://127.0.0.1:3000/deliveries/${id}`);
+          navigate(`/deliveries/${id}`);
           setErrors([]);
         });
 
@@ -385,7 +385,7 @@ function Deliveries({ onAddingDelivery }) {
               <TableCell align="right">Delivery Instructions</TableCell>
               <TableCell align="right">Service Type</TableCell>
               <TableCell align="right">Package Details</TableCell>
-              <TableCell align="right">Delete</TableCell>
+              {/* <TableCell align="right">Delete</TableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -411,15 +411,17 @@ function Deliveries({ onAddingDelivery }) {
                     <button className="viewBtn">View More</button>
                   </Link>
                 </TableCell>
+                <TableCell align="right">
                   <button
                     onClick={() => {
                       deleteDelivery(row.id);
                     }}
-                    type="button"
-                    className="btn-danger my-3"
+                    // type="button"
+                    className="btn-danger"
                   >
-                    DELETE
+                    Delete
                   </button>
+                  </TableCell>
               </TableRow>
             ))}
           </TableBody>

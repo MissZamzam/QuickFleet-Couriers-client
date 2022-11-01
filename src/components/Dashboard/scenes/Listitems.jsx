@@ -6,15 +6,13 @@ import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-// import PeopleIcon from '@mui/icons-material/People';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import Receipts from '../../Receipts/Receipts';
 import Orders from '../../Orders/Orders';
 import { Link } from 'react-router-dom';
-// import Login from '../../components/Login/Login';
 import Deliveries from './Deliveries';
-// import Deliveries from './Deliveries';
-// import Deliveries from "./Deliveries";
+
+
 
 
 export const mainListItems = (
@@ -48,7 +46,7 @@ export const mainListItems = (
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        {/* <PeopleIcon /> */}
+        
       </ListItemIcon>
       {/* <ListItemText primary="Customers" /> */}
       {/* <Link to="/users" element={<Login/>}>Customers</Link> */}
@@ -61,26 +59,26 @@ export const mainListItems = (
 export const secondaryListItems = (
   <React.Fragment>
     <ListSubheader component="div" inset>
-    {/* Saved reports */}
+   
     </ListSubheader>
     <ListItemButton>
       <ListItemIcon>
-        {/* <AssignmentIcon /> */}
+        
       </ListItemIcon>
       
-      {/* <ListItemText primary="Current month" /> */}
+      
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        {/* <AssignmentIcon /> */}
+       
       </ListItemIcon>
-      {/* <ListItemText primary="Last quarter" /> */}
+     
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        {/* <AssignmentIcon /> */}
+        
       </ListItemIcon>
-      {/* <ListItemText primary="Year-end sale" /> */}
+     
     </ListItemButton>
   </React.Fragment>
 );
