@@ -4,7 +4,6 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Link, useNavigate } from "react-router-dom";
-// import Receipt from "./Receipt"
 import Receipt from "./Receipt";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
@@ -12,11 +11,6 @@ import { Button, Stack } from "@mui/material";
 import "./Receipts.css";
 
 function Receipts({ onAddingReceipt }) {
-  // receipts.map( ( recp ) =>
-  // {
-  //   console.log(recp)
-  // })
-  // console.log( receipt )
 
   const [receipts, setReceipts] = useState([]);
   const [receipt_no, setReceiptNumber] = useState("");
@@ -27,8 +21,10 @@ function Receipts({ onAddingReceipt }) {
   const [destination, setDestination] = useState("");
   const [amount_paid, setAmount] = useState("");
   const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  // const [receipt, setReceipt] = useState({})
+  const [ isLoading, setIsLoading ] = useState( false );
+  const [ pageSize, setPageSize ] = useState( 5 );
+  const [rowId, setRowId] = useState(null);
+  const [receipt, setReceipt] = useState({})
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -36,72 +32,75 @@ function Receipts({ onAddingReceipt }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
+    { field: "id", headerName: "ID", width: 50, align: "center" },
 
-    { field: "receipt_no", headerName: "Receipt.No" },
+    {
+      field: "receipt_no",
+      headerName: "Receipt.No",
+      width: 170,
+      align: "center",
+    },
 
     {
       field: "sender_name",
       headerName: "Sender Name",
-      flex: 1,
-      cellClassName: "name-column--cell",
+      width: 150,
+      align: "center",
     },
     {
       field: "receiver_name",
       headerName: "Receiver Name",
-      flex: 1,
-      cellClassName: "name-column--cell",
+      width: 150,
+      align: "center",
     },
     {
       field: "nature_of_goods",
       headerName: "Nature Of Goods",
-      flex: 1,
+      type: "singleSelect",
+      valueOptions: ["Flamable", "Perishable", "Fragile"],
+      editable: true,
+      width: 150,
+      align: "center",
     },
     {
       field: "pickup",
       headerName: "PickUp",
-      flex: 1,
+      width: 130,
+      align: "center",
     },
     {
       field: "destination",
       headerName: "Destination",
-      flex: 1,
+      width: 130,
+      align: "center",
     },
     {
       field: "amount_paid",
       headerName: "Amount Paid",
-      flex: 1,
+      width: 130,
+      align: "center",
     },
+
     {
-      field: "action",
-      headerName: "Action",
-      width: 180,
-      sortable: false,
-      disableClickEventBubbling: true,
+      field: "Route",
+      headerName: "View",
+      type: "actions",
+      width: 130,
+      align: "center",
 
       renderCell: (params) => {
-        const onClick = (e) => {
-          const currentRow = params.row;
-          return alert(JSON.stringify(currentRow, null, 4));
-        };
-
-        // const handleReceipt = ( receipt ){
-        //   setReceipt( receipt )
-        // };
+        console.log(params);
 
         return (
-          <Stack spacing={1}>
-            {receipts.map((receipt) => {
-              return (
-                <Link
-                  to={`/receipts/${receipt.id}`}
-                  onClick={() => <Receipt key={receipt.id} />}
-                >
-                  <button className="viewBtn">View More</button>
-                </Link>
-              );
-            })}
-          </Stack>
+          <>
+            <Link
+              to={`/receipt/${params.id}`}
+              onClick={() => <Receipt key={receipt.id} />}
+              target="blank"
+            >
+              <button className="viewBtn">View More</button>
+            </Link>
+          </>
         );
       },
     },
@@ -319,6 +318,9 @@ function Receipts({ onAddingReceipt }) {
             </div>
           </div>
         </Modal>
+        <Typography variant="h3" component="h3" sx={{ textAlign: "center" }}>
+          Manage Receipts
+        </Typography>
         <Box
           m="40px 0 0 0"
           height="75vh"
@@ -334,6 +336,15 @@ function Receipts({ onAddingReceipt }) {
           <DataGrid
             rows={receipts}
             columns={columns}
+            getRowId={(row) => row.id}
+            rowsPerPageOptions={[5, 10, 20]}
+            pageSize={pageSize}
+            onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+            getRowSpacing={(params) => ({
+              top: params.isFirstVisible ? 0 : 4,
+              bottom: params.isLastVisible ? 0 : 4,
+            })}
+            onCellEditCommit={(params) => setRowId(params.id)}
             components={{ Toolbar: GridToolbar }}
           />
         </Box>

@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useEffect } from 'react'
-// import bag from "../assets/svgs/bag.png"
 import { UserContext } from '../../hooks/useContext'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
@@ -18,16 +17,16 @@ const Navbar = ({setUsers, user}) => {
             }
         })
     }
+    
+
 
   return (
     <div class="mt-36">
           <nav class = "navbar navbar-expand-lg navbar-light fixed-top navbarr">
         <div class = "container">
-            <a class = "navbar-brand d-flex justify-content-between align-items-center order-lg-0 spans" href="/">
-
-                <span class = "text-uppercase fw-lighter ms-2 quick">Quick<span style={{color:"orange"}} class="fleet">Fleet</span></span>
+            <a class = "navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="/">
+                <span class = "text-uppercase fw-lighter ms-2">Quick<span style={{color:"orange"}}>Fleet</span></span>
             </a>
-
             <div class = "order-lg-2 nav-btns">
 
                 { user ? (
