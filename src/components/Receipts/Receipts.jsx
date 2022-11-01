@@ -108,7 +108,7 @@ function Receipts({ onAddingReceipt }) {
   ];
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/receipts")
+    fetch("/receipts")
       .then((response) => response.json())
       //   .then( ( response ) => console.log(response) )
       .then((data) => {
@@ -121,7 +121,7 @@ function Receipts({ onAddingReceipt }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("http://127.0.0.1:3000/receipts", {
+    fetch("/receipts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
