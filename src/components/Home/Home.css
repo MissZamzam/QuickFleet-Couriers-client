@@ -8,45 +8,31 @@
 
 
 .caption{
-    color: white;
     font-size: xx-large;
     font-weight: 800;
     margin-bottom: 15px;
 
 }
 .first{
-    color: white;
-    font-size: 12px;
+    color: black;
+    font-size: 32px;
     margin-top: 10px;
     font-size: large;
     margin-bottom: 15px;
 }
-.solutions{
-    background-color: #F2B035;
-    padding: 16px 40px;
-    border-radius: 27px;
-    margin: 10px;
-    margin-left: 139px;
-}
-.town{
-    background-color: #353D68;
-    color: white;
-    font-size: larger;
-    margin-left: 160px;
-    width: 140px;
-    padding: 28px;
-}
-.client{
-    background-color: #060E26;
-    color: white;
-    margin-left: 300px;
-    width: 180px;
-    height: 100px;
-    padding: 18px;
-}
 
 .pickman img{
-    width: 50vw;
-    height: 50vh;
+    width: 30vw;
+    height: 30vh;
     position: relative;
+
+}
+
+#ex{
+    background-color: white;
+    border: 1px solid #3c6aaf;
+}
+
+#exp{
+    color: #3c6aaf;
 }

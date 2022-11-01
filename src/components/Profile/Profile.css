@@ -252,7 +252,7 @@
   position: absolute;
   width: 500px;
   height: 500px;
-  background-image: conic-gradient(transparent,transparent,transparent, #343281);
+  /* background-image: conic-gradient(transparent,transparent,transparent, #343281); */
   animation: animate 4s linear infinite;
   animation-delay: -2s;
 }
@@ -262,7 +262,7 @@
   position: absolute;
   width: 500px;
   height: 500px;
-  background-image: conic-gradient(transparent,transparent,transparent, #00ccff);
+  /* background-image: conic-gradient(transparent,transparent,transparent, #00ccff); */
   animation: animate 4s linear infinite;
 }
 
