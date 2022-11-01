@@ -12,7 +12,7 @@ function Receipt() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:3000/receipts/${id}`).then((response) => {
+    fetch(`/receipts/${id}`).then((response) => {
       if (response.ok) {
         response.json().then((receipt) => {
           console.log(receipt);

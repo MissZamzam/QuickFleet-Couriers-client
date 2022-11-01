@@ -1,5 +1,7 @@
-.navbar{
+.navbarr{
     background: #272D55;
+    /* background: red; */
+    border-bottom: 1px solid white;
 }
 
 .quick{
@@ -21,4 +23,16 @@ i{
 
 .line{
     border-top: 2px solid rgb(20, 5, 5);
+}
+
+.spans span{
+    font-weight: 900;
+}
+/* .quicknavbar{
+    background: #272D55;
+    width: 100%;
+} */
+.quick{
+    color: #fff;
+    font-weight: 900;
 }

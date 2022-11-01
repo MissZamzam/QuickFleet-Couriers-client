@@ -1,13 +1,12 @@
-import * as React from 'react';
+import React, {useState} from 'react'
+import "./OrderForm.css";
+import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormLabel from '@mui/material/FormLabel'
-import "./OrderForm.css";
-import {useState} from "react"
-import { useNavigate } from 'react-router-dom';
 
-export default function OrderForm() {
+function OrderForm() {
 
   const [senderName, setSenderName] = useState('')
   const [receiverName, setReceiverName] = useState('')
@@ -17,9 +16,9 @@ export default function OrderForm() {
   const [destination, setDestination] = useState('')
   const navigate = useNavigate()
 
-  function handleSubmit(e){
-    e.preventDefault();
-    fetch('http://127.0.0.1:3004/orders', {
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('http://127.0.0.1:3004/orders',{
       method: 'POST',
       headers: {
           "Content-Type": "application/json",
@@ -39,32 +38,33 @@ export default function OrderForm() {
     navigate('/ordercard')
   }
 
-  return (
+  return(
     <div className='form'>
-    <form onSubmit={handleSubmit}> 
+      <form onSubmit={handleSubmit}>
         <Box
-          sx={{
-            '& .MuiTextField-root': { m: 1, width: '25ch' },
-          }}
-          noValidate
-          autoComplete="off"
-          style={{"background":"white",
-          "padding":'20px',
-          "marginTop":"140px",
-          "width":'100%',
-          }}
-        >
-        <FormLabel
-          style={{"justifyContent": 'center',
-            "alignItems":"center",
-            "display": "flex",
-            "fontWeight": "bolder",
-            "color": "black",
-            "fontSize": "20px"
-          }}
-        >
-          Place your order
-        </FormLabel>
+            sx={{
+              '& .MuiTextField-root': { m: 1, width: '25ch' },
+            }}
+            noValidate
+            autoComplete="off"
+            style={{"background":"white",
+            "padding":'20px',
+            "marginTop":"10px",
+            "marginBottom": '30px',
+            "width":'100%',
+            }}
+          >
+          <FormLabel
+            style={{"justifyContent": 'center',
+              "alignItems":"center",
+              "display": "flex",
+              "fontWeight": "bolder",
+              "color": "black",
+              "fontSize": "20px"
+            }}
+          >
+            Place your order
+          </FormLabel>
           <div>
             <TextField
               required
@@ -79,6 +79,7 @@ export default function OrderForm() {
               value={receiverName}
               onChange={(e)=>setReceiverName(e.target.value)}
             />
+            </div>
             <div>
               <TextField
                 id="outlined-password-input"
@@ -112,12 +113,15 @@ export default function OrderForm() {
                 "margin":"18px"
               }}>Make Order</Button>
             </div>
-          </div>
-        </Box>
-    </form>
+          </Box>
+      </form>
     </div>
-  );
+  )
+
 }
+
+export default OrderForm;
+
 
 
 
