@@ -152,6 +152,7 @@ export default function Login({setUser, user}) {
             res.json().then((user) => {
               setUser(user);
               navigate("/orders");
+              navigate("/");
               console.log(user);
               sessionStorage.setItem("user", JSON.stringify(user));
               console.log(user);
