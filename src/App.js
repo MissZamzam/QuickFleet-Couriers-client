@@ -73,9 +73,9 @@ function App() {
         <Route path='/ordercard' element={<OrderCard />} />
         <Route path='/packagetrackings' element={<PackageTracking />} />
         <Route path='/tracking/:id' element={<Tracking />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        {/* <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/deliveries' element={<Deliveries />} />
-        <Route path='/orders' element={<Orders/>} />
+        <Route path='/orders' element={<Orders/>} /> */}
         <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
         <Route path='/Signup' element={<Signup  />} />
         <Route path='/Mapper' element={<Mapper  />} />
