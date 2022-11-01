@@ -24,7 +24,7 @@ import PackageTracking from './components/Package_Tracking/Package_Tracking';
 import axios from 'axios';
 import Mapper from './components/Maper/Mapper';
 // import OrderForm from './components/OrderForm/OrderForm';
-import OrderCard from './components/OrderForm/OrderCard';
+// import OrderCard from './components/OrderForm/OrderCard';
 
 function App() {
 
@@ -55,7 +55,7 @@ function App() {
     <div className="App">
     {/* <BrowserRouter> */}
     <Navbar user={user} setUser={setUser}/>
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/service' element={<Services />} />
         <Route path='/service/:id' element={<Service />} />
@@ -69,7 +69,7 @@ function App() {
         <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
         <Route path='/Signup' element={<Signup  />} />
         <Route path='/Mapper' element={<Mapper  />} />
-    </Routes>
+    </Routes> */}
     <div className="routes">
         <Routes>
           <Route path='/' element={<Home />} />
@@ -81,6 +81,7 @@ function App() {
           <Route path='/orderform' element={<OrderForm />} />
           <Route path='/ordercard' element={<OrderCard />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/deliveryform' element={<DeliveryForm />} />
           {/* <Route path='/orders' element={<Orders />} /> */}
           <Route path='/packagetrackings' element={<PackageTracking />} />
           <Route path='/tracking/:id' element={<Tracking />} />
