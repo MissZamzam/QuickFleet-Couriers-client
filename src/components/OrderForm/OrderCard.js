@@ -45,7 +45,7 @@ export default function MultiActionAreaCard() {
             },
             body: JSON.stringify({
                 senderName: senderName,
-                receiverName: receiverName,
+                receiverName: receiverName                                                                                                                                                 ,
                 natureOfGoods: natureOfGoods,
                 amountPaid: amountPaid,
                 pickup: pickup,
