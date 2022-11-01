@@ -7,6 +7,9 @@ import { Link, useNavigate } from "react-router-dom";
 import Receipt from "./Receipt";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import FormLabel from "@mui/material/FormLabel";
+
 import { Button, Stack } from "@mui/material";
 import "./Receipts.css";
 
@@ -188,7 +191,7 @@ function Receipts({ onAddingReceipt }) {
                 </button>
               </div>
               <div className="modal-body">
-                <div className="addtenant-pg">
+                <div className="addreceipt-pg">
                   <form className="adding-form" onSubmit={handleSubmit}>
                     <div className="form-group">
                       <label htmlFor="exampleInputEmail1">Receipt.No</label>
@@ -217,8 +220,8 @@ function Receipts({ onAddingReceipt }) {
                     <div className="form-group">
                       <label htmlFor="exampleInputEmail1">Receiver</label>
                       <input
-                        type="ext"
-                        id="gender"
+                        type="text"
+                        id="receiver"
                         autoComplete="off"
                         className="form-control"
                         placeholder="enter receiver name..."
@@ -230,15 +233,19 @@ function Receipts({ onAddingReceipt }) {
                       <label htmlFor="exampleInputEmail1">
                         Nature of Goods
                       </label>
-                      <input
-                        type="tel"
-                        id="contact"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter nature of goods..."
+                      <select
+                        className="form-select"
+                        placeholder="enter pickup place.."
                         value={nature_of_goods}
-                        onChange={(e) => setNatureGoods(e.target.value)}
-                      />
+                        aria-label="Default select example"
+                      >
+                        <option selected>Select</option>
+                        <option value="1">Flammable</option>
+                        <option value="2">Fragile</option>
+                        <option value="3">Perishable</option>
+                        <option value="3">Bulk</option>
+                        <option value="3">Medical</option>
+                      </select>
                     </div>
                     <div className="form-group">
                       <label htmlFor="exampleInputEmail1">Pickup</label>
@@ -265,7 +272,7 @@ function Receipts({ onAddingReceipt }) {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Amount</label>
+                      <label htmlFor="exampleInputEmail1">Price</label>
                       <input
                         type="text"
                         id="amount"
@@ -303,16 +310,27 @@ function Receipts({ onAddingReceipt }) {
                 </div>
               </div>
               <div className="modal-footer">
+                {/* <div className="form-group">
+                  <button type="submit" className="btn btn-primary createreceipt">
+                    {isLoading ? "Loading..." : "Add"}{" "}
+                    <i className="fa fa-sign-in" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div className="form-group">
+                  {errors.map((err) => (
+                    <div key={err}>{err}</div>
+                  ))}
+                </div> */}
+                <button type="button" className="btn btn-primary savechanges">
+                  Save changes
+                </button>
                 <button
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn btn-secondary closemodal"
                   data-dismiss="modal"
                   onClick={handleClose}
                 >
                   Close
-                </button>
-                <button type="button" className="btn btn-primary">
-                  Save changes
                 </button>
               </div>
             </div>
