@@ -487,15 +487,14 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
-import { mainListItems,secondaryListItems } from './Listitems';
+import { mainListItems, secondaryListItems } from './Listitems';
+// import { mainListItems,secondaryListItems } from './Listitems';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 //import NotificationsIcon from '@mui/icons-material/Notifications';
 import Chart from '../Chart';
 import Deliveries from './Deliveries';
-import Orders from '../../components/Orders/Orders';
-import Receipts from '../../components/Receipts/Receipts';
-// import Deposits from './Deposits';
-// import Orders from './Orders';
+import Orders from '../../Orders/Orders';
+import Receipts from '../../Receipts/Receipts';
 
 function Copyright(props) {
   return (
