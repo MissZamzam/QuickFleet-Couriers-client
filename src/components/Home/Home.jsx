@@ -5,7 +5,7 @@ import "./Home.css"
 function Home(){
 return(
     <div className="container-fluid my-8">
-        <div className="row justify-content-center">
+        <div className="row">
             <div className="col-md-3 col-sm-4 col-lg-6">
                 <h1 className="caption">We Are Top Courier <br></br> and Mover Service <br></br> in Nairobi</h1>
                 <p className="first">An application where users can login to send packages.Just
