@@ -47,7 +47,7 @@ function Profile() {
       </div>
       <div class="row options-row">
             <div class='options'>
-              <p>Make a booking with us and have the best experience</p>
+            <p>Book your Orders</p>
               <button class="btn">
                 <Link to="/orderform" >
                   Book appointment
