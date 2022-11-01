@@ -1,11 +1,11 @@
 // import axios from 'axios';
-// import React, { useState } from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../auth/Users';
 import "./Login.css"
 import { useRef, useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+// import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import axios from "../../api/axios"
 const LOGIN_URL = '/signin';
@@ -151,7 +151,7 @@ export default function Login({setUser, user}) {
           if (res.ok) {
             res.json().then((user) => {
               setUser(user);
-              navigate("/");
+              navigate("/profile");
               console.log(user);
               sessionStorage.setItem("user", JSON.stringify(user));
               console.log(user);
@@ -213,7 +213,7 @@ export default function Login({setUser, user}) {
                         Forget Password?
                     </a>
                     <div className="mt-6">
-                        <button type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600 login" />
+                        {/* <button type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600 login" /> */}
                         <button  className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
                             Login
                         </button>
