@@ -88,14 +88,15 @@ function Receipts({ onAddingReceipt }) {
       width: 130,
       align: "center",
 
-      renderCell: (cellValues) => {
-        console.log(cellValues);
+      renderCell: (params) => {
+        console.log(params);
 
         return (
           <>
             <Link
-              to={`/receipts/${cellValues.id}`}
-              onClick={() => <Receipt key={receipt.id} />}
+              to={`/receipt/${params.id}`}
+              onClick={ () => <Receipt key={ receipt.id } /> }
+              target = "blank"
             >
               <button className="viewBtn">View More</button>
             </Link>
@@ -106,7 +107,7 @@ function Receipts({ onAddingReceipt }) {
   ];
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/receipts")
+    fetch("/receipts")
       .then((response) => response.json())
       //   .then( ( response ) => console.log(response) )
       .then((data) => {
@@ -119,7 +120,7 @@ function Receipts({ onAddingReceipt }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("http://127.0.0.1:3000/receipts", {
+    fetch("/receipts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
