@@ -10,7 +10,7 @@ function Package_Tracking() {
 
   useEffect( () =>
   {
-    fetch( "http://127.0.0.1:3000/receipts" )
+    fetch( "/receipts" )
       .then( response => response.json() )
       .then( ( receipts ) =>
       {
