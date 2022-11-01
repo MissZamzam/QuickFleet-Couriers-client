@@ -135,7 +135,7 @@ export default function Registration() {
                             </div>
                         </div>
                         <a
-                            href="#"
+                            href=" "
                             className="text-xs text-blue-600"
                         >
                             Forget Password?
