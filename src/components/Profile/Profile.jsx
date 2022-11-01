@@ -1,43 +1,67 @@
 import React, {useState, useEffect} from 'react'
 import './Profile.css'
+import { Link } from 'react-router-dom'
 
 function Profile() {
 
-  const [user, setUser] = useState([])
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch('/users')
+    fetch('http://127.0.0.1:3004/use_profiles')
     .then((res)=> res.json())
-    .then((data) => setUser(data))
+    .then((data) => setUsers(data))
   }, [])
 
-
   return (
-    <div>
-      <div class="background"></div>
-
-      <div class="outer-div">
-        <div class="inner-div">
-          <div class="front">
-            <div class="front__bkg-photo"></div>
-            <div class="front__face-photo"></div>
-            <div class="front__text">
-              <h3 class="front__text-header">Bobby Korec</h3>
-              <p class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i>Seattle</p>
-
-              <span class="front__text-hover">Hover to Find Me</span>
-            </div>
-          </div>
-          <div class="back">
-            <div class="social-media-wrapper">
-              <a href=" " class="social-icon"><i class="fab fa-codepen" aria-hidden="true"></i></a>
-              <a href=" " class="social-icon"><i class="fab fa-github-square" aria-hidden="true"></i></a>
-              <a href=" " class="social-icon"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a>
-              <a href=" " class="social-icon"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            </div>
-          </div>
-
+    <div class="container cont">
+      <div class="row user-row">
+        <div>
+            {users.map((user)=>{
+              return(
+                <div>
+                  <div class="background"></div>
+                  <div class="outer-div">
+                    <div class="inner-div">
+                      <div class="front">
+                        <div class="front__bkg-photo"></div>
+                        <div class="front__face-photo"></div>
+                        <div class="front__text">
+                          <h3 class="front__text-header">{user.name}</h3>
+                          <p class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i>{user.location}</p>
+                          <span class="front__text-hover">Read more about Me</span>
+                        </div>
+                      </div>
+                      <div class="back">
+                        <div class="social-media-wrapper">
+                          <a href=" " class="social-icon"><i class="fa-solid fa-pencil" aria-hidden="true"></i></a>
+                          <a href=" " class="social-icon"><i class="fa fa-envelope" aria-hidden="true">{user.email}</i></a>
+                          {/* <a href=" " class="social-icon"><i class="fab fa-github-square" aria-hidden="true"></i></a>
+                          <a href=" " class="social-icon"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a>
+                          <a href=" " class="social-icon"><i class="fab fa-instagram" aria-hidden="true"></i></a> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
         </div>
+      </div>
+      <div class="row options-row">
+            <div>
+              <p>Make a booking with us and have the best experience</p>
+              <button class="btn">
+                <Link to="/orderform" >
+                  Book appointment
+                </Link>
+              </button>
+              <p>Check your Orders</p>
+              <button class="btn">
+                <Link to="/ordercard" >
+                  Manage Your Orders
+                </Link>
+              </button>
+            </div>
       </div>
     </div>
   )
