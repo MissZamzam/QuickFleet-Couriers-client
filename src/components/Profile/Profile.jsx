@@ -13,7 +13,7 @@ function Profile() {
   }, [])
 
   return (
-    <div class="container cont">
+    <div class="container cont mb-10">
       <div class="row user-row">
         <div>
             {users.map((user)=>{
@@ -46,26 +46,28 @@ function Profile() {
         </div>
       </div>
       <div class="row options-row">
-            <div class='options'>
-            <p>Book your Orders</p>
-              <button class="btn">
-                <Link to="/orderform" >
-                  Book appointment
-                </Link>
-              </button>
-              <p>Check your Orders</p>
-              <button class="btn">
-                <Link to="/ordercard" >
-                  Manage Your Orders
-                </Link>
-              </button>
-              <p>Track your Orders</p>
-              <button class="btn">
-                <Link to="/packagetrackings" >
-                  Track Your Order
-                </Link>
-              </button>
-            </div>
+      <div class="box">
+        <div class='options'>
+        <p>Book your Orders</p>
+          <button class="btn">
+            <Link to="/orderform" >
+              Book Orders
+            </Link>
+          </button>
+          <p>Check your Orders</p>
+          <button class="btn">
+            <Link to="/ordercard" >
+              Manage Your Orders
+            </Link>
+          </button>
+          <p>Track your Orders</p>
+          <button class="btn">
+            <Link to="/packagetrackings" >
+              Track Your Order
+            </Link>
+          </button>
+        </div>
+      </div>
       </div>
     </div>
   )
