@@ -193,54 +193,60 @@ function Receipts({ onAddingReceipt }) {
               <div className="modal-body">
                 <div className="addreceipt-pg">
                   <form className="adding-form" onSubmit={handleSubmit}>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Receipt.No</label>
-                      <input
-                        type="text"
-                        id="name"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter receipt number..."
-                        value={receipt_no}
-                        onChange={(e) => setReceiptNumber(e.target.value)}
-                      />
+                    <div className="formGrp">
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Receipt.No</label>
+                        <input
+                          type="text"
+                          id="name"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter receipt number..."
+                          value={receipt_no}
+                          onChange={(e) => setReceiptNumber(e.target.value)}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Sender</label>
+                        <input
+                          type="number{ >= 18}"
+                          id="age"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter sender name..."
+                          value={sender_name}
+                          onChange={(e) => setSender(e.target.value)}
+                        />
+                      </div>
                     </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Sender</label>
-                      <input
-                        type="number{ >= 18}"
-                        id="age"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter sender name..."
-                        value={sender_name}
-                        onChange={(e) => setSender(e.target.value)}
-                      />
+                    <div className="formGrp">
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Receiver</label>
+                        <input
+                          type="text"
+                          id="receiver"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter receiver name..."
+                          value={receiver_name}
+                          onChange={(e) => setReceiver(e.target.value)}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">
+                          Nature of Goods
+                        </label>
+                        <input
+                          type="text"
+                          id="nature of goods"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter nature of goods..."
+                          value={nature_of_goods}
+                          onChange={(e) => setNatureGoods(e.target.value)}
+                        />
+                      </div>
                     </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Receiver</label>
-                      <input
-                        type="text"
-                        id="receiver"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter receiver name..."
-                        value={receiver_name}
-                        onChange={(e) => setReceiver(e.target.value)}
-                      />
-                    </div>
-                    <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Nature of Goods</label>
-                    <input
-                      type="text"
-                      id="nature of goods"
-                      autoComplete="off"
-                      className="form-control"
-                      placeholder="enter nature of goods..."
-                      value={nature_of_goods}
-                      onChange={(e) => setNatureGoods(e.target.value)}
-                    />
-                  </div>
                     {/* <div className="form-group">
                       <label htmlFor="exampleInputEmail1">
                         Nature of Goods
@@ -258,30 +264,33 @@ function Receipts({ onAddingReceipt }) {
                         <option value="Medical">Medical</option>
                       </select> */}
                     {/* </div> */}
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Pickup</label>
-                      <input
-                        type="text"
-                        id="room-no"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter pickup place.."
-                        value={pickup}
-                        onChange={(e) => setPickup(e.target.value)}
-                      />
+                    <div className="formGrp">
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Pickup</label>
+                        <input
+                          type="text"
+                          id="room-no"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter pickup place.."
+                          value={pickup}
+                          onChange={(e) => setPickup(e.target.value)}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Destination</label>
+                        <input
+                          type="text"
+                          id="room-no"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter destination..."
+                          value={destination}
+                          onChange={(e) => setDestination(e.target.value)}
+                        />
+                      </div>
                     </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Destination</label>
-                      <input
-                        type="text"
-                        id="room-no"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter destination..."
-                        value={destination}
-                        onChange={(e) => setDestination(e.target.value)}
-                      />
-                    </div>
+                    <div className="formGrp">
                     <div className="form-group">
                       <label htmlFor="exampleInputEmail1">Price</label>
                       <input
@@ -293,7 +302,8 @@ function Receipts({ onAddingReceipt }) {
                         value={amount_paid}
                         onChange={(e) => setAmount(e.target.value)}
                       />
-                    </div>
+                      </div>
+                      </div>
                     {/* <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Deliveries</label>
                     <input
@@ -307,7 +317,10 @@ function Receipts({ onAddingReceipt }) {
                     />
                   </div> */}
                     <div className="form-group">
-                      <button type="submit" className="btn btn-primary">
+                      <button
+                        type="submit"
+                        className="btn btn-primary createreceipt"
+                      >
                         {isLoading ? "Loading..." : "Add"}{" "}
                         <i className="fa fa-sign-in" aria-hidden="true"></i>
                       </button>
@@ -321,17 +334,6 @@ function Receipts({ onAddingReceipt }) {
                 </div>
               </div>
               <div className="modal-footer">
-                {/* <div className="form-group">
-                  <button type="submit" className="btn btn-primary createreceipt">
-                    {isLoading ? "Loading..." : "Add"}{" "}
-                    <i className="fa fa-sign-in" aria-hidden="true"></i>
-                  </button>
-                </div>
-                <div className="form-group">
-                  {errors.map((err) => (
-                    <div key={err}>{err}</div>
-                  ))}
-                </div> */}
                 <button type="button" className="btn btn-primary savechanges">
                   Save changes
                 </button>
