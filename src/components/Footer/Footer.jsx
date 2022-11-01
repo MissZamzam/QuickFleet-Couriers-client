@@ -34,19 +34,21 @@ function Footer() {
     <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
             <a href="https://flowbite.com/" class="flex items-center">
-                <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-8" alt="FlowBite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                <img src="https://thumbs.dreamstime.com/b/delivery-truck-line-icon-blue-neon-style-set-logistics-illustration-icons-signs-symbols-can-be-used-web-logo-mobile-app-155033092.jpg" class="mr-3 h-8" alt="FlowBite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">QuickFleet</span>
             </a>
         </div>
         <div class="grid mx-12 grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div class=''>
                 <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                <h2 class="mb-6 text-sm font-semibold text-white-900 uppercase dark:text-white">Opening Hours</h2>
+
                 <ul class="text-gray-600 dark:text-gray-400">
                     <li class="mb-4">
-                        <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                    <p>Monday to Friday - 9am to 9pm</p>
                     </li>
-                    <li>
-                        <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                    <li class="mb-4">
+                    <p>Saturday to Sunday - 8am to 11pm</p>
                     </li>
                 </ul>
             </div>
@@ -54,7 +56,7 @@ function Footer() {
                 <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                 <ul class="text-gray-600 dark:text-gray-400">
                     <li class="mb-4">
-                        <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                        <a href="" class="hover:underline ">Github</a>
                     </li>
                     <li>
                         <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
