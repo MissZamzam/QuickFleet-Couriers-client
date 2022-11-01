@@ -21,10 +21,11 @@ import Orders from './components/OrderForm/OrderForm'
 import OrderCard from './components/OrderForm/OrderCard'
 import OrderForm from './components/OrderForm/OrderForm'
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
-import axios from 'axios';
+import Admin from "./components/Admin/Login/Login"
+// import Dashboard from './components/Dashboard/scenes/Dashboard';
+import Dashboard  from './components/Admin/Dashboard/Dashboard';
 import Mapper from './components/Maper/Mapper';
-// import OrderForm from './components/OrderForm/OrderForm';
-// import OrderCard from './components/OrderForm/OrderCard';
+
 
 function App() {
 
@@ -49,36 +50,35 @@ function App() {
 
 
   // authorized === true || authorized === false ?
-  return  (   
-    <>
-        <div className="app">
-        <Navbar user={user} setUser={setUser}/>
-        <div className="routes">
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/services' element={<Services />} />
-              <Route path='/service/:id' element={<Service />} />
-              <Route path='/receipts' element={<Receipts />} />
-              <Route path='/receipt/:id' element={<Receipt />} />
-              <Route path='/trackings' element={<Trackings />} />
-              <Route path='/orderform' element={<OrderForm />} />
-              <Route path='/ordercard' element={<OrderCard />} />
-              <Route path='/profile' element={<Profile />} />
-              <Route path='/deliveryform' element={<DeliveryForm />} />
-              {/* <Route path='/orders' element={<Orders />} /> */}
-              <Route path='/packagetrackings' element={<PackageTracking />} />
-              <Route path='/tracking/:id' element={<Tracking />} />
-              <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
-              <Route path='/Signup' element={<Signup  />} />
-              <Route path='/Mapper' element={<Mapper  />} />
-            </Routes>
-        </div>
-      </div>
-      <Footer />
-    </>
+  return  (
+    <div className="App">
+    {/* <BrowserRouter> */}
+    <Navbar user={user} setUser={setUser}/>
+    <div className="routes">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/service/:id' element={<Service />} />
+          <Route path='/receipts' element={<Receipts />} />
+          <Route path='/receipt/:id' element={<Receipt />} />
+          <Route path='/trackings' element={<Trackings />} />
+          <Route path='/orderform' element={<OrderForm />} />
+          <Route path='/ordercard' element={<OrderCard />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/deliveryform' element={<DeliveryForm />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/packagetrackings' element={<PackageTracking />} />
+          <Route path='/tracking/:id' element={<Tracking />} />
+          <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
+          <Route path='/Signup' element={<Signup  />} />
+          <Route path='/Mapper' element={<Mapper  />} />
+        </Routes>
+    </div>
+    <Footer />
+  </div>
 
-
-  ) 
+  )
 
 }
 
