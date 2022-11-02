@@ -29,7 +29,7 @@ import Mapper from './components/Maper/Mapper';
 // import Dashboard from "./scenes/dashboard";
 import Team from "./components/Admin/scenes/team";
 import Invoices from "./components/Admin/scenes/invoices";
-import Contacts from "./components/Admin/scenes/contacts";
+import Contacts from "./components/Admin/scenes/orders";
 import Bar from "./components/Admin/scenes/bar/index";
 import Form from "./components/Admin/scenes/form";
 import Line from "./components/Admin/scenes/line";
