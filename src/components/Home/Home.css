@@ -22,8 +22,8 @@
 }
 
 .pickman img{
-    width: 30vw;
-    height: 30vh;
+    width: 50vw;
+    height: 50vh;
     position: relative;
 
 }
@@ -35,4 +35,14 @@
 
 #exp{
     color: #3c6aaf;
+}
+
+.back{
+    background: url("https://i.pinimg.com/564x/0f/36/62/0f3662c7417e099b7398933f2a6dc7b6.jpg");
+    width: 100%;
+    height: 100vh;
+}
+
+.font-12{
+    font-size: large;
 }
