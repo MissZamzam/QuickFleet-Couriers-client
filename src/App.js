@@ -3,8 +3,9 @@ import {   BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import React from 'react'
 // import {   BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { verify } from "./auth/Users";
+// import { verify } from "./auth/Users";
 import Login from './components/Login/Login';
+import Profile from './components/Profile/Profile';
 import Signup from "./components/SignUp/SignUp"
 import Navbar from './components/Navbar/Navbar'
 import DeliveryForm from './components/DeliveryDetails/DeliveryForm'
@@ -18,9 +19,27 @@ import Trackings from './components/Tracking/Trackings';
 import Tracking from './components/Tracking/Trackings';
 import Orders from './components/OrderForm/OrderForm'
 import OrderCard from './components/OrderForm/OrderCard'
+import OrderForm from './components/OrderForm/OrderForm'
 import PackageTracking from './components/Package_Tracking/Package_Tracking';
-import axios from 'axios';
+import Admin from "./components/Admin/Login/Login"
+// import Dashboard from './components/Dashboard/scenes/Dashboard';
+import Dashboard  from './components/Admin/Dashboard/Dashboard';
 import Mapper from './components/Maper/Mapper';
+import Sidebar from "./scenes/global/Sidebar";
+// import Dashboard from "./scenes/dashboard";
+import Team from "./scenes/team";
+import Invoices from "./scenes/invoices";
+import Contacts from "./scenes/contacts";
+import Bar from "./scenes/bar";
+import Form from "./scenes/form";
+import Line from "./scenes/line";
+import Pie from "./scenes/pie";
+import FAQ from "./scenes/faq";
+import Geography from "./scenes/geography";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ColorModeContext, useMode } from "./theme";
+import Calendar from "./scenes/calendar/calendar";
+
 
 function App() {
 
@@ -51,21 +70,51 @@ function App() {
     <div className="App">
     {/* <BrowserRouter> */}
     <Navbar user={user} setUser={setUser}/>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/services' element={<Services />} />
-        <Route path='/service/:id' element={<Service />} />
-        <Route path='/receipts' element={<Receipts />} />
-        <Route path='/receipt/:id' element={<Receipt />} />
-        <Route path='/trackings' element={<Trackings />} />
-        <Route path='/orders' element={<Orders />} />
-        <Route path='/ordercard' element={<OrderCard />} />
-        <Route path='/packagetrackings' element={<PackageTracking />} />
-        <Route path='/tracking/:id' element={<Tracking />} />
-        <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
-        <Route path='/Signup' element={<Signup  />} />
-        <Route path='/Mapper' element={<Mapper  />} />
-    </Routes>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="app">
+          <Sidebar isSidebar={isSidebar} />
+          <main className="content">
+            <Topbar setIsSidebar={setIsSidebar} />
+            <Routes>
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/invoices" element={<Invoices />} />
+              <Route path="/form" element={<Form />} />
+              <Route path="/bar" element={<Bar />} />
+              <Route path="/pie" element={<Pie />} />
+              <Route path="/line" element={<Line />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/geography" element={<Geography />} />
+              <Route path='/' element={<Home />} />
+              <Route path='/services' element={<Services />} />
+              <Route path='/service/:id' element={<Service />} />
+              <Route path='/receipts' element={<Receipts />} />
+              <Route path='/receipt/:id' element={<Receipt />} />
+              <Route path='/trackings' element={<Trackings />} />
+              <Route path='/orderform' element={<OrderForm />} />
+              <Route path='/ordercard' element={<OrderCard />} />
+              <Route path='/profile' element={<Profile />} />
+              <Route path='/deliveryform' element={<DeliveryForm />} />
+              {/* <Route path='/dashboard' element={<Dashboard />} /> */}
+              <Route path='/admin' element={<Admin />} />
+              <Route path='/packagetrackings' element={<PackageTracking />} />
+              <Route path='/tracking/:id' element={<Tracking />} />
+              <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
+              <Route path='/Signup' element={<Signup  />} />
+              <Route path='/Mapper' element={<Mapper  />} />
+            </Routes>
+          </main>
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+    <div className="routes">
+        <Routes>
+        </Routes>
+    </div>
     <Footer />
   </div>
 
