@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios"
 
-const Contacts = () => {
+const Orders = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -106,4 +106,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default Orders;
