@@ -64,7 +64,7 @@ export default function MultiActionAreaCard() {
         setSenderName(table.senderName)
         setReceiverName(table.receiverName)
         setNatureOfGoods(table.natureOfGoods)
-        setAmountPaid(table.amountPaid)
+        // setAmountPaid(table.amountPaid)
         setPickup(table.pickup)
         setDestination(table.destination)
         console.log(table)
@@ -127,10 +127,10 @@ export default function MultiActionAreaCard() {
                         Nature of Goods:
                         {table.natureOfGoods}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    {/* <Typography variant="body2" color="text.secondary">
                         Amount:
                         {table.amountPaid}
-                    </Typography>
+                    </Typography> */}
                     <Typography variant="body2" color="text.secondary">
                         Pickup:
                         {table.pickup}

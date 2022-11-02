@@ -28,7 +28,7 @@ function OrderForm() {
           senderName,
           receiverName,
           natureOfGoods,
-          amountPaid,
+          // amountPaid,
           pickup,
           destination,
         }
@@ -87,12 +87,12 @@ function OrderForm() {
                 value={natureOfGoods}
                 onChange={(e)=>setNatureOfGoods(e.target.value)}
               />
-              <TextField
+              {/* <TextField
                 id="outlined-read-only-input"
                 label="Amount paid"
                 value={amountPaid}
                 onChange={(e)=>setAmountPaid(e.target.value)}
-              />
+              /> */}
             </div>
             <div>
               <TextField
