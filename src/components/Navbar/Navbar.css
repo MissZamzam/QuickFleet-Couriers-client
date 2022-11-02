@@ -1,6 +1,5 @@
-.navbarr{
+/* .navbarr{
     background: #272D55;
-    /* background: red; */
     border-bottom: 1px solid white;
     margin-left: -300px;
 }
@@ -28,12 +27,12 @@ i{
 
 .spans span{
     font-weight: 900;
-}
+} */
 /* .quicknavbar{
     background: #272D55;
     width: 100%;
 } */
-.quick{
+/* .quick{
     color: #fff;
     font-weight: 900;
 }
@@ -46,4 +45,12 @@ i{
     margin-bottom: 30px;
     margin-left: 20px;
     color: #fff;
+} */
+
+.navbar-logo a{
+    font-size: 2em;
+}
+
+.navbar-list li{
+    font-size: 1.5em;
 }
