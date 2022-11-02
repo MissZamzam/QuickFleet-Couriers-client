@@ -8,7 +8,7 @@ function Home(){
 return(
     <div className="container-fluid d-flex ">
         <div class="row">
-            <div class="col py-3">
+            <div class="col-md-8 col-sm-8">
                 <h1 className="caption">We Are Top Courier <br></br> and Mover Service <br></br> in Nairobi</h1>
                 <p className="first">An application where users can login to send packages.Just
                 <br></br>like Wells Fargo, Sendy etc.</p>
@@ -17,7 +17,7 @@ return(
                 <button className="solutions">Our Solutions</button>
             </div>
         </div>
-        <div class="col">
+        <div class="col col-md-4 col-sm-4">
         <img src="https://i.pinimg.com/564x/0f/36/62/0f3662c7417e099b7398933f2a6dc7b6.jpg" alt="bike man"/>
         </div>
         {/* <div className="row">
