@@ -17,7 +17,7 @@ export default function MultiActionAreaCard() {
     const [senderName, setSenderName] = useState('')
     const [receiverName, setReceiverName] = useState('')
     const [natureOfGoods, setNatureOfGoods] = useState('')
-    const [amountPaid, setAmountPaid] = useState('')
+    // const [amountPaid, setAmountPaid] = useState('')
     const [pickup, setPickup] = useState('')
     const [destination, setDestination] = useState('')
 
@@ -47,7 +47,7 @@ export default function MultiActionAreaCard() {
                 senderName: senderName,
                 receiverName: receiverName,
                 natureOfGoods: natureOfGoods,
-                amountPaid: amountPaid,
+                // amountPaid: amountPaid,
                 pickup: pickup,
                 destination: destination
             })
@@ -64,7 +64,7 @@ export default function MultiActionAreaCard() {
         setSenderName(table.senderName)
         setReceiverName(table.receiverName)
         setNatureOfGoods(table.natureOfGoods)
-        setAmountPaid(table.amountPaid)
+        // setAmountPaid(table.amountPaid)
         setPickup(table.pickup)
         setDestination(table.destination)
         console.log(table)
@@ -127,10 +127,10 @@ export default function MultiActionAreaCard() {
                         Nature of Goods:
                         {table.natureOfGoods}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    {/* <Typography variant="body2" color="text.secondary">
                         Amount:
                         {table.amountPaid}
-                    </Typography>
+                    </Typography> */}
                     <Typography variant="body2" color="text.secondary">
                         Pickup:
                         {table.pickup}
@@ -183,10 +183,10 @@ export default function MultiActionAreaCard() {
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nature of Goods</label>
           <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={natureOfGoods} onChange={(e)=>setNatureOfGoods(e.target.value)} required />
         </div>
-        <div class="mb-6">
+        {/* <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Amount Paid</label>
           <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={amountPaid} onChange={(e)=>setAmountPaid(e.target.value)} required />
-        </div>
+        </div> */}
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pickup</label>
           <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={pickup} onChange={(e)=>setPickup(e.target.value)} required />
