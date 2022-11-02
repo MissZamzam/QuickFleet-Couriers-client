@@ -138,11 +138,11 @@ export default function NavBar() {
                     >
                         <ul className="items-center justify-center space-y-12 md:flex md:space-x-6 md:space-y-0 mt-3 navbar-list">
                             <li className="text-black-600">
-                                <a href="javascript:void(0)">Home</a>
-                            </li>
+                            <Link to={"/"} type = "button">Home</Link>
+                                                    </li>
                             <li className="text-black-600">
-                                <a href="javascript:void(0)">Service</a>
-                            </li>
+                            <Link to={"/services"} type = "button">Services</Link>
+                                                    </li>
                             <Link to={"/login"} type = "button">
                                  <i class="fa-regular fa-user"></i>
                             </Link>
