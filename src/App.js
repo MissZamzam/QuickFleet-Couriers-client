@@ -102,30 +102,7 @@ function App() {
       </main>
       <Footer />
     </div>
-  )   
-    // <div className="App">
-    {/* <BrowserRouter> */}
-    {/* <ColorModeContext.Provider value={colorMode}> */}
-      {/* <ThemeProvider theme={theme}> */}
-        {/* <div className="app"> */}
-          {/* <Sidebar isSidebar={isSidebar} /> */}
-            {/* <Topbar setIsSidebar={setIsSidebar} /> */}
-          // </main>
-        {/* </div> */}
-      {/* </ThemeProvider> */}
-    {/* </ColorModeContext.Provider> */}
-  {/* return  (
-    <div className="App">
-    <BrowserRouter>
-    <Navbar user={user} setUser={setUser}/>
-    <div className="routes">
-        <Routes>
-        </Routes>
-    </div>
-    <Footer />
-  </div>  */}
-
-  // )
+  )
 
 }
 
