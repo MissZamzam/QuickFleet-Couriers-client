@@ -1,19 +1,12 @@
 // import axios from 'axios';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { login } from '../../auth/Users';
-import "./Login.css"
 import { useRef, useState, useEffect } from 'react';
-import useAuth from '../../hooks/useAuth';
-// import { Link, useNavigate, useLocation } from 'react-router-dom';
-
-import axios from "../../api/axios"
-const LOGIN_URL = '/signin';
-
-//ALERT PLEASE DONT DELETE COMMENTED OUT CODE THIS WILL BE IMPLIMENTED IN FUTURE
 
 
-export default function Login({setUser, user}) {
+
+
+export default function Login({setUser}) {
 
     // const { setAuth } = useAuth();
     const [errors, setErrors] = useState([]);
@@ -141,7 +134,7 @@ export default function Login({setUser, user}) {
         e.preventDefault();
         // post user credentialas to login route
 
-        fetch("/users/login", {
+        fetch("/admin/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -151,7 +144,7 @@ export default function Login({setUser, user}) {
           if (res.ok) {
             res.json().then((user) => {
               setUser(user);
-              navigate("/profile");
+              navigate("/dashboard");
               console.log(user);
               sessionStorage.setItem("user", JSON.stringify(user));
               console.log(user);
@@ -166,10 +159,10 @@ export default function Login({setUser, user}) {
 
 
     return (
-        <div className="login-container relative flex flex-col justify-center min-h-screen overflow-hidden">
+        <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
                 <h1 className="text-3xl font-semibold text-center text-purple-700">
-                <span>Log</span><span className='fleet'>In</span>
+                <span className='quick'>Log</span><span className='fleet'>In</span>
                 </h1>
             {/* <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> */}
 
@@ -212,15 +205,11 @@ export default function Login({setUser, user}) {
                     >
                         Forget Password?
                     </a>
-                    <div className="mt-6 buttons">
+                    <div className="mt-6">
                         {/* <button type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600 login" /> */}
                         <button  className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
                             Login
                         </button>
-                        <p>Or</p>
-                        <Link to={"/admin"} className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md focus:outline-none text-center login">
-                            Login as admin
-                        </Link>
                     </div>
                 </form>
 
