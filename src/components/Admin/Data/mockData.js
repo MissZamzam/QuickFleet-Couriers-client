@@ -1,7 +1,4 @@
-import { useEffect } from "react";
 import { tokens } from "../Glob/theme";
-
-
 
 export const mockDataTeam = [
   {
@@ -79,7 +76,6 @@ export const mockDataTeam = [
 ];
 
 export const mockDataContacts = [
-
   {
     id: 1,
     name: "Jon Snow",

@@ -64,17 +64,11 @@ function App() {
 
 
   // authorized === true || authorized === false ?
-  return  (   
-    <div className="App">
-    {/* <BrowserRouter> */}
-    <Navbar user={user} setUser={setUser}/>
-    {/* <ColorModeContext.Provider value={colorMode}> */}
-      {/* <ThemeProvider theme={theme}> */}
-        <CssBaseline />
-        <div className="app">
-          {/* <Sidebar isSidebar={isSidebar} /> */}
-          <main className="content">
-            {/* <Topbar setIsSidebar={setIsSidebar} /> */}
+  return  (
+    <div className='App'>
+      <Navbar user={user} setUser={setUser}/>
+      <CssBaseline />
+      <main className="content">
             <Routes>
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
@@ -105,18 +99,33 @@ function App() {
               <Route path='/Signup' element={<Signup  />} />
               <Route path='/Mapper' element={<Mapper  />} />
             </Routes>
-          </main>
-        </div>
+      </main>
+      <Footer />
+    </div>
+  )   
+    // <div className="App">
+    {/* <BrowserRouter> */}
+    {/* <ColorModeContext.Provider value={colorMode}> */}
+      {/* <ThemeProvider theme={theme}> */}
+        {/* <div className="app"> */}
+          {/* <Sidebar isSidebar={isSidebar} /> */}
+            {/* <Topbar setIsSidebar={setIsSidebar} /> */}
+          // </main>
+        {/* </div> */}
       {/* </ThemeProvider> */}
     {/* </ColorModeContext.Provider> */}
+  {/* return  (
+    <div className="App">
+    <BrowserRouter>
+    <Navbar user={user} setUser={setUser}/>
     <div className="routes">
         <Routes>
         </Routes>
     </div>
     <Footer />
-  </div>
+  </div>  */}
 
-  ) 
+  // )
 
 }
 
