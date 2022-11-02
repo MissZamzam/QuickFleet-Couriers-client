@@ -1,11 +1,22 @@
-.login{
+.login-container .login{
     background-color: #353D68;
 }
 
-.login:hover{
+.login-container .login:hover{
     background-color: #FF8261;
 }
 
-.quick{
+.login-container .quick{
     color:#353D68
+}
+
+.login-container .buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container .buttons p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -59,7 +59,7 @@ export default function Registration() {
                 <div>
                     <a href="/">
                         <h3 className="text-4xl font-bold text-600">
-                        <span className='quick'>Sign</span><span className='fleet'>Up</span>
+                        <span>Sign</span><span className='fleet'>Up</span>
 
                         </h3>
                     </a>
@@ -127,7 +127,7 @@ export default function Registration() {
                             </div>
                         </div>
                         <a
-                            href="#"
+                            href=" "
                             className="text-xs text-blue-600"
                         >
                             Forget Password?

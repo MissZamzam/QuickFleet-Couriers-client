@@ -6,6 +6,40 @@
     margin: 30px;
 }
 
+/* 
+.caption{
+    font-size: xx-large;
+    font-weight: 800;
+    margin-bottom: 15px;
+
+} */
+.first{
+    color: black;
+    font-size: 32px;
+    margin-top: 10px;
+    font-size: large;
+    margin-bottom: 15px;
+}
+
+.pickman img{
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+
+}
+
+#ex{
+    background-color: white;
+    border: 1px solid #3c6aaf;
+    /* padding: 30px; */
+}.home{
+    background: #272D55;
+
+}
+.nest{
+    margin: 30px;
+}
+
 
 .caption{
     font-size: xx-large;
@@ -22,17 +56,110 @@
 }
 
 .pickman img{
-    width: 30vw;
-    height: 30vh;
+    width: 50vw;
+    height: 50vh;
     position: relative;
 
 }
 
-#ex{
-    background-color: white;
-    border: 1px solid #3c6aaf;
+.nest{
+    margin: 30px;
+}
+
+
+.caption{
+    font-size: xx-large;
+    font-weight: 800;
+    margin-bottom: 15px;
+
+}
+.first{
+    color: black;
+    font-size: 32px;
+    margin-top: 10px;
+    font-size: large;
+    margin-bottom: 15px;
+}
+
+.pickman img{
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+
+}
+
+
+.back{
+    background: url("https://i.pinimg.com/564x/0f/36/62/0f3662c7417e099b7398933f2a6dc7b6.jpg");
+    width: 100%;
+    height: 100vh;
+}
+
+.font-12{
+    font-size: large;
+}
+
+.move{
+    margin-left: 30px;
+/* } */
 }
 
 #exp{
     color: #3c6aaf;
 }
+
+.back{
+    background: url("https://i.pinimg.com/564x/0f/36/62/0f3662c7417e099b7398933f2a6dc7b6.jpg");
+    width: 100%;
+    height: 100vh;
+}
+
+.font-12{
+    font-size: large;
+}
+
+.move{
+    margin-left: 30px;
+}
+
+#exp{
+    color: #3c6aaf;
+}
+
+.back{
+    background: url("https://i.pinimg.com/564x/0f/36/62/0f3662c7417e099b7398933f2a6dc7b6.jpg");
+    width: 100%;
+    height: 100vh;
+}
+
+.font-12{
+    font-size: large;
+}
+
+.move{
+    margin-left: 30px;
+}
+
+.back{
+    background: url("https://i.pinimg.com/564x/0f/36/62/0f3662c7417e099b7398933f2a6dc7b6.jpg");
+    width: 100%;
+    height: 100vh;
+}
+
+.font-12{
+    font-size: large;
+}
+
+.move{
+    /* margin-left: 30px; */
+    height: 70vh;
+}
+.move h1{
+    font-size: 3em;
+}
+
+.landing-text h1{
+    font-size: 3em;
+    font-weight: 900;
+}
+
