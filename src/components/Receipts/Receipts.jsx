@@ -7,7 +7,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Receipt from "./Receipt";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
-import { Button, Stack } from "@mui/material";
 import "./Receipts.css";
 
 function Receipts({ onAddingReceipt }) {
