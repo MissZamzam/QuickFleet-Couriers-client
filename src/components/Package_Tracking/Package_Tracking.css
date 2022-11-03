@@ -1,11 +1,11 @@
-.bgggg{
+.trackings{
   height: 130vh !important;
   background-image: url("../Image/TrackImg.png") !important;
   background-repeat: no-repeat;
   background-size:contain;
   background-color: #353D68;
   object-fit: cover;
-  margin-top: -5em;
+  margin-bottom: -9em;
 }
 
 .receipt-form{

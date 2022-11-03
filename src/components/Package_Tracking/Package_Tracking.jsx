@@ -46,7 +46,7 @@ function Package_Tracking() {
     };
   
   return (
-    <div className="container-fluid bg">
+    <div className="container-fluid bg trackings">
       <div className="receipt-form">
         <form className="receiptNo-form">
           <h5>Track Your Package Delivery </h5>
