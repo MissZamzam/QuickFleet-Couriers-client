@@ -35,7 +35,7 @@ import Form from "./components/Admin/scenes/form";
 import Line from "./components/Admin/scenes/line";
 import Pie from "./components/Admin/scenes/pie";
 import FAQ from "./components/Admin/scenes/faq";
-import Geography from "./components/Admin/scenes/geography";
+// import Geography from "./components/Admin/scenes/geography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./components/Admin/Glob/theme";
 import Calendar from "./components/Admin/scenes/calendar/calendar";
@@ -80,7 +80,7 @@ function App() {
               <Route path="/line" element={<Line />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/calendar" element={<Calendar />} />
-              <Route path="/geography" element={<Geography />} />
+              {/* <Route path="/geography" element={<Geography />} /> */}
               <Route path='/' element={<Home />} />
               <Route path='/services' element={<Services />} />
               <Route path='/service/:id' element={<Service />} />
