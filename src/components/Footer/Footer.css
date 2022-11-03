@@ -4,7 +4,7 @@
     color: #fff;
 }
 
-.footer-row{
+/* .footer-row{
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -73,7 +73,6 @@
     color: #fff;
     cursor: pointer;
     transition: .8s;
-    /* display: flex; */
 }
 
 .social-links .fa:hover{
@@ -96,4 +95,4 @@
         top: 50%;
         left: 70%;
     }
-}
+} */

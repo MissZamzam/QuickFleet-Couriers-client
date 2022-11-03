@@ -1,8 +1,12 @@
-button{
+.delivery-button{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-top: 2em;
+    color: #ffff;
+    border:  3px solid #ffff;
+    background-color: #272D55 !important;
 }
 
 .deliveryformCards{
@@ -36,7 +40,8 @@ button{
     border-radius: 50%;
     height: 12em;
 }
-img{
+
+.deliveryImg{
     object-fit: cover;
 }
 
@@ -45,9 +50,7 @@ img{
    justify-content: center;
    align-items: center;
 }
-button{
-    margin-top: 2em;
-    color: #ffff;
-    border:  3px solid #ffff;
-    background-color: #272D55 !important;
-}
+
+/* button{
+
+} */
