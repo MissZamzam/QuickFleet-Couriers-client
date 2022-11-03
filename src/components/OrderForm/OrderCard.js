@@ -24,12 +24,12 @@ export default function MultiActionAreaCard() {
     useEffect(() =>{
         fetch('/orders')
         .then(res => res.json())
-        .then(data => 
+        .then(data =>
             setOrders(data))
     }, [])
 
     const handleSubmit = (id)=>{
-    
+
         // axios.patch("/orders",{
             // senderName:"",
             // receiverName:"",
@@ -79,13 +79,13 @@ export default function MultiActionAreaCard() {
 
         .then((response) => response.json())
 
-        .then(() => {        
-          const deleting = orders.filter((table) => table.id !== id);   
-               setOrders(deleting);     
+        .then(() => {
+          const deleting = orders.filter((table) => table.id !== id);
+               setOrders(deleting);
               console.log('data')
               })
-        // .catch((err) => console.log(err));    alert("delete was successful");  
-    
+        // .catch((err) => console.log(err));    alert("delete was successful");
+
 
 
         // .then((r)=>r.json())
@@ -98,11 +98,11 @@ export default function MultiActionAreaCard() {
     }
 
   return (
-    <div>
+<div class="grid gap-10 px-5 mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-12">
 
     {orders.map((table) => {
         return(
-            <div class="grid gap-10 px-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div>
                 <Card sx={{ maxWidth: 345 }} style={{backgroundColor: 'white'}}>
                 <CardActionArea>
                     <CardMedia
@@ -154,7 +154,7 @@ export default function MultiActionAreaCard() {
                 </CardActions>
                 </Card>
             </div>
-            
+
         )
     })}
 
@@ -169,7 +169,7 @@ export default function MultiActionAreaCard() {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
+
       <form onSubmit={handleSubmit}>
         <div class="mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sender Name</label>
