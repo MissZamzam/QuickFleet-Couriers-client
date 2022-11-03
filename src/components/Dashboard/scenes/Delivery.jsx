@@ -17,9 +17,9 @@ function Delivery() {
     delivery_instructions:"",
     package_type:"",
     package_details:"",
-   
+
   } );
-  
+
   function FillEditInput (tenant)
   {
     setEditDelivery({receiver_name:delivery.receiver_name, receiver_contact:delivery.receiver_contact, pickup_instructions:delivery.pickup_instructions, delivery_instructions:delivery.delivery_instructions, service_type: delivery.service_type, package_details: delivery.package_details})
@@ -31,13 +31,13 @@ function Delivery() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:3000/deliveries/${id}`).then((response) => {
+    fetch(`http://127.0.0.1:3004/deliveries/${id}`).then((response) => {
       if (response.ok) {
         response.json().then((delivery) => {
-        
+
           setDelivery({ data: delivery, error: "", status: "dispatched" });
         });
-       
+
       } else {
         response.json().then((err) =>
           setDelivery({
@@ -59,7 +59,7 @@ function Delivery() {
     e.preventDefault();
 
     console.log(editdelivery);
-    fetch(`http://127.0.0.1:3000/deliveries/${id}`, {
+    fetch(`http://127.0.0.1:3004/deliveries/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -68,15 +68,15 @@ function Delivery() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-    
+
         setDelivery(data);
       });
-    
-    
+
+
   }
   return (
     <>
-     
+
     <div className="restbody">
       <div className="container bg-darksalmon">
         <div className="card restcards" key={delivery?.id}>

@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Editdelivery () {
-   
+
     const {id} = useParams();
 
-    
+
      const[data,setData]= useState({
-        
+
         receiver_name:'',
         contact_name:'',
         pickup_instructions:'',
@@ -19,29 +19,29 @@ function Editdelivery () {
 
     function handleChange(e){
 
-  
+
         setData({...setData, [e.target.id]: e.target.value});
     }
 
     useEffect(() => {
 
-        fetch(`http://127.0.0.1:3000/deliveries/${id}`)
+        fetch(`http://127.0.0.1:3004/deliveries/${id}`)
           .then((response) => response.json())
           .then((data) => {
-           
+
               setData(data)
              console.log(data)
-          
-    
+
+
           })
           .catch((error) => console.log(error));
 
       }, [])
-      
-    
+
+
       function handleSubmit(e) {
         e.preventDefault();
-        fetch(`http://127.0.0.1:3000/deliveries/${id}`,{
+        fetch(`http://127.0.0.1:3004/deliveries/${id}`,{
 	method:'PATCH',
   	headers:{
     	'Content-Type': 'application/json'
@@ -54,11 +54,11 @@ console.log(data)
 setData(data)
 })
     }
-      
+
 
     return(
         <div>
-            
+
             <form  onSubmit={(e)=>handleSubmit(e)}>
             <label>   Receiver Name: </label>
             <input id="receiver-name" value={data.receiver_name} onChange={e=>handleChange(e)}/>
@@ -66,7 +66,7 @@ setData(data)
             <input id="receiver-contact" onChange={e=>handleChange(e)}
             value={data.receiver_contact} />
             <label > Pickup Instructions: </label>
-            <input id="pickup-instructions"onChange={e=>handleChange(e)} 
+            <input id="pickup-instructions"onChange={e=>handleChange(e)}
             value={data.pickup_instructions}/>
             <label >Delivery Instructions:  </label>
             <input value={data.delivery_instructions} id="delivery-instructions"onChange={e=>handleChange(e)} />
@@ -74,15 +74,15 @@ setData(data)
             <input value={data.package_type} id="package-type"onChange={e=>handleChange(e)} />
             <label >Package Details:  </label>
             <input value={data.package_details} id="package-details"onChange={e=>handleChange(e)} />
- 
- 
+
+
             <button type="button display in-line padding: 15px" className="btn btn-primary">SUBMIT</button>
-           
+
         </form>
 
         </div>
-            
-  
+
+
 
     )
 }
