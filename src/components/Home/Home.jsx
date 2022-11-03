@@ -1,7 +1,6 @@
 import React from "react"
 import "./Home.css"
-import { Link } from "react-router-dom"
-// import Footer from '../Footer/Footer'
+import { Link, NavLink } from "react-router-dom"
 
 
 function Home(){
@@ -11,7 +10,9 @@ return(
             <div class="col-md-6 d-flex align-items-center justify-content-center ">
                 <div className="text-center">
                 <h1 className="caption">We Are Top Courier <br></br> and Mover Service <br></br> in Kenya<br/></h1>
-                <button className="btn btn-outline-secondary text-white"><Link to='/services'>Our Solutions</Link></button>
+                <NavLink to='/services'>
+                    <button className="btn btn-outline-secondary text-white solutions-button">Our Solutions</button>
+                </NavLink>
                 </div>
             </div>
         <div class="col-md-6 d-flex align-items-center justify-content-center">

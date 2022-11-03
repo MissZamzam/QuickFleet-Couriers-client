@@ -12,13 +12,12 @@ export default function Services() {
 
     useEffect(()=>{
         fetch("/services")
-        .then((res) => res.json()) 
+        .then((res) => res.json())
         .then((data)=>setServices(data))
     }, [])
 
 
   return (
-//   <div class="grid gap-10 px-5 mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">    
 <div class="grid gap-10 px-5 mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-12">
     {services.map((service)=>{
             return(
@@ -47,7 +46,7 @@ export default function Services() {
             </Card>
             )
         })}
-          </div>      
+          </div>
 
   );
 }
