@@ -7,6 +7,10 @@ import { Link, useNavigate } from "react-router-dom";
 import Receipt from "./Receipt";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import FormLabel from "@mui/material/FormLabel";
+
+import { Button, Stack } from "@mui/material";
 import "./Receipts.css";
 
 function Receipts({ onAddingReceipt }) {
@@ -56,7 +60,7 @@ function Receipts({ onAddingReceipt }) {
       field: "nature_of_goods",
       headerName: "Nature Of Goods",
       type: "singleSelect",
-      valueOptions: ["Flamable", "Perishable", "Fragile"],
+      valueOptions: ["Flammable", "Perishable", "Fragile", "Bulk", "Medical"],
       editable: true,
       width: 150,
       align: "center",
@@ -94,8 +98,8 @@ function Receipts({ onAddingReceipt }) {
           <>
             <Link
               to={`/receipt/${params.id}`}
-              onClick={() => <Receipt key={receipt.id} />}
-              target="blank"
+              onClick={ () => <Receipt key={ receipt.id } /> }
+              target = "blank"
             >
               <button className="viewBtn">View More</button>
             </Link>
@@ -187,84 +191,108 @@ function Receipts({ onAddingReceipt }) {
                 </button>
               </div>
               <div className="modal-body">
-                <div className="addtenant-pg">
+                <div className="addreceipt-pg">
                   <form className="adding-form" onSubmit={handleSubmit}>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Receipt.No</label>
-                      <input
-                        type="text"
-                        id="name"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter receipt number..."
-                        value={receipt_no}
-                        onChange={(e) => setReceiptNumber(e.target.value)}
-                      />
+                    <div className="formGrp">
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Receipt.No</label>
+                        <input
+                          type="text"
+                          id="name"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter receipt number..."
+                          value={receipt_no}
+                          onChange={(e) => setReceiptNumber(e.target.value)}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Sender</label>
+                        <input
+                          type="number{ >= 18}"
+                          id="age"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter sender name..."
+                          value={sender_name}
+                          onChange={(e) => setSender(e.target.value)}
+                        />
+                      </div>
                     </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Sender</label>
-                      <input
-                        type="number{ >= 18}"
-                        id="age"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter sender name..."
-                        value={sender_name}
-                        onChange={(e) => setSender(e.target.value)}
-                      />
+                    <div className="formGrp">
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Receiver</label>
+                        <input
+                          type="text"
+                          id="receiver"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter receiver name..."
+                          value={receiver_name}
+                          onChange={(e) => setReceiver(e.target.value)}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">
+                          Nature of Goods
+                        </label>
+                        <input
+                          type="text"
+                          id="nature of goods"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter nature of goods..."
+                          value={nature_of_goods}
+                          onChange={(e) => setNatureGoods(e.target.value)}
+                        />
+                      </div>
                     </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Receiver</label>
-                      <input
-                        type="ext"
-                        id="gender"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter receiver name..."
-                        value={receiver_name}
-                        onChange={(e) => setReceiver(e.target.value)}
-                      />
-                    </div>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                       <label htmlFor="exampleInputEmail1">
                         Nature of Goods
                       </label>
-                      <input
-                        type="tel"
-                        id="contact"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter nature of goods..."
-                        value={nature_of_goods}
-                        onChange={(e) => setNatureGoods(e.target.value)}
-                      />
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        // onChange={(e) => setNatureGoods(e.target.value)}
+                      >
+                        <option selected>Select</option>
+                        <option value="Flammable">Flammable</option>
+                        <option value="Fragile">Fragile</option>
+                        <option value="Perishable">Perishable</option>
+                        <option value="Bulk">Bulk</option>
+                        <option value="Medical">Medical</option>
+                      </select> */}
+                    {/* </div> */}
+                    <div className="formGrp">
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Pickup</label>
+                        <input
+                          type="text"
+                          id="room-no"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter pickup place.."
+                          value={pickup}
+                          onChange={(e) => setPickup(e.target.value)}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Destination</label>
+                        <input
+                          type="text"
+                          id="room-no"
+                          autoComplete="off"
+                          className="form-control"
+                          placeholder="enter destination..."
+                          value={destination}
+                          onChange={(e) => setDestination(e.target.value)}
+                        />
+                      </div>
                     </div>
+                    <div className="formGrp">
                     <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Pickup</label>
-                      <input
-                        type="text"
-                        id="room-no"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter pickup place.."
-                        value={pickup}
-                        onChange={(e) => setPickup(e.target.value)}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Destination</label>
-                      <input
-                        type="text"
-                        id="room-no"
-                        autoComplete="off"
-                        className="form-control"
-                        placeholder="enter destination..."
-                        value={destination}
-                        onChange={(e) => setDestination(e.target.value)}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Amount</label>
+                      <label htmlFor="exampleInputEmail1">Price</label>
                       <input
                         type="text"
                         id="amount"
@@ -274,7 +302,8 @@ function Receipts({ onAddingReceipt }) {
                         value={amount_paid}
                         onChange={(e) => setAmount(e.target.value)}
                       />
-                    </div>
+                      </div>
+                      </div>
                     {/* <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Deliveries</label>
                     <input
@@ -288,7 +317,10 @@ function Receipts({ onAddingReceipt }) {
                     />
                   </div> */}
                     <div className="form-group">
-                      <button type="submit" className="btn btn-primary">
+                      <button
+                        type="submit"
+                        className="btn btn-primary createreceipt"
+                      >
                         {isLoading ? "Loading..." : "Add"}{" "}
                         <i className="fa fa-sign-in" aria-hidden="true"></i>
                       </button>
@@ -302,16 +334,16 @@ function Receipts({ onAddingReceipt }) {
                 </div>
               </div>
               <div className="modal-footer">
+                <button type="button" className="btn btn-primary savechanges">
+                  Save changes
+                </button>
                 <button
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn btn-secondary closemodal"
                   data-dismiss="modal"
                   onClick={handleClose}
                 >
                   Close
-                </button>
-                <button type="button" className="btn btn-primary">
-                  Save changes
                 </button>
               </div>
             </div>

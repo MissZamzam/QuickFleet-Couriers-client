@@ -70,7 +70,7 @@ function App() {
       <CssBaseline />
       <main className="content">
             <Routes>
-              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
@@ -102,7 +102,7 @@ function App() {
       </main>
       <Footer />
     </div>
-  )   
+  )
     // <div className="App">
     {/* <BrowserRouter> */}
     {/* <ColorModeContext.Provider value={colorMode}> */}

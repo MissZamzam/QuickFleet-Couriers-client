@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './DeliveryForm.css'
 import TextField from '@mui/material/TextField';
-import Image1 from '../Image/receiver.png' 
-import Image2 from '../Image/instructions.png' 
-import Image3 from "../Image/packagearrival.png"; 
+import Image1 from '../Image/receiver.png'
+import Image2 from '../Image/instructions.png'
+import Image3 from "../Image/packagearrival.png";
 
 function DeliveryForm() {
 
@@ -178,7 +178,7 @@ function DeliveryForm() {
       <div className='deliveryBtn'>
         <button
           type="submit"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded delivery-button"
         >
           Deliver Courier Now
         </button>
