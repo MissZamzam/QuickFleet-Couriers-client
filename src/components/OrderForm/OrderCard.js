@@ -8,6 +8,7 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 // import axios from '../../api/axios';
 import axios from 'axios';
 import { idID } from '@mui/material/locale';
+import "./OrderCard.css"
 
 export default function MultiActionAreaCard() {
     const [orders, setOrders] = useState([])
@@ -116,16 +117,20 @@ export default function MultiActionAreaCard() {
                         Your Order Details
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        sender Name:
-                        {table.senderName}
+                        Sender Name:
+                        <span style={{paddingLeft: '20px'}}>{table.senderName}</span>
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         Receiver Name:
-                        {table.receiverName}
+                        {/* {table.receiverName} */}
+                        <span style={{paddingLeft: '20px'}}>{table.receiverName}</span>
+
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         Nature of Goods:
-                        {table.natureOfGoods}
+                        {/* {table.natureOfGoods} */}
+                        <span style={{paddingLeft: '20px'}}>{table.natureOfGoods}</span>
+
                     </Typography>
                     {/* <Typography variant="body2" color="text.secondary">
                         Amount:
@@ -133,11 +138,15 @@ export default function MultiActionAreaCard() {
                     </Typography> */}
                     <Typography variant="body2" color="text.secondary">
                         Pickup:
-                        {table.pickup}
+                        {/* {table.pickup} */}
+                        <span style={{paddingLeft: '20px'}}>{table.pickup}</span>
+
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         Destination:
-                        {table.destination}
+                        {/* {table.destination} */}
+                        <span style={{paddingLeft: '20px'}}>{table.destination}</span>
+
                     </Typography>
                     {/* <Typography variant="body2" color="text.secondary">
                         {table.senderName}
@@ -145,7 +154,7 @@ export default function MultiActionAreaCard() {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <button onClick={()=> handleUpdate(table, table.id)} type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button onClick={()=> handleUpdate(table, table.id)} type="button" class="btn update-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         UPDATE ORDER
                     </button>
                     <button class="bg-red-500 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDelete(table.id)}>
