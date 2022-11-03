@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 .user-row{
@@ -162,17 +163,17 @@
   position: relative;
   top: 10px;
   font-size: 10px;
-  color: tomato;
+  color: rgb(58, 49, 48);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.4px;
-  border: 2px solid tomato;
+  border: 2px solid rgb(17, 16, 16);
   padding: 8px 15px;
   border-radius: 30px;
-  background: tomato;
-  color: #fff;
+  /* background: rgb(40, 34, 61); */
+  color: rgb(34, 32, 32);
 }
 
 .back {
@@ -239,7 +240,7 @@
   position: relative;
   width: 300px;
   height: 450px;
-  background: rgba(0,0,0,0.75);
+  /* background: rgba(0,0,0,0.75); */
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -278,9 +279,12 @@
 .box .options{
   position: absolute;
   inset: 5px;
-  border-radius: 16px;
-  background: #0c1022;
+  border-radius:9px;
+  /* background: #0c1022; */
   z-index: 1;
+  border: solid 1px rgb(214, 206, 206);
+  box-shadow: 2px 1px 2px rgb(99, 88, 88);
+  /* margin-top: 10px; */
 }
 
 .box p{

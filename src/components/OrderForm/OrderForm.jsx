@@ -11,7 +11,7 @@ function OrderForm() {
   const [senderName, setSenderName] = useState('')
   const [receiverName, setReceiverName] = useState('')
   const [natureOfGoods, setNatureOfGoods] = useState('')
-  const [amountPaid, setAmountPaid] = useState('')
+  // const [amountPaid, setAmountPaid] = useState('')
   const [pickup, setPickup] = useState('')
   const [destination, setDestination] = useState('')
   const navigate = useNavigate()
@@ -28,7 +28,7 @@ function OrderForm() {
           senderName,
           receiverName,
           natureOfGoods,
-          amountPaid,
+          // amountPaid,
           pickup,
           destination,
         }
@@ -87,12 +87,12 @@ function OrderForm() {
                 value={natureOfGoods}
                 onChange={(e)=>setNatureOfGoods(e.target.value)}
               />
-              <TextField
+              {/* <TextField
                 id="outlined-read-only-input"
                 label="Amount paid"
                 value={amountPaid}
-                onChange={(e)=>setAmountPaid(e.target.value)}
-              />
+                // onChange={(e)=>setAmountPaid(e.target.value)}
+              /> */}
             </div>
             <div>
               <TextField
