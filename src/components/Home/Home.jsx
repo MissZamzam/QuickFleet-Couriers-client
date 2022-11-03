@@ -11,11 +11,11 @@ return(
                 <div className="text-center">
                 <h1 className="caption">We Are Top Courier <br></br> and Mover Service <br></br> in Kenya<br/></h1>
                 <NavLink to='/services'>
-                    <button className="btn btn-outline-secondary text-white solutions-button">Our Solutions</button>
+                    <button className="btn btn-outline-secondary text-white solutions-button mt-4">Our Solutions</button>
                 </NavLink>
                 </div>
             </div>
-        <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="col-md-6 d-flex align-items-center justify-content-center my-4">
         <img src="https://i.pinimg.com/564x/0f/36/62/0f3662c7417e099b7398933f2a6dc7b6.jpg" alt="bike man"/>
         </div>
         </div>
