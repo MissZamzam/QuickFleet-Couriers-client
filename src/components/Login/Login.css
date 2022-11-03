@@ -7,7 +7,11 @@
 }
 
 .login-container .quick{
-    color:#353D68
+    color:#353D68;
+}
+
+.login-container .fleet{
+    color: #FF8261;
 }
 
 .login-container .buttons{
@@ -19,4 +23,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 0;
 }

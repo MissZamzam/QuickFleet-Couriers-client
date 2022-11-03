@@ -15,7 +15,7 @@
 
 
 // function Deliveries() {
-  
+
 // const[deliveries, setDeliveries]= useState([])
 
 
@@ -34,7 +34,7 @@
 //     }
 //   })
 //   .then(r => r.json())
-//   .then(()=> { const deleting = deliveries.filter((delivery) => delivery.id !== id) 
+//   .then(()=> { const deleting = deliveries.filter((delivery) => delivery.id !== id)
 //     setDeliveries(deleting)
 
 
@@ -68,7 +68,7 @@
 //             {/* <TableCell align="right">View</TableCell> */}
 //              {/* <TableCell align="right">View</TableCell> */}
 //               {/* <TableCell align="right">View</TableCell> */}
-           
+
 //           </TableRow>
 //         </TableHead>
 //         <TableBody>
@@ -105,14 +105,14 @@
 //               Delete
 //             </Button>
 //           </Stack> */}
-              
+
 //               {/* <button onClick={() => {deleteDelivery (row.id)}} type="button display in-line padding: 15px" className="btn-danger btn-xsm">DELETE</button> */}
-              
+
 //              <Button classname="editbtn" variant="contained" color="success">EDIT</Button>
-          
+
 //               <Button onClick={() => {deleteDelivery (row.id)}} variant="outlined" color="error">DELETE</Button>
-             
-          
+
+
 //             </TableRow>
 //           ))}
 //         </TableBody>
@@ -144,7 +144,7 @@ import "./Deliveries.css"
 
 
 function Deliveries({ onAddingDelivery }) {
-  
+
     const [deliveries, setDeliveries] = useState([]);
     const [receiver_name, setReceiver_name] = useState("");
     const [receiver_contact, setReceiver_contact] = useState("");
@@ -167,13 +167,17 @@ function Deliveries({ onAddingDelivery }) {
   }, []);
 
   async function getDeliveries() {
+<<<<<<< HEAD
     let result = await fetch("/deliveries");
+=======
+    let result = await fetch("http://127.0.0.1:3004/deliveries");
+>>>>>>> 07a9ce0ac54efe633c625e9824d0f896e5a18048
     result = await result.json();
     setDeliveries(result);
   }
 
   function deleteDelivery(id) {
-    fetch(`/deliveries/${id}`, {
+    fetch(`http://127.0.0.1:3004/deliveries/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -193,7 +197,7 @@ function Deliveries({ onAddingDelivery }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/deliveries", {
+    fetch("http://127.0.0.1:3004/deliveries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -213,7 +217,7 @@ function Deliveries({ onAddingDelivery }) {
           console.log(newDelivery);
           onAddingDelivery(newDelivery);
 
-          navigate(`/deliveries/${id}`);
+          navigate(`/http://127.0.0.1:3004/deliveries/${id}`);
           setErrors([]);
         });
 
@@ -225,8 +229,8 @@ function Deliveries({ onAddingDelivery }) {
   }
 
   return (
-    
-    
+
+
     <div>
       {/* <Header/> */}
       <button
@@ -355,7 +359,7 @@ function Deliveries({ onAddingDelivery }) {
                   </div>
                   </div>
                 </form>
-              
+
               </div>
             </div>
             <div className="modal-footer">
@@ -429,8 +433,8 @@ function Deliveries({ onAddingDelivery }) {
       </TableContainer>
       </Box>
     </div>
-    
-  
+
+
   );
 }
 
