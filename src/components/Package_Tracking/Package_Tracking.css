@@ -8,7 +8,7 @@
   margin-bottom: -9em;
 }
 
-.receipt-form{
+.order-form{
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -39,7 +39,7 @@
 a:hover{
   background-color: lightgray;
 }
-.receiptNo-form{
+.orderNo-form{
   height: 40%;
   width: 60%;
   align-items: center;
@@ -50,7 +50,7 @@ a:hover{
   border-radius: .8em;
   margin-bottom: -11em;
 }
-.receiptNo-form input{
+.orderNo-form input{
   width: 13em;
   border: #1A1F3D 2px solid;
   margin-top: .2em;
@@ -72,7 +72,7 @@ a:hover{
   justify-content: center;
   align-items: center;
 }
-.package-receipt{
+.package-order{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,7 +90,7 @@ a:hover{
   object-fit: cover;
 }
 
-.receiptBtn{
+.orderBtn{
   border: none;
   height: 2em;
   width: 6em;

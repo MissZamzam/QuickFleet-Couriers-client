@@ -4,18 +4,18 @@ import CloseIcon from "@mui/icons-material/Close";
 import "./Package_Tracking.css";
 
 function Package_Tracking() {
-  const [ receipts, setReceipts ] = useState( [] );
+  const [ orders, setOrders ] = useState( [] );
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
   useEffect( () =>
   {
-    fetch( "/receipts" )
+    fetch( "/orders" )
       .then( response => response.json() )
-      .then( ( receipts ) =>
+      .then( ( orders ) =>
       {
-        console.log( receipts );
-        setReceipts(receipts)
+        console.log( orders );
+        setOrders(orders)
     })
     
   }, [] )
@@ -27,9 +27,9 @@ function Package_Tracking() {
     const searchWord = event.target.value;
     setWordEntered(searchWord)
 
-    const newFilter = receipts.filter( ( receipt ) =>
+    const newFilter = orders.filter( ( order ) =>
     {
-      return receipt.receipt_no.toLowerCase().includes( searchWord.toLowerCase() )
+      return order.order_id.toLowerCase().includes( searchWord.toLowerCase() )
     } );
     if (searchWord === "") {
       setFilteredData([]);
@@ -47,17 +47,17 @@ function Package_Tracking() {
   
   return (
     <div className="container-fluid bg trackings">
-      <div className="receipt-form">
-        <form className="receiptNo-form">
+      <div className="order-form">
+        <form className="orderNo-form">
           <h5>Track Your Package Delivery </h5>
-          <p>Enter the receipt number that you got from our offices</p>
+          <p>Enter the order number that you got from our offices</p>
           <div className="form-group">
             <div>
               <input
                 type="text"
                 autoComplete="off"
                 className="form-control"
-                placeholder="enter your receipt.no..."
+                placeholder="enter your order.no..."
                 value={wordEntered}
                 onChange={handleFilter}
               />
@@ -71,11 +71,11 @@ function Package_Tracking() {
             </div>
             {filteredData.length != 0 && (
               <div className="dataResults">
-                {filteredData.map((receipt, index) => {
+                {filteredData.map((order, index) => {
                   return (
-                    <a className="dataItem" href="/receipts" target="blank">
-                      {/* { receipt.receipt_no } */}
-                      <p>{receipt.receipt_no}</p>
+                    <a className="dataItem" href="/orders" target="blank">
+                      {/* { order.order_no } */}
+                      <p>{order.order_id}</p>
                     </a>
                   );
                 })}
@@ -84,14 +84,14 @@ function Package_Tracking() {
 
             {/* <i className="fa fa-search searchIcon" aria-hidden="true"></i> */}
           </div>
-          <div className=" container package-receipt">
-            <div className="receipt-details">
-              {/* <h5>{singleReceipt.receipt_no}</h5> */}
+          <div className=" container package-order">
+            <div className="order-details">
+              {/* <h5>{singleorder.order_no}</h5> */}
               <h5>Quick Fleet</h5>
               <p>#KEN23454634</p>
             </div>
             <div>
-              <button className="receiptBtn">On Process</button>
+              <button className="orderBtn">On Process</button>
             </div>
           </div>
         </form>
