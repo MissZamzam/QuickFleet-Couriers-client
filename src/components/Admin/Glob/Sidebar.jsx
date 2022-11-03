@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ProSidebar, Menu, MenuItem,  } from "react-pro-sidebar";
-
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom"
 import "react-pro-sidebar/dist/css/styles.css";
@@ -17,6 +16,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import Receipts from "../../Receipts/Receipts";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -132,24 +132,25 @@ const Sidebar = () => {
               >
                 Data
               </Typography>
-              <Item
+              {/* <Item
                 title="Deliveries"
                 // to="/team"
                 icon={<PeopleOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
-              />
+              /> */}
               <Item
                 title="Orders"
-                to="/contacts"
+                to="/orders"
                 icon={<ContactsOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
               <Item
                 title="Receipts"
-                // to="/invoices"
+                to="/receipts"
                 icon={<ReceiptOutlinedIcon />}
+                
                 selected={selected}
                 setSelected={setSelected}
               />

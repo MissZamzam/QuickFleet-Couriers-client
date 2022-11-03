@@ -28,7 +28,7 @@ export const mainListItems = (
         <LocalShippingIcon />
       </ListItemIcon>
       {/* <ListItemText primary="Deliveries" /> */}
-      <Link to="/deliveries" element={<Deliveries/>}>Deliveries</Link>
+      {/* <Link to="/deliveries" element={<Deliveries/>}>Deliveries</Link> */}
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>

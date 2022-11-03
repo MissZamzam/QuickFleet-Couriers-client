@@ -21,7 +21,7 @@ import { mainListItems,secondaryListItems } from './Listitems';
 import Orders from '../../components/Orders/Orders';
 import Receipts from '../../components/Receipts/Receipts';
 import Chart from '../Chart';
-import Deliveries from './Deliveries';
+// import Deliveries from './Deliveries';
 
 
 function Copyright(props) {
@@ -202,7 +202,7 @@ function DashboardContent() {
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 3, display: 'flex', flexDirection: 'column' }}>
-                  <Deliveries/>
+                  {/* <Deliveries/> */}
                 </Paper>
               </Grid>
            

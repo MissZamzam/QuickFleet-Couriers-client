@@ -167,11 +167,7 @@ function Deliveries({ onAddingDelivery }) {
   }, []);
 
   async function getDeliveries() {
-<<<<<<< HEAD
-    let result = await fetch("/deliveries");
-=======
     let result = await fetch("http://127.0.0.1:3004/deliveries");
->>>>>>> 07a9ce0ac54efe633c625e9824d0f896e5a18048
     result = await result.json();
     setDeliveries(result);
   }
