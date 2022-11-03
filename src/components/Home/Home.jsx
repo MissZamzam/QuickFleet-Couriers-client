@@ -23,10 +23,16 @@ return(
         <div className="row text-center my-4 landing-text">
             <h1>About us</h1>
             <p className="first">An application where users can login to send packages.Just
-                <br></br>like Wells Fargo, Sendy etc.</p>
-                <p className="font-12">Having a secure logistics provider you can trust is essential in today's fast paced business world.</p>
-                <p className="font-12">In a world of increasingly demanding schedules,you need a partner who will help you achieve your goals. <br />A partner who understands your needs and provides you with efficient, <br/> reliable end to end logistical solutions that help you expand your business.</p>
+                <br></br>like Wells Fargo, Sendy etc.
+            </p>
+            <p className="font-12">Having a secure logistics provider you can trust is essential in today's fast paced business world.</p>
+            <p className="font-12">In a world of increasingly demanding schedules,you need a partner who will help you achieve your goals. <br />A partner who understands your needs and provides you with efficient, <br/> reliable end to end logistical solutions that help you expand your business.</p>
         </div>
+        {/* Let's make our homepage more contentful */}
+
+        {/* <div className="row">
+
+        </div> */}
 
     </div>
 )

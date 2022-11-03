@@ -11,8 +11,9 @@ import LineChart from "../Comp/LineChart";
 import GeographyChart from "../Comp/GeographyChart";
 import BarChart from "../Comp/BarChart";
 import StatBox from "../Comp/StatBox";
-import Sidebar from "../Glob/Sidebar" 
+import Sidebar from "../Glob/Sidebar"
 import axios from "axios"
+import "../../../App.css"
 
 import ProgressCircle from "../Comp/ProgressCircle";
 import { useEffect } from "react";
@@ -40,10 +41,10 @@ const Dashboard = () => {
   return (
 
 
-    <>
+    <div className="dashboardd">
 <div className="admin" class="d-flex">
     <div className="side">
-      <Sidebar/> 
+      <Sidebar/>
     </div>
     <div className="dash">
       <Box m="20px">
@@ -298,7 +299,7 @@ const Dashboard = () => {
 
 </div>
 
-    </>
+    </div>
   );
 };
 
