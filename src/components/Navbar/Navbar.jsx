@@ -190,14 +190,6 @@ export default function NavBar({setUser, user}) {
 
                     
 
-                {/* <button type = "button" class = "btn position-relative">
-                    <a href="/cart" style={{color:"black"}}><i class="fa-solid fa-basket-shopping"></i></a>
-                </button> */}
-
-                {/* <button type = "button" class = "btn position-relative">
-                    <a href="/login" style={{color:"black"}}><i class="fa-solid fa-user"></i></a>
-                </button> */}
-
                     </>
                 )}
 
