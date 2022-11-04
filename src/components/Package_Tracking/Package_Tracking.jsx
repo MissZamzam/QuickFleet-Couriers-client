@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import "./Package_Tracking.css";
+import Navbar from '../Navbar/Navbar'
 
 function Package_Tracking() {
   const [ receipts, setReceipts ] = useState( [] );
@@ -17,9 +18,9 @@ function Package_Tracking() {
         console.log( receipts );
         setReceipts(receipts)
     })
-    
+
   }, [] )
-  
+
   function handleFilter (event)
   {
     event.preventDefault();
@@ -38,14 +39,16 @@ function Package_Tracking() {
       console.log(newFilter);
     }
 
-    // setFilteredData( newFilter ); 
+    // setFilteredData( newFilter );
   }
     const clearInput = () => {
       setFilteredData([]);
       setWordEntered("");
     };
-  
+
   return (
+  <>
+    {/* <Navbar /> */}
     <div className="container-fluid bg">
       <div className="receipt-form">
         <form className="receiptNo-form">
@@ -97,6 +100,7 @@ function Package_Tracking() {
         </form>
       </div>
     </div>
+  </>
   );
 }
 

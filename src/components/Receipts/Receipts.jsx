@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import FormLabel from "@mui/material/FormLabel";
+import Navbar from '../Navbar/Navbar'
 
 import { Button, Stack } from "@mui/material";
 import "./Receipts.css";
@@ -157,6 +158,7 @@ function Receipts({ onAddingReceipt }) {
 
   return (
     <>
+    {/* <Navbar /> */}
       <div className="addReceipt">
         <button
           onClick={handleOpen}

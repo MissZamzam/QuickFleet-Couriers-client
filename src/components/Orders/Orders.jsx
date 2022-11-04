@@ -111,7 +111,7 @@
 //           components={{ Toolbar: GridToolbar }}
 //         />
 //       </Box>
-//     </Box>      
+//     </Box>
 //     );
 // }
 // export default Orders;
@@ -191,6 +191,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link }from 'react-router-dom';
+import Navbar from '../Navbar/Navbar'
 
 
 function Orders() {
@@ -211,7 +212,7 @@ function deleteOrder(id) {
     }
   })
   .then(r => r.json())
-  .then(()=> { const deleting = orders.filter((order) => order.id !== id) 
+  .then(()=> { const deleting = orders.filter((order) => order.id !== id)
     setOrders(deleting)
 
 
@@ -225,52 +226,55 @@ function deleteOrder(id) {
 
 
 return(
-<TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-        <TableHead>Recent Orders</TableHead>
-          <TableRow>
-            <TableCell>Id</TableCell>
-            <TableCell align="right">Sender Name</TableCell>
-            <TableCell align="right">Receiver Name</TableCell>
-            <TableCell align="right">Amount Paid</TableCell>
-            <TableCell align="right">Nature Of Goods</TableCell>
-            <TableCell align="right">PickUp</TableCell>
-            <TableCell align="right">Destination</TableCell>
-            <TableCell align="right">Delivery</TableCell>
-            <TableCell align="right">Receipt</TableCell>
+  <>
+    {/* <Navbar /> */}
+    <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+            <TableHead>Recent Orders</TableHead>
+              <TableRow>
+                <TableCell>Id</TableCell>
+                <TableCell align="right">Sender Name</TableCell>
+                <TableCell align="right">Receiver Name</TableCell>
+                <TableCell align="right">Amount Paid</TableCell>
+                <TableCell align="right">Nature Of Goods</TableCell>
+                <TableCell align="right">PickUp</TableCell>
+                <TableCell align="right">Destination</TableCell>
+                <TableCell align="right">Delivery</TableCell>
+                <TableCell align="right">Receipt</TableCell>
 
 
 
-            <TableCell align="right">View</TableCell>
-           
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {orders.map((row) => (
-            <TableRow
-              key={row.id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.id}
-              </TableCell>
-              <TableCell align="right">{row.sender_name}</TableCell>
-              <TableCell align="right">{row.receiver_name}</TableCell>
-              <TableCell align="right">{row.amaount_paid}</TableCell>
-              <TableCell align="right">{row.nature_of_goods}</TableCell>
-              <TableCell align="right">{row.pickup}</TableCell>
-              <TableCell align="right">{row.destination}</TableCell>
-              <TableCell align="right">{row.delivery_id}</TableCell>
-              <TableCell align="right">{row.receipt_id}</TableCell>
-              <TableCell align="right"><Link to="/orders/:id">{row.view}</Link></TableCell>
-              <button onClick={() => {deleteOrder (row.id)}} type="button display in-line padding: 15px" className="btn-danger btn-xsm">DELETE</button>
-          
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+                <TableCell align="right">View</TableCell>
+
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {orders.map((row) => (
+                <TableRow
+                  key={row.id}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.id}
+                  </TableCell>
+                  <TableCell align="right">{row.sender_name}</TableCell>
+                  <TableCell align="right">{row.receiver_name}</TableCell>
+                  <TableCell align="right">{row.amaount_paid}</TableCell>
+                  <TableCell align="right">{row.nature_of_goods}</TableCell>
+                  <TableCell align="right">{row.pickup}</TableCell>
+                  <TableCell align="right">{row.destination}</TableCell>
+                  <TableCell align="right">{row.delivery_id}</TableCell>
+                  <TableCell align="right">{row.receipt_id}</TableCell>
+                  <TableCell align="right"><Link to="/orders/:id">{row.view}</Link></TableCell>
+                  <button onClick={() => {deleteOrder (row.id)}} type="button display in-line padding: 15px" className="btn-danger btn-xsm">DELETE</button>
+
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
     </TableContainer>
+  </>
   );
 }
 

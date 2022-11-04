@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import './Mapper.css'
 import {GoogleMap, useLoadScript} from '@react-google-maps/api'
+import Navbar from '../Navbar/Navbar'
 
 // import { Skeleton } from '@mui/material'
 
@@ -23,7 +24,7 @@ const Mapper = () => {
     //   url: 'https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyBdotwo1ZYLLG9Rxj-TyWpK6gm68X04WGE',
     //   headers: { }
     // };
-    
+
     // axios(config)
     // .then(function (response) {
     //   console.log(JSON.stringify(response.data));
@@ -33,18 +34,21 @@ const Mapper = () => {
     // });
 
     // return <Map />
-    
- 
+
+
   return (
-    <div className='Mapper'>
-        {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem minima cumque consequuntur beatae, obcaecati quasi reprehenderit sint officia aspernatur voluptas quis, iusto similique repudiandae voluptates pariatur corporis sequi, quia mollitia!</p> */}
-        <GoogleMap center={center} zoom={15} mapContainerStyle={{width:"100%", height:"100%"}}>
+    <>
+      {/* <Navbar /> */}
+      <div className='Mapper'>
+          {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem minima cumque consequuntur beatae, obcaecati quasi reprehenderit sint officia aspernatur voluptas quis, iusto similique repudiandae voluptates pariatur corporis sequi, quia mollitia!</p> */}
+          <GoogleMap center={center} zoom={15} mapContainerStyle={{width:"100%", height:"100%"}}>
 
 
-        </GoogleMap>
-        <iframe style={{border:"0", height:"100vh", width:"100%"}} loading="lazy" allowFullScreen src="https://www.google.com/maps/embed/v1/view?zoom=10&center=-1.2921,36.8219&key=AIzaSyBdotwo1ZYLLG9Rxj-TyWpK6gm68X04WGE"></iframe>
+          </GoogleMap>
+          <iframe style={{border:"0", height:"100vh", width:"100%"}} loading="lazy" allowFullScreen src="https://www.google.com/maps/embed/v1/view?zoom=10&center=-1.2921,36.8219&key=AIzaSyBdotwo1ZYLLG9Rxj-TyWpK6gm68X04WGE"></iframe>
 
-    </div>
+      </div>
+    </>
   )
 }
 // function Map(){
