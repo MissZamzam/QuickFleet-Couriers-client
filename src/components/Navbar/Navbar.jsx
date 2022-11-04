@@ -3,6 +3,7 @@
 // import { UserContext } from '../../hooks/useContext'
 // import './Navbar.css'
 import { Link } from 'react-router-dom'
+import "./Navbar.css"
 
 
 // const Navbar = ({setUsers, user}) => {
@@ -81,8 +82,19 @@ import { Link } from 'react-router-dom'
 import { useState } from "react";
 import './Navbar.css'
 
-export default function NavBar() {
+export default function NavBar({setUser, user}) {
     const [navbar, setNavbar] = useState(false);
+
+    const handleLogout = () =>{
+        fetch("/users/signout",{
+            method:"DELETE"
+        })
+        .then((r) => {
+            if(r.ok){
+                setUser(null)
+            }
+        })
+    }
 
     return (
         <nav className="w-full bg-white shadow">
@@ -136,6 +148,33 @@ export default function NavBar() {
                             navbar ? "block" : "hidden"
                         }`}
                     >
+
+{ user ? (
+                    <div class = "navbar-nav mx-auto text-center">
+                        <ul className="items-center justify-center space-y-12 md:flex md:space-x-6 md:space-y-0 mt-3 navbar-list">
+
+                            <li className="text-black-600">
+                                <a href="javascript:void(0)">Home</a>
+                            </li>
+                            <li className="text-black-600">
+                                <a href="javascript:void(0)">Service</a>
+                            </li>
+
+                    <button class = "btn position-relative logout-button" onClick={handleLogout}>
+                        Logout
+                    </button>
+                        </ul>
+
+                    {/* <button class = "btn position-relative logi" onClick={handleLogout}>
+                        Logout
+                    </button> */}
+
+                    
+                    </div>
+                ) : (
+                    <>
+
+
                         <ul className="items-center justify-center space-y-12 md:flex md:space-x-6 md:space-y-0 mt-3 navbar-list">
                             <li className="text-black-600">
                                 <a href="javascript:void(0)">Home</a>
@@ -146,6 +185,32 @@ export default function NavBar() {
                             <Link to={"/login"} type = "button">
                                  <i class="fa-regular fa-user"></i>
                             </Link>
+                        
+                        </ul>
+
+                    
+
+                {/* <button type = "button" class = "btn position-relative">
+                    <a href="/cart" style={{color:"black"}}><i class="fa-solid fa-basket-shopping"></i></a>
+                </button> */}
+
+                {/* <button type = "button" class = "btn position-relative">
+                    <a href="/login" style={{color:"black"}}><i class="fa-solid fa-user"></i></a>
+                </button> */}
+
+                    </>
+                )}
+
+                        <ul className="items-center justify-center space-y-12 md:flex md:space-x-6 md:space-y-0 mt-3 navbar-list">
+                            {/* <li className="text-black-600">
+                                <a href="javascript:void(0)">Home</a>
+                            </li>
+                            <li className="text-black-600">
+                                <a href="javascript:void(0)">Service</a>
+                            </li>
+                            <Link to={"/login"} type = "button">
+                                 <i class="fa-regular fa-user"></i>
+                            </Link> */}
                         
                         </ul>
                     </div>

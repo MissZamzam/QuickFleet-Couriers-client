@@ -45,6 +45,15 @@ function App() {
 
   const [user, setUser] = useState(null)
 
+  useEffect(() => {
+    fetch("/me")
+    .then((r) => {
+      if(r.ok){
+        r.json().then((user) => setUser(user))
+      }
+    })
+  },[])
+
   // const [authorized, setAuthorized] = useState(null);
   // const [userData, setUserData] = useState({});
 

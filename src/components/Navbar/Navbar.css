@@ -54,3 +54,13 @@ i{
 .navbar-list li{
     font-size: 1.5em;
 }
+
+/* .logi{
+    background-color: white !important;
+
+} */
+
+.logout-button{
+    background-color: white !important;
+    font-size: 1.5em;
+}

@@ -13,7 +13,6 @@ export default function Registration() {
         email: "",
         password: "",
         password_confirmation:""
-
       });
 
       const handleChange = (e) => {
@@ -65,7 +64,7 @@ export default function Registration() {
                     </a>
                 </div>
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div>
                             <label
                                 htmlFor="name"
@@ -76,7 +75,9 @@ export default function Registration() {
                             <div className="flex flex-col items-start">
                                 <input
                                     type="text"
-                                    name="name"
+                                    value={user.username}
+                                    onChange={handleChange}
+                                    name="username"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 />
                             </div>
@@ -89,7 +90,9 @@ export default function Registration() {
                                 Email
                             </label>
                             <div className="flex flex-col items-start">
-                                <input
+                                <input 
+                                    value={user.email}
+                                    onChange={handleChange}
                                     type="email"
                                     name="email"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -105,6 +108,8 @@ export default function Registration() {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    value={user.password}
+                                    onChange={handleChange}
                                     type="password"
                                     name="password"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -120,6 +125,8 @@ export default function Registration() {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    value={user.password_confirmation}
+                                    onChange={handleChange}
                                     type="password"
                                     name="password_confirmation"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
