@@ -46,8 +46,15 @@ function App() {
 
   const [user, setUser] = useState(null)
 
-  // const [authorized, setAuthorized] = useState(null);
-  // const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    fetch("/me")
+    .then((r) => {
+      if(r.ok){
+        r.json().then((user) => setUser(user))
+      }
+    })
+  },[])
 
   // useEffect(() => {
   //   const reverify = async () => {
@@ -105,30 +112,6 @@ function App() {
       <Footer />
     </div>
   )
-    // <div className="App">
-    {/* <BrowserRouter> */}
-    {/* <ColorModeContext.Provider value={colorMode}> */}
-      {/* <ThemeProvider theme={theme}> */}
-        {/* <div className="app"> */}
-          {/* <Sidebar isSidebar={isSidebar} /> */}
-            {/* <Topbar setIsSidebar={setIsSidebar} /> */}
-          // </main>
-        {/* </div> */}
-      {/* </ThemeProvider> */}
-    {/* </ColorModeContext.Provider> */}
-  {/* return  (
-    <div className="App">
-    <BrowserRouter>
-    <Navbar user={user} setUser={setUser}/>
-    <div className="routes">
-        <Routes>
-        </Routes>
-    </div>
-    <Footer />
-  </div>  */}
-
-  // )
-
 }
 
 export default App;

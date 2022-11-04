@@ -151,12 +151,14 @@ export default function Login({setUser, user}) {
           if (res.ok) {
             res.json().then((user) => {
               setUser(user);
-              navigate("/profileform");
-              console.log(user);
+            //   console.log(user);
               sessionStorage.setItem("user", JSON.stringify(user));
-              console.log(user);
+            navigate("/profileform");
+
+            //   console.log(user);
               // alert(errors);
             });
+
           } else {
             res.json().then((error) => setErrors(error.errors));
           }

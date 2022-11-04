@@ -8,7 +8,7 @@ function Profile() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch('/use_profiles')
+    fetch('/user_profiles')
     .then((res)=> res.json())
     .then((data) => setUsers(data))
   }, [])

@@ -9,7 +9,8 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import axios from 'axios';
 import { idID } from '@mui/material/locale';
 import "./OrderCard.css"
-import Navbar from '../Navbar/Navbar'
+import { Link } from 'react-router-dom';
+import Profile from '../Profile/Profile';
 
 export default function MultiActionAreaCard() {
     const [orders, setOrders] = useState([])
@@ -103,7 +104,6 @@ export default function MultiActionAreaCard() {
 
   return (
     <>
-      {/* <Navbar /> */}
       <div class="grid gap-10 px-5 mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-12">
 
           {orders.map((table) => {
@@ -226,6 +226,14 @@ export default function MultiActionAreaCard() {
       </div>
 
       </div>
+      <div className='account'>
+      <Link
+              to="/profile"
+              onClick={ () => <Profile /> }
+            >
+              <button className="btn btn-primary back-btn">Back</button>
+            </Link>
+        </div>
 
     </>
 

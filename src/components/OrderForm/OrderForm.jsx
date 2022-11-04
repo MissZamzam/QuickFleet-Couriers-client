@@ -9,7 +9,6 @@ import { Select } from '@mui/material';
 import { InputLabel } from '@mui/material';
 import { MenuItem } from '@mui/material';
 import "./OrderForm.css"
-import Navbar from '../Navbar/Navbar'
 
 
 function OrderForm() {
@@ -46,7 +45,6 @@ function OrderForm() {
 
   return(
     <>
-      <Navbar />
       <div className='form'>
         <form onSubmit={handleSubmit} className="forrm">
           <Box

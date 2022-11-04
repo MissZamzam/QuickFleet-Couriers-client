@@ -191,8 +191,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link }from 'react-router-dom';
-import Navbar from '../Navbar/Navbar'
-
 
 function Orders() {
 const[orders, setOrders]= useState([])
@@ -227,7 +225,6 @@ function deleteOrder(id) {
 
 return(
   <>
-    {/* <Navbar /> */}
     <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>

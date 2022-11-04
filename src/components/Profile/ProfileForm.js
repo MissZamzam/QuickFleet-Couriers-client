@@ -12,7 +12,7 @@ function ProfileForm() {
 
   function handleSubmit(e){
     e.preventDefault()
-    fetch('/use_profiles',{
+    fetch('/user_profiles',{
       method: 'POST',
       headers: {
           "Content-type": "application/json",
