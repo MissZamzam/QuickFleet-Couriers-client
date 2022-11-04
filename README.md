@@ -57,13 +57,25 @@ Our Company is suited for both businesses and individuals.</li>
 </ul><ul>
 <li>Automating Admin’s graph</li>
 </ul>
+</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LinkedIn Profiles</font></font></h2>
+<hr><ul>
+<li>LinkedIn - Zamzam Hassan</li>
+  <li>LinkedIn - Janet Ngei</li>
+  <li>LinkedIn - Loretta Jefwa</li>
+  <li> LinkedIn - Newton Ombese</li>
+  <li>  LinkedIn - Alvin Ndung'u</li>
+ </ul><ul>
+<li></li>
+</ul>
+</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Live Link</font></font></h2>
+<hr><ul>
+<li>https://quickfleet-api.herokuapp.com</li>
+  <li>https://quickfleet-api.herokuapp.com/user_profiles</li>
+  <li>https://quickfleet-api.herokuapp.com/services</li>
+  <li></li>
+  <li></li>
+ </ul><ul>
+<li></li>
+</ul>
 
-LinkedIn - Zamzam Hassan LinkedIn - Janet Ngei LinkedIn - Loretta Jefwa LinkedIn - Newton Ombese LinkedIn - Alvin Ndung'u
-The live link for the project is:
-https://quickfleet-api.herokuapp.com
-For the user-profiles link is:
-https://quickfleet-api.herokuapp.com/user_profiles
-For the services link is:
-https://quickfleet-api.herokuapp.com/services
-For the orders link is:
-https://quickfleet-api.herokuapp.com/orders
+ 
