@@ -57,13 +57,14 @@ Our Company is suited for both businesses and individuals.</li>
 </ul><ul>
 <li>Automating Admin’s graph</li>
 </ul>
-</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LinkedIn Profiles</font></font></h2>
+</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Author's Profiles</font></font></h2>
 <hr><ul>
-<li>LinkedIn - Zamzam Hassan</li>
-  <li>LinkedIn - Janet Ngei</li>
-  <li>LinkedIn - Loretta Jefwa</li>
-  <li> LinkedIn - Newton Ombese</li>
-  <li>  LinkedIn - Alvin Ndung'u</li>
+  # Authors Info
+  <li>LinkedIn - [Zamzam Hassan](https://www.linkedin.com/in/zamzam-hassan-16a7557a)</li>
+  <li>LinkedIn - [Janet Ngei](https://www.linkedin.com/in/janet-mutindi-22a237153)</li>
+  <li>LinkedIn - [Loretta Jefwa](https://www.linkedin.com/in/loretta-jefwa-b17b401b9/)</li>
+  <li>LinkedIn - [Newton Ombese](https://www.linkedin.com/in/newton-ombese-570862210/)</li>
+  <li>LinkedIn - [Alvin Ndung'u](https://www.linkedin.com/in/alvin-ndungu/)</li>
  </ul><ul>
 </ul>
 </ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Live Link</font></font></h2>
