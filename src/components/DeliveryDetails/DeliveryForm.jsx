@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Image1 from '../Image/receiver.png'
 import Image2 from '../Image/instructions.png'
 import Image3 from "../Image/packagearrival.png";
+import Navbar from '../Navbar/Navbar'
 
 function DeliveryForm() {
 
@@ -16,6 +17,7 @@ function DeliveryForm() {
 
   return (
     <div>
+      {/* <Navbar /> */}
         {/* <div class="flex justify-center mb-4">
             <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
                 <img class=" w-full h-24 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />

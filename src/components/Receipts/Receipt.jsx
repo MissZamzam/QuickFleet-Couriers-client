@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Image5 from "../Image/logo.png";
 import "./Receipt.css";
+import Navbar from '../Navbar/Navbar'
+
 
 function Receipt() {
   const [{ data: receipt, error, status }, setReceipt] = useState({
@@ -41,6 +43,7 @@ function Receipt() {
 
   return (
     <>
+    {/* <Navbar /> */}
       <div className="restbody">
         <div className="container bg-darksalmon">
           <div className="card restcards" key={receipt.id}>
