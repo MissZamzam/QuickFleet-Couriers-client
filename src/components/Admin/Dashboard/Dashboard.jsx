@@ -43,7 +43,7 @@ const Dashboard = () => {
 
 
     <div className="dashboardd">
-      <Topbar />
+      {/* <Topbar /> */}
 <div className="admin" class="d-flex">
     <div className="side">
       <Sidebar/>
