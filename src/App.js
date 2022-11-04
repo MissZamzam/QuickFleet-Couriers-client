@@ -39,6 +39,7 @@ import FAQ from "./components/Admin/scenes/faq";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./components/Admin/Glob/theme";
 import Calendar from "./components/Admin/scenes/calendar/calendar";
+import ProfileForm from './components/Profile/ProfileForm'
 
 
 function App() {
@@ -98,6 +99,7 @@ function App() {
               <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
               <Route path='/Signup' element={<Signup  />} />
               <Route path='/Mapper' element={<Mapper  />} />
+              <Route path='/profileform' element={<ProfileForm />} />
             </Routes>
       </main>
       <Footer />

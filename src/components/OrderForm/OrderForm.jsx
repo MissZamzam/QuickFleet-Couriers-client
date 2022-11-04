@@ -39,7 +39,7 @@ function OrderForm() {
   }
 
   return(
-    <div className='form'>
+    <div className='container d-flex align-items-center justify-content-center'>
       <form onSubmit={handleSubmit}>
         <Box
             sx={{
@@ -82,7 +82,7 @@ function OrderForm() {
             </div>
             <div>
               <TextField
-              
+
                 id="outlined-password-input"
                 label="Nature of goods"
                 value={natureOfGoods}
