@@ -1,3 +1,4 @@
+import { Dashboard } from "@mui/icons-material";
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Image5 from "../Image/logo.png";
@@ -119,6 +120,14 @@ function Receipt() {
           Print <i className="fa fa-print" aria-hidden="true"></i>
         </button>
       </div>
+      <div className='account'>
+      <Link
+              to="/dashboard"
+              onClick={ () => <Dashboard /> }
+            >
+              <button className="btn btn-primary back-btn">Back</button>
+            </Link>
+        </div>
     </>
   );
 }
