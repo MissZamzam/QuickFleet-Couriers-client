@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ReactReadMoreReadLess from "react-read-more-read-less";
-
+import "./Services.css"
 
 export default function Services() {
 
@@ -46,6 +46,10 @@ export default function Services() {
             </Card>
             )
         })}
+        <div className='account'>
+            <p>Interested in our services?</p>
+            <h5>Create an account <a href="/login">Proceed</a></h5>
+        </div>
           </div>
 
   );

@@ -65,7 +65,7 @@ function OrderForm() {
               "display": "flex",
               "fontWeight": "bolder",
               "color": "black",
-              "fontSize": "20px"
+              "fontSize": "40px"
             }}
           >
             Place your order

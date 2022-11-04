@@ -21,6 +21,8 @@ export default function MultiActionAreaCard() {
     // const [amountPaid, setAmountPaid] = useState('')
     const [pickup, setPickup] = useState('')
     const [destination, setDestination] = useState('')
+    const [status, setStatus] = useState('')
+
 
     useEffect(() =>{
         fetch('/orders')
@@ -160,6 +162,9 @@ export default function MultiActionAreaCard() {
                     <button class="bg-red-500 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDelete(table.id)}>
                       CANCEL ORDER
                     </button>
+                    {/* <button  class="btn update-btn">
+                      {status.content}
+                    </button> */}
                 </CardActions>
                 </Card>
             </div>

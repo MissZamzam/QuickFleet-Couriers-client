@@ -7,6 +7,8 @@ import { useTheme } from "@mui/material";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios"
+import { Link } from "react-router-dom";
+import Receipts from "../../../Receipts/Receipts";
 
 const Orders = () => {
   const theme = useTheme();
@@ -54,7 +56,33 @@ const Orders = () => {
       field: "destination",
       headerName: "Destination",
       flex: 1,
-    }
+    },
+
+    {
+      field: "Route",
+      headerName: "Dispatch",
+      type: "actions",
+      width: 130,
+      align: "center",
+
+      renderCell: (params) => {
+        console.log(params);
+
+        return (
+          <>
+            <Link
+              to='/receipts'
+              onClick={ () => <Receipts /> }
+              
+            >
+              <button className="viewBtn">Dispatch</button>
+            </Link>
+          </>
+        );
+      },
+    },
+
+
   ];
 
   return (
@@ -74,24 +102,31 @@ const Orders = () => {
             borderBottom: "none",
           },
           "& .name-column--cell": {
-            color: colors.greenAccent[300],
+            color: colors.blueAccent[300],
           },
           "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: colors.blueAccent[200],
             borderBottom: "none",
+            color: "orange"
+
           },
           "& .MuiDataGrid-virtualScroller": {
             backgroundColor: colors.primary[400],
+
           },
           "& .MuiDataGrid-footerContainer": {
             borderTop: "none",
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: colors.blueAccent[200],
+
+            
           },
           "& .MuiCheckbox-root": {
             color: `${colors.greenAccent[200]} !important`,
+            
           },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
             color: `${colors.grey[100]} !important`,
+            
           },
         }}
       >
