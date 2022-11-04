@@ -69,12 +69,12 @@ function Profile() {
                 Manage Your Orders
               </Link>
             </button>
-            <p>Track your Orders</p>
+            {/* <p>Track your Orders</p>
             <button class="btn">
-              <Link to="/packagetrackings" >
+              <Link to="/order/${id}" >
                 Track Your Order
               </Link>
-            </button>
+            </button> */}
           </div>
         </div>
         </div>
