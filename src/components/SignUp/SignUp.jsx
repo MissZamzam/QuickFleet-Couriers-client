@@ -55,20 +55,6 @@ export default function Registration() {
             password: "",
             password_confirmation:""
         }))
-
-        // fetch('/use_profile',{
-        //     method: 'POST',
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         firstName,
-        //         lastName,
-        //         location,
-        //         telephone,
-        //     }),
-        // })
-        // .then((r)=> r.json())
         navigate('/profileform')
     }
 

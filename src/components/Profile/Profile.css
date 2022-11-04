@@ -1,4 +1,4 @@
-.cont{
+/* .cont{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,9 +23,9 @@
 
 .options-row button a{
   color: #fff;
-}
+} */
 
-@media screen and (max-width:770px){
+/* @media screen and (max-width:770px){
   .user-row,.options-row{
       flex-basis: 100%;
       font-size: 14px;
@@ -34,7 +34,7 @@
       top: 50%;
       left: 70%;
   }
-}
+} */
 
 .outer-div,
 .inner-div {
@@ -175,6 +175,29 @@
   /* background: rgb(40, 34, 61); */
   color: rgb(34, 32, 32);
 }
+
+.booking-orders{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.booking-orders p{
+  font-size: 1.4em;
+  margin-right: 2%;
+  pointer-events: none;
+  cursor:none;
+}
+
+.booking-orders a button{
+  color: black;
+  border: 1px solid #272D55;
+}
+
+.booking-orders a button:hover{
+  background-color: #fff;
+}
+
 
 .back {
   transform: rotateY(180deg);
