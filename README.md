@@ -5,14 +5,16 @@ We provide safe and secure local delivery services.</p><h2><font style="vertical
 <li>QuickFleet is a courier service company that offers door-to-door delivery services while ensuring our customer's packages are safe and secure.
 Our Company is suited for both businesses and individuals.</li>
 </ul><ul>
-<li>Due to the increased crime rate in recent times, it is difficult for people to shop and take their goods home safely or any other valuable items especially if they don’t have private means.</li>
-</ul><ul>
+<li>PROBLEM STATEMENT</li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Due to the increased crime rate in recent times, it is difficult for people to shop and take their goods home safely or any other valuable items especially if they don’t have private means.</font></font></p><ul>
 <li></li>
 </ul>
-<p>Security from theft or loss</p>
-<p>Adaptability to loads that exceed the size or weight limits for the postal service</p>
-<p>Completeness of service from door to door</p>
-<p>Overall cost-effectiveness</p><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Technologies Used</font></font></h2>
+<p>SOLUTIONS</p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Security from theft or loss</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adaptability to loads that exceed the size or weight limits for the postal service</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Completeness of service from door to door</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Overall cost-effectiveness</font></font></p><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Technologies Used</font></font></h2>
 <hr><ul>
 <li>Figma</li>
 </ul><ul>
@@ -54,5 +56,14 @@ Our Company is suited for both businesses and individuals.</li>
 <li>Assisted Shopping</li>
 </ul><ul>
 <li>Automating Admin’s graph</li>
-</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contact</font></font></h2>
-<hr><p><span style="margin-right: 30px;"></span><a href="https://github.com/MissZamzam/QuickFleet-Couriers-client, https://github.com/MissZamzam/QuickFleet-Couriers-api, LIVE LINK: https://quickfleet-api.herokuapp.com/"><img target="_blank" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" style="width: 10%;"></a></p>
+</ul>
+
+LinkedIn - Zamzam Hassan LinkedIn - Janet Ngei LinkedIn - Loretta Jefwa LinkedIn - Newton Ombese LinkedIn - Alvin Ndung'u
+The live link for the project is:
+https://quickfleet-api.herokuapp.com
+For the user-profiles link is:
+https://quickfleet-api.herokuapp.com/user_profiles
+For the services link is:
+https://quickfleet-api.herokuapp.com/services
+For the orders link is:
+https://quickfleet-api.herokuapp.com/orders
