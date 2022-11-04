@@ -31,3 +31,16 @@ hr{
 .sec2card{
     text-align: justify;
 }
+.back-btn{
+    padding: 15px 50px;
+    background-color: #f2b035;
+    color: black;
+    border: none;
+    font-size: larger;
+}
+.printBtn{
+    margin-left: 11em;
+    padding: 15px 50px;
+    /* margin: 10px; */
+    font-size: larger;
+}

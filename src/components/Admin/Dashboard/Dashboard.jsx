@@ -12,6 +12,7 @@ import GeographyChart from "../Comp/GeographyChart";
 import BarChart from "../Comp/BarChart";
 import StatBox from "../Comp/StatBox";
 import Sidebar from "../Glob/Sidebar"
+import Topbar from "../Glob/Topbar"
 import axios from "axios"
 import "../../../App.css"
 
@@ -42,6 +43,7 @@ const Dashboard = () => {
 
 
     <div className="dashboardd">
+      <Topbar />
 <div className="admin" class="d-flex">
     <div className="side">
       <Sidebar/>
