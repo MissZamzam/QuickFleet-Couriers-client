@@ -10,7 +10,10 @@ body{
     position: relative;
 }
 
-.dashboardd{
+/* .dashboardd{
     background-color: #272D55;
-}
+} */
 
+title{
+    color: white;
+}
