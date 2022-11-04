@@ -14,10 +14,7 @@ export default function Registration() {
         password: "",
         password_confirmation:""
     });
-    // const [firstName, setFirstName] = useState("")
-    // const [lastName, setLastName] = useState("")
-    // const [telephone, setTelephone] = useState("")
-    // const [location, setLocation] = useState("")
+
 
       const handleChange = (e) => {
         const { name, value } = e.target;
@@ -55,20 +52,6 @@ export default function Registration() {
             password: "",
             password_confirmation:""
         }))
-
-        // fetch('/use_profile',{
-        //     method: 'POST',
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         firstName,
-        //         lastName,
-        //         location,
-        //         telephone,
-        //     }),
-        // })
-        // .then((r)=> r.json())
         navigate('/profileform')
     }
 
@@ -85,19 +68,21 @@ export default function Registration() {
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
                     <form onSubmit={handleSubmit}>
                         <div className="mt-4">
+
                             <label
                                 htmlFor="email"
                                 className="block text-sm font-medium text-gray-700 undefined"
                             >
                                 UserName
                             </label>
+
                             <div className="flex flex-col items-start">
                                 <input
-                                    type="email"
-                                    name="email"
+                                    type="username"
+                                    name="username"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                    // value={user.username}
-                                    // onChange={(e)=>setUser.username(e.target.value)}
+                                    value={user.username}
+                                    onChange={handleChange}
                                 />
                             </div>
                         </div>
@@ -114,7 +99,7 @@ export default function Registration() {
                                     name="email"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     value={user.email}
-                                    onChange={(e)=>setUser.email(e.target.value)}
+                                    onChange={handleChange}
                                 />
                             </div>
                         </div>
@@ -131,7 +116,7 @@ export default function Registration() {
                                     name="password"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     value={user.password}
-                                    onChange={(e)=>setUser.password(e.target.value)}
+                                    onChange={handleChange}
                                 />
                             </div>
                         </div>
@@ -148,7 +133,7 @@ export default function Registration() {
                                     name="password_confirmation"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     value={user.password_confirmation}
-                                    onChange={(e)=>setUser.password_confirmation(e.target.value)}
+                                    onChange={handleChange}
                                 />
                             </div>
                         </div>
