@@ -1,70 +1,58 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h1>QUICK FLEET SERVICES</h1>
+<hr><p>QuickFleet is a courier service company that offers door to door delivery services.
+We provide safe and secure local delivery services.</p><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">General Information</font></font></h2>
+<hr><ul>
+<li>QuickFleet is a courier service company that offers door-to-door delivery services while ensuring our customer's packages are safe and secure.
+Our Company is suited for both businesses and individuals.</li>
+</ul><ul>
+<li>Due to the increased crime rate in recent times, it is difficult for people to shop and take their goods home safely or any other valuable items especially if they don’t have private means.</li>
+</ul><ul>
+<li></li>
+</ul>
+<p>Security from theft or loss</p>
+<p>Adaptability to loads that exceed the size or weight limits for the postal service</p>
+<p>Completeness of service from door to door</p>
+<p>Overall cost-effectiveness</p><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Technologies Used</font></font></h2>
+<hr><ul>
+<li>Figma</li>
+</ul><ul>
+<li>React</li>
+</ul><ul>
+<li>Bootsrap</li>
+</ul><ul>
+<li>Material UI</li>
+</ul><ul>
+<li>Ruby on Rails</li>
+</ul><ul>
+<li>POSTGRES</li>
+</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Features</font></font></h2>
+<hr><ul>
+<li>As a User of the application you will be able to:</li>
+</ul><ul>
+<li>Create an Account</li>
+</ul><ul>
+<li>Place Orders</li>
+</ul><ul>
+<li>Get Email notification of the Order Details once the order is dispatched.</li>
+</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Usage</font></font></h2>
+<hr><ul>
+<li>
+<p>Users can create an account and log in</p>
+</li>
+<li>
+<p>Users can create, view, edit or    cancel a delivery order</p>
+</li>
+</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Improvements</font></font></h2>
+<hr><ul>
+<li>Online Chat</li>
+</ul><ul>
+<li>Pickup Request On chat</li>
+</ul><ul>
+<li>Overseas Service</li>
+</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Features that can be added</font></font></h2>
+<hr><ul>
+<li>Assisted Shopping</li>
+</ul><ul>
+<li>Automating Admin’s graph</li>
+</ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contact</font></font></h2>
+<hr><p><span style="margin-right: 30px;"></span><a href="LinkedIn Zamzam - Hassan LinkedIn - Janet Ngei LinkedIn - Loretta Jefwa LinkedIn - Newton Ombese LinkedIn - Alvin Ndung'u"><img target="_blank" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" style="width: 10%;"></a><span style="margin-right: 30px;"></span><a href="https://github.com/MissZamzam/QuickFleet-Couriers-client, https://github.com/MissZamzam/QuickFleet-Couriers-api, LIVE LINK: https://quickfleet-api.herokuapp.com/"><img target="_blank" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" style="width: 10%;"></a></p>
