@@ -65,15 +65,12 @@ Our Company is suited for both businesses and individuals.</li>
   <li> LinkedIn - Newton Ombese</li>
   <li>  LinkedIn - Alvin Ndung'u</li>
  </ul><ul>
-<li></li>
 </ul>
 </ul><h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Live Link</font></font></h2>
 <hr><ul>
 <li>https://quickfleet-api.herokuapp.com</li>
   <li>https://quickfleet-api.herokuapp.com/user_profiles</li>
   <li>https://quickfleet-api.herokuapp.com/services</li>
-  <li></li>
-  <li></li>
  </ul><ul>
 <li></li>
 </ul>
