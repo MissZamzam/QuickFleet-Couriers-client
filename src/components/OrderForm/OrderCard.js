@@ -179,10 +179,10 @@ export default function MultiActionAreaCard() {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Order</h1>
+        <h1 class="modal-title mt-1 fs-5" id="exampleModalLabel">Order</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body d-flex align-items-center justify-content-center">
 
       <form onSubmit={handleSubmit}>
         <div class="mb-6">
