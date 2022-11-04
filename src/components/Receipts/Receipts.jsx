@@ -182,7 +182,7 @@ function Receipts({ onAddingReceipt }) {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Add Receipt
+                  Create Receipt
                 </h5>
                 <button
                   type="button"
@@ -312,7 +312,7 @@ function Receipts({ onAddingReceipt }) {
                       </button>
                     </div>
                     <div className="form-group">
-                      {errors.map((err) => (
+                      {errors?.map((err) => (
                         <div key={err}>{err}</div>
                       ))}
                     </div>
