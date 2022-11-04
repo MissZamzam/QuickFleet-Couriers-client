@@ -72,7 +72,6 @@ Our Company is suited for both businesses and individuals.</li>
   <li>https://quickfleet-api.herokuapp.com/user_profiles</li>
   <li>https://quickfleet-api.herokuapp.com/services</li>
  </ul><ul>
-<li></li>
 </ul>
 
  
