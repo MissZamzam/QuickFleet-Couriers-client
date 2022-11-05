@@ -196,7 +196,7 @@ function Orders() {
 const[orders, setOrders]= useState([])
 
 useEffect(()=>{
-    fetch("http://127.0.0.1:3000/orders")
+    fetch("/orders")
     .then(response => response.json())
     .then(data => setOrders(data))
 },[])
