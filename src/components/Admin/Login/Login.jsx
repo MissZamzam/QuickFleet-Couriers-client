@@ -134,7 +134,7 @@ export default function Login({setUser}) {
         e.preventDefault();
         // post user credentialas to login route
 
-        fetch("/admin/login", {
+        fetch("https://quickfleet-api.herokuapp.com/admin/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

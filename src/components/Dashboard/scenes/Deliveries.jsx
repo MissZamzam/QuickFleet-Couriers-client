@@ -167,13 +167,13 @@ function Deliveries({ onAddingDelivery }) {
   }, []);
 
   async function getDeliveries() {
-    let result = await fetch("http://127.0.0.1:3004/deliveries");
+    let result = await fetch("https://quickfleet-api.herokuapp.com/deliveries");
     result = await result.json();
     setDeliveries(result);
   }
 
   function deleteDelivery(id) {
-    fetch(`http://127.0.0.1:3004/deliveries/${id}`, {
+    fetch(`https://quickfleet-api.herokuapp.com/deliveries/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -193,7 +193,7 @@ function Deliveries({ onAddingDelivery }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("http://127.0.0.1:3004/deliveries", {
+    fetch("https://quickfleet-api.herokuapp.com/deliveries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -213,7 +213,7 @@ function Deliveries({ onAddingDelivery }) {
           console.log(newDelivery);
           onAddingDelivery(newDelivery);
 
-          navigate(`/http://127.0.0.1:3004/deliveries/${id}`);
+          navigate(`https://quickfleet-api.herokuapp.com/deliveries/${id}`);
           setErrors([]);
         });
 
@@ -405,7 +405,7 @@ function Deliveries({ onAddingDelivery }) {
                 <TableCell align="right">{row.package_details}</TableCell>
                 <TableCell align="right">
                   <Link
-                    to={`/deliveries/${row.id}`}
+                    to={`https://quickfleet-api.herokuapp.com/deliveries/${row.id}`}
                     onClick={() => <Delivery key={row.id} />}
                   >
                     <button className="viewBtn">View More</button>

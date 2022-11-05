@@ -48,7 +48,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch("/me")
+    fetch("https://quickfleet-api.herokuapp.com/me")
     .then((r) => {
       if(r.ok){
         r.json().then((user) => setUser(user))

@@ -28,9 +28,8 @@ const Dashboard = () => {
   const [orders, setOrders] = useState([])
 
   useEffect(()=>{
-    // axios("/orders")
-    // .then((resv)=>{console.log(resv)})
-    fetch("/orders")
+    fetch("https://quickfleet-api.herokuapp.com/orders")
+
     .then((res)=> res.json())
     .then(data => setOrders(data))
   },[])

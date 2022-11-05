@@ -25,7 +25,7 @@ function Editdelivery () {
 
     useEffect(() => {
 
-        fetch(`http://127.0.0.1:3004/deliveries/${id}`)
+        fetch(`https://quickfleet-api.herokuapp.com/deliveries/${id}`)
           .then((response) => response.json())
           .then((data) => {
 
@@ -41,7 +41,7 @@ function Editdelivery () {
 
       function handleSubmit(e) {
         e.preventDefault();
-        fetch(`http://127.0.0.1:3004/deliveries/${id}`,{
+        fetch(`https://quickfleet-api.herokuapp.com/deliveries/${id}`,{
 	method:'PATCH',
   	headers:{
     	'Content-Type': 'application/json'
