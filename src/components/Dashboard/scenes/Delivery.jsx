@@ -59,7 +59,7 @@ function Delivery() {
     e.preventDefault();
 
     console.log(editdelivery);
-    fetch(`http://127.0.0.1:3004/deliveries/${id}`, {
+    fetch(`/deliveries/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
