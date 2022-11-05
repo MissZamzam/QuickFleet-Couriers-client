@@ -15,7 +15,10 @@ export default function Services() {
     useEffect(()=>{
         fetch("/services")
         .then((res) => res.json())
-        .then((data)=>setServices(data))
+        .then((data)=>{
+            setServices(data)
+            console.log("fetched")
+        })
     }, [])
 
 
