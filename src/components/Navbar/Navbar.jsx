@@ -2,7 +2,7 @@
 // import { useEffect } from 'react'
 // import { UserContext } from '../../hooks/useContext'
 // import './Navbar.css'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 // const Navbar = ({setUsers, user}) => {
@@ -14,7 +14,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 //         .then((r) => {
 //             if (r.ok){
 //                 setUsers(null)
-//             }
+//             }href
 //         })
 //     }
     
@@ -103,9 +103,9 @@ export default function NavBar({setUser, user}) {
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block navbar-logo">
-                        <a href="javascript:void(0)">
-                        <span class = "text-uppercase ms-2">Quick<span style={{color:"orange"}}>Fleet</span></span>
-                        </a>
+                        <Link to="/">
+                        <span className = "text-uppercase ms-2">Quick<span style={{color:"orange"}}>Fleet</span></span>
+                        </Link>
                         <div className="md:hidden">
                             <button
                                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -152,15 +152,15 @@ export default function NavBar({setUser, user}) {
                     >
 
                         { user ? (
-                    <div class = "navbar-nav mx-auto text-center">
+                    <div className= "navbar-nav mx-auto text-center">
                         <ul className="items-center justify-center space-y-12 md:flex md:space-x-6 md:space-y-0 mt-3 navbar-list">
                             <li className="text-black-600">
-                                <a href="javascript:void(0)">Home</a>
+                                <Link to="/">Home</Link>
                             </li>
                             <li className="text-black-600">
-                                <a href="javascript:void(0)">Service</a>
+                                <Link to="/services">Service</Link>
                             </li>
-                    <button class = "btn position-relative logout-button" onClick={handleLogout}>
+                    <button className = "btn position-relative logout-button" onClick={handleLogout}>
                         Logout
                     </button>
                         </ul>
@@ -171,13 +171,13 @@ export default function NavBar({setUser, user}) {
                     <>
                         <ul className="items-center justify-center space-y-12 md:flex md:space-x-6 md:space-y-0 mt-3 navbar-list">
                             <li className="text-black-600">
-                                <a href="javascript:void(0)">Home</a>
+                            <Link to="/">Home</Link>
                             </li>
                             <li className="text-black-600">
-                                <a href="javascript:void(0)">Service</a>
+                            <Link to="/services">Service</Link>
                             </li>
                             <Link to={"/login"} type = "button">
-                                 <i class="fa-regular fa-user"></i>
+                                 <i className="fa-regular fa-user"></i>
                             </Link>
                         
                         </ul>
