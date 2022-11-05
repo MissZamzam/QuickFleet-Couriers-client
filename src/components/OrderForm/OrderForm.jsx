@@ -23,7 +23,7 @@ function OrderForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    fetch('/orders',{
+    fetch('https://quickfleet-api.herokuapp.com/orders',{
       method: 'POST',
       headers: {
           "Content-Type": "application/json",
