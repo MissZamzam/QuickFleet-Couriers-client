@@ -13,7 +13,7 @@ export default function Services() {
     const [services, setServices] = useState([])
 
     useEffect(()=>{
-        fetch("https://quickfleet-api.herokuapp.com/services")
+        fetch("/services")
         .then((res) => res.json())
         .then((data)=>setServices(data))
     }, [])
