@@ -1,7 +1,10 @@
+import { Dashboard } from "@mui/icons-material";
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Image5 from "../Image/logo.png";
 import "./Receipt.css";
+import Navbar from '../Navbar/Navbar'
+
 
 function Receipt() {
   const [{ data: receipt, error, status }, setReceipt] = useState({
@@ -12,7 +15,7 @@ function Receipt() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:3000/receipts/${id}`).then((response) => {
+    fetch(`/receipts/${id}`).then((response) => {
       if (response.ok) {
         response.json().then((receipt) => {
           console.log(receipt);
@@ -40,6 +43,7 @@ function Receipt() {
 
   return (
     <>
+    {/* <Navbar /> */}
       <div className="restbody">
         <div className="container bg-darksalmon">
           <div className="card restcards" key={receipt.id}>
@@ -119,6 +123,14 @@ function Receipt() {
           Print <i className="fa fa-print" aria-hidden="true"></i>
         </button>
       </div>
+      <div className='account'>
+      <Link
+              to="/dashboard"
+              onClick={ () => <Dashboard /> }
+            >
+              <button className="btn btn-primary back-btn">Back</button>
+            </Link>
+        </div>
     </>
   );
 }

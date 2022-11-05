@@ -1,31 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css"
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Registration() {
-
+    const navigate = useNavigate()
     const [errMsg, setErrMsg] = useState('');
-
     const [user, setUser] = useState({
         username:"",
         email: "",
         password: "",
         password_confirmation:""
-
       });
-
       const handleChange = (e) => {
         const { name, value } = e.target;
         setUser({...user,[name]: value})
       };
-
-
     useEffect(() => {
         setErrMsg('');
     },[])
-
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -36,6 +30,7 @@ export default function Registration() {
             password_confirmation: user.password_confirmation
         })
         .then((res) => {setUser(res)})
+
         .catch((err) => {
             if(!err?.response){
                 console.log(err.response.status)
@@ -44,6 +39,7 @@ export default function Registration() {
                 console.log(`here ${err.response.message}`)
             }
         })
+        navigate("/profileform")
         .finally(()=>
         setUser({
             username:"",
@@ -51,7 +47,6 @@ export default function Registration() {
             password: "",
             password_confirmation:""
         }))
-
     }
     return (
         <div>
@@ -59,13 +54,12 @@ export default function Registration() {
                 <div>
                     <a href="/">
                         <h3 className="text-4xl font-bold text-600">
-                        <span className='quick'>Sign</span><span className='fleet'>Up</span>
-
+                        <span>Sign</span><span className='fleet'>Up</span>
                         </h3>
                     </a>
                 </div>
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div>
                             <label
                                 htmlFor="name"
@@ -76,7 +70,9 @@ export default function Registration() {
                             <div className="flex flex-col items-start">
                                 <input
                                     type="text"
-                                    name="name"
+                                    value={user.username}
+                                    onChange={handleChange}
+                                    name="username"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 />
                             </div>
@@ -90,6 +86,8 @@ export default function Registration() {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    value={user.email}
+                                    onChange={handleChange}
                                     type="email"
                                     name="email"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -105,6 +103,8 @@ export default function Registration() {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    value={user.password}
+                                    onChange={handleChange}
                                     type="password"
                                     name="password"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -120,6 +120,8 @@ export default function Registration() {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    value={user.password_confirmation}
+                                    onChange={handleChange}
                                     type="password"
                                     name="password_confirmation"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -127,7 +129,7 @@ export default function Registration() {
                             </div>
                         </div>
                         <a
-                            href="#"
+                            href=" "
                             className="text-xs text-blue-600"
                         >
                             Forget Password?
