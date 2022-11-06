@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'http://localhost:3004';
+const BASE_URL = 'https://quickfleet-api.herokuapp.com';
 
 export default axios.create({
     baseURL: BASE_URL

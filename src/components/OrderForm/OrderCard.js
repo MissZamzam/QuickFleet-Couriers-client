@@ -27,7 +27,7 @@ export default function MultiActionAreaCard() {
 
 
     useEffect(() =>{
-        fetch('/orders')
+        fetch('https://quickfleet-api.herokuapp.com/orders')
         .then(res => res.json())
         .then(data =>
             setOrders(data))

@@ -31,7 +31,7 @@ function Delivery() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:3004/deliveries/${id}`).then((response) => {
+    fetch(`https://quickfleet-api.herokuapp.com/deliveries/${id}`).then((response) => {
       if (response.ok) {
         response.json().then((delivery) => {
 
@@ -59,7 +59,7 @@ function Delivery() {
     e.preventDefault();
 
     console.log(editdelivery);
-    fetch(`/deliveries/${id}`, {
+    fetch(`https://quickfleet-api.herokuapp.com/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
