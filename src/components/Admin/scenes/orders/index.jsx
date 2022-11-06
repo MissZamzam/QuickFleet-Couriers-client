@@ -18,11 +18,11 @@ const Orders = () => {
 
 
   useEffect(()=>{
-    axios("/orders")
-    .then((resv)=>{setOrders(resv.data)})
-    // fetch("/orders")
-    // .then((res)=> res.json())
-    // .then(data => setOrders(data))
+    // axios("/orders")
+    // .then((resv)=>{setOrders(resv.data)})
+    fetch("https://quickfleet-api.herokuapp.com/orders")
+    .then((res)=> res.json())
+    .then(data => setOrders(data))
   },[])
   console.log(orders)
 
