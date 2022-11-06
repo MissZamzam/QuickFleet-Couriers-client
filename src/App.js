@@ -100,7 +100,7 @@ function App() {
               <Route path='/profile' element={<Profile />} />
               <Route path='/deliveryform' element={<DeliveryForm />} />
               {/* <Route path='/dashboard' element={<Dashboard />} /> */}
-              <Route path='/admin' element={<Admin />} />
+              <Route path='/admin' element={<Admin setUser={setUser}/>} />
               <Route path='/packagetrackings' element={<PackageTracking />} />
               <Route path='/tracking/:id' element={<Tracking />} />
               <Route path='/Login' element={<Login user={user} setUser={setUser} />} />
