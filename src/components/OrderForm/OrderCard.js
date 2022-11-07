@@ -78,7 +78,9 @@ export default function MultiActionAreaCard() {
 
 
     function handleDelete(id){
-        fetch(`/orders/${id}`,{
+        // fetch(`/orders/${id}`,{
+          fetch(`https://quickfleet-api.herokuapp.com/orders/${id}`,{ 
+
             method: "DELETE",
         })
 
