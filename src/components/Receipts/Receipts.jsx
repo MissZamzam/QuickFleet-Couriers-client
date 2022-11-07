@@ -125,7 +125,9 @@ function Receipts({ onAddingReceipt }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/receipts", {
+    // fetch("/receipts", {
+      fetch('https://quickfleet-api.herokuapp.com/receipts', { 
+
       method: "POST",
       headers: {
         "Content-Type": "application/json",
