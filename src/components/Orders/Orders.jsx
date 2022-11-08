@@ -203,7 +203,7 @@ useEffect(()=>{
 
 
 function deleteOrder(id) {
-  fetch(`http://127.0.0.1:3000/orders/${id}`, {
+  fetch(`https://quickfleet-api.herokuapp.com/orders/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json"

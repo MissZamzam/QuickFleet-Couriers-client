@@ -8,7 +8,7 @@ function Profile() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch('/user_profiles')
+    fetch('https://quickfleet-api.herokuapp.com/user_profiles')
     .then((res)=> res.json())
     .then((data) => setUsers(data))
   }, [])

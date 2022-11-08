@@ -15,7 +15,7 @@ function Receipt() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`/receipts/${id}`).then((response) => {
+    fetch(`https://quickfleet-api.herokuapp.com/receipts/${id}`).then((response) => {
       if (response.ok) {
         response.json().then((receipt) => {
           console.log(receipt);

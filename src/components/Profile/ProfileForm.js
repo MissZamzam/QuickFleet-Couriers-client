@@ -12,7 +12,7 @@ function ProfileForm() {
 
   function handleSubmit(e){
     e.preventDefault()
-    fetch('/user_profiles',{
+    fetch('https://quickfleet-api.herokuapp.com/user_profiles',{
       method: 'POST',
       headers: {
           "Content-type": "application/json",

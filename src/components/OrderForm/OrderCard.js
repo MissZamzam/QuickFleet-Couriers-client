@@ -43,7 +43,7 @@ export default function MultiActionAreaCard() {
             // pickup:"",
             // destination:""
         // })
-        fetch(`/orders/${id}`,{
+        fetch(`https://quickfleet-api.herokuapp.com/orders/${id}`,{
             method:"PATCH",
             headers:{
                 "Content-Type":"application/json"
@@ -79,7 +79,7 @@ export default function MultiActionAreaCard() {
 
     function handleDelete(id){
         // fetch(`/orders/${id}`,{
-          fetch(`https://quickfleet-api.herokuapp.com/orders/${id}`,{ 
+          fetch(`https://quickfleet-api.herokuapp.com/orders/${id}`,{
 
             method: "DELETE",
         })

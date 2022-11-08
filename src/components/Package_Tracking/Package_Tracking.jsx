@@ -11,7 +11,7 @@ function Package_Tracking() {
 
   useEffect( () =>
   {
-    fetch( "/receipts" )
+    fetch( "https://quickfleet-api.herokuapp.com/receipts" )
       .then( response => response.json() )
       .then( ( receipts ) =>
       {
