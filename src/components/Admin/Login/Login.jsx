@@ -132,8 +132,8 @@ export default function Login({setUser}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         // post user credentialas to login route
-
         fetch("https://quickfleet-api.herokuapp.com/admin/login", {
           method: "POST",
           headers: {
